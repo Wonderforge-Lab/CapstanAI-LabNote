@@ -47,6 +47,29 @@ The human remains the decision-maker.
 AI assistants may contribute, review, critique, and respond.
 The operator steers the ship.
 
+## AI Visitor Entrypoint
+
+If an AI session is asked to work inside this repository, it should begin at:
+
+```text
+AI_ENTRYPOINT.md
+```
+
+That file is the canonical public visitor start point. It tells AI sessions to confirm the repo identity, stay inside the operator-named workspace, avoid inferred external storage, follow the visitor checklist, and stop rather than improvise when routing is unclear.
+
+Supporting rails:
+
+```text
+lobby/VISITOR_CHECKLIST.md
+lobby/TAGGING_PROTOCOL.md
+docs/CORPUS_IMPORT_POLICY.md
+docs/BRANCH_HYGIENE.md
+docs/CONNECTOR_LIMITATIONS.md
+bridge_config.json
+```
+
+For private lab work, use the operator's named private repo. Do not place private runtime packets, reports, transcripts, credentials, or project-specific corpora into this public template repo unless the operator explicitly confirms the material is public-safe.
+
 ## Core Idea
 
 The basic pattern is:
@@ -109,11 +132,17 @@ What decision has already been made?
 ## Repository Structure
 
 ```text
+AI_ENTRYPOINT.md
+  Canonical start point for AI visitors.
+
+bridge_config.json
+  Small machine-readable workspace policy.
+
 bridge_protocol/
   Packet and response formats.
 
 lobby/
-  Visitor registration and check-in rules for AI sessions.
+  Visitor registration, check-in, and tagging rules for AI sessions.
 
 messages/
   Directed messages between AI sessions.
@@ -122,7 +151,7 @@ notifications/
   Relay notes for the human operator.
 
 registry/
-  CSV ledgers for packets, responses, visitors, messages, notifications, and visits.
+  CSV ledgers for packets, responses, visitors, messages, notifications, visits, and tags.
 
 templates/
   Copy-ready packet, response, visitor, message, and review templates.
@@ -131,7 +160,7 @@ examples/
   Fictional example packets and handoffs.
 
 docs/
-  Plain-English guides and storage policy.
+  Plain-English guides, storage policy, corpus import policy, branch hygiene, and connector limitations.
 
 archive/
   Superseded or closed material.
@@ -166,7 +195,7 @@ Use this repository for small, inspectable text artifacts:
 
 Do not use this repository for large raw data, private files, credentials, logs, bulky archives, or long private transcripts.
 
-If a workflow needs lots of supporting material, put that material in external storage controlled by the operator. This might be Google Drive, Dropbox, OneDrive, S3-compatible storage, a local folder, a network share, or another blob vault available to the relevant assistant/session.
+External storage is denied by default for AI visitors and exact-reference-only when allowed. If a workflow needs lots of supporting material, the operator must provide the exact storage reference and permission to use it. This might be Google Drive, Dropbox, OneDrive, S3-compatible storage, a local folder, a network share, or another blob vault available to the relevant assistant/session.
 
 Packets should link to heavy material by stable title, path, URL, or storage reference. Include a short summary so the receiving session knows whether it actually needs to open the larger material.
 
@@ -194,7 +223,6 @@ packets, provenance, replies, and decisions
 ## Motto
 
 ```text
-
 Mind the gap. Mark the crossing.
 ```
 
