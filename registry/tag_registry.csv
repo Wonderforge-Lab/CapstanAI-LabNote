@@ -1,0 +1,6 @@
+tag_slug,display_name,status,scope,description,created_by,date_created,notes
+example-project,Example Project,accepted,project,Generic example project tag,template,,Public-safe seed tag
+visitor-routing,Visitor routing,accepted,workflow,Visitor identity and message routing workflow,template,,Public-safe seed tag
+packet-handoff,Packet handoff,accepted,workflow,Packet creation and handoff workflow,template,,Public-safe seed tag
+human-in-the-loop,Human-in-the-loop,accepted,method,Human review and decision-making workflow,template,,Public-safe seed tag
+provenance,Provenance,accepted,method,Traceable source and decision record keeping,template,,Public-safe seed tag
