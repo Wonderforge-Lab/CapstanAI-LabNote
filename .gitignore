@@ -1,5 +1,4 @@
 # OS / editor cruft
-
 .DS_Store
 Thumbs.db
 *.swp
@@ -9,8 +8,7 @@ Thumbs.db
 .idea/
 
 # Python / tooling
-
-**pycache**/
+__pycache__/
 *.py[cod]
 .pytest_cache/
 .mypy_cache/
@@ -20,14 +18,12 @@ venv/
 env/
 
 # Node / web tooling, if added later
-
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
 
 # Build / generated output
-
 dist/
 build/
 site/
@@ -35,7 +31,6 @@ coverage/
 .cache/
 
 # Local runtime / private work areas
-
 .local/
 tmp/
 temp/
@@ -46,7 +41,6 @@ secrets/
 .local_state/
 
 # Environment and credentials
-
 .env
 .env.*
 *.pem
@@ -57,7 +51,6 @@ secrets/
 credentials.json
 
 # Logs and bulky/raw material
-
 *.log
 logs/
 raw/
@@ -66,12 +59,10 @@ blob_vault/
 exports/
 
 # Optional local sync folders
-
 gdrive/
 drive/
 rclone-cache/
 
 # Keep scaffold placeholders
-
 !.gitkeep
 !README.md
