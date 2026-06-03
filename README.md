@@ -152,6 +152,8 @@ They do not own the factory.
 
 ## Storage Policy
 
+OpenBridge LabNote is the ledger, not the warehouse.
+
 Use this repository for small, inspectable text artifacts:
 
 * packets
@@ -162,9 +164,13 @@ Use this repository for small, inspectable text artifacts:
 * review notes
 * signoffs
 
-Do not use this repository for large raw data, private files, credentials, logs, or bulky archives.
+Do not use this repository for large raw data, private files, credentials, logs, bulky archives, or long private transcripts.
 
-Large supporting material should live in an external storage area such as Google Drive, Dropbox, local storage, or another blob vault. Link to it from the relevant packet when needed.
+If a workflow needs lots of supporting material, put that material in external storage controlled by the operator. This might be Google Drive, Dropbox, OneDrive, S3-compatible storage, a local folder, a network share, or another blob vault available to the relevant assistant/session.
+
+Packets should link to heavy material by stable title, path, URL, or storage reference. Include a short summary so the receiving session knows whether it actually needs to open the larger material.
+
+Decide where bulky/private material will live before deploying OpenBridge LabNote for real multi-session work.
 
 ## Status
 
