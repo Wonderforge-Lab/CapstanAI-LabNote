@@ -1,0 +1,16 @@
+{
+  "lab_name": "OpenBridge-LabNote",
+  "canonical_repo": "Wonderforge-Lab/OpenBridge-LabNote",
+  "workspace_policy": "repo_only_by_default",
+  "external_storage_default": "deny",
+  "allowed_external_storage": "only_when_explicitly_referenced_in_packet",
+  "ai_entrypoint": "AI_ENTRYPOINT.md",
+  "visitor_checklist": "lobby/VISITOR_CHECKLIST.md",
+  "tagging_protocol": "lobby/TAGGING_PROTOCOL.md",
+  "corpus_import_policy": "docs/CORPUS_IMPORT_POLICY.md",
+  "branch_hygiene": "docs/BRANCH_HYGIENE.md",
+  "connector_limitations": "docs/CONNECTOR_LIMITATIONS.md",
+  "on_repo_mismatch": "stop_and_report",
+  "on_missing_input": "stop_and_report",
+  "on_unclear_routing": "stop_and_report"
+}
