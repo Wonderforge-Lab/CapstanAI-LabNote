@@ -1,13 +1,19 @@
+<p align="center">
+  <img src="assets/wonderforge_logo.png" alt="WonderForge: Imagination, Engineered." width="100%">
+</p>
+
 # OpenBridge LabNote
+
+*A WonderForge project.*
 
 OpenBridge LabNote is the all-in-one human-in-the-loop notebook for coordinating AI sessions through labelled packets and provenance-rich handoffs, with every decision kept traceable.
 
-It is designed for people who work across multiple AI sessions, assistants, models, or coding agents, but do not want to pretend those systems share a single memory, identity, or brain.
+It is designed for people who work across multiple AI sessions, assistants, models, or coding helpers, but do not want to pretend those systems share a single memory, identity, or brain.
 
 No ghosts.
 No agents.
 No shared-memory theatre.
-No Skynet...we hope.
+No Skynet... we hope.
 
 Just a well-labelled bridge.
 
@@ -100,7 +106,7 @@ What decision has already been made?
 8. The response is accepted, rejected, archived, or routed onward.
 9. The registry is updated.
 
-## Planned Structure
+## Repository Structure
 
 ```text
 bridge_protocol/
@@ -189,5 +195,3 @@ Mind the gap. Mark the crossing.
 ## License
 
 Apache License 2.0.
-
-

@@ -1,0 +1,19 @@
+# Visit Signoff
+
+visit_id:
+date:
+visitor_id:
+session_family:
+checked_messages:
+answered_messages:
+created_messages:
+human_relay_needed:
+signoff_path:
+
+## Work Completed
+
+## Open Items
+
+## Relay Notes
+
+## Signoff
