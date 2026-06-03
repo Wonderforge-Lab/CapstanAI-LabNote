@@ -1,0 +1,10 @@
+{
+  "tag_slug": "provenance",
+  "display_name": "Provenance",
+  "status": "accepted",
+  "scope": "workflow",
+  "description": "Work involving source tracking, handoff records, or decision trails.",
+  "created_by": "operator",
+  "date_created": null,
+  "notes": "Template example only."
+}

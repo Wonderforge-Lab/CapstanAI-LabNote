@@ -1,0 +1,10 @@
+{
+  "notification_id": "YYYYMMDD-example-notification",
+  "date": "YYYY-MM-DD",
+  "requested_by": "example-visitor",
+  "recipient": "operator",
+  "status": "open",
+  "path": "notifications/open/YYYYMMDD-example-notification.md",
+  "relay_needed": true,
+  "notes": ""
+}

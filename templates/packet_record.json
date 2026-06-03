@@ -1,0 +1,13 @@
+{
+  "packet_id": "YYYYMMDD-example-visitor-short-topic",
+  "date": "YYYY-MM-DD",
+  "source_ai": "ExampleAI",
+  "target_ai": "Shared",
+  "topic": "short-topic",
+  "status": "new",
+  "path": "datadrops/shared/inbox/YYYYMMDD-example-visitor-short-topic.md",
+  "response_expected": false,
+  "response_packet_id": null,
+  "tags": [],
+  "notes": ""
+}

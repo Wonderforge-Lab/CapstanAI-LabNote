@@ -1,0 +1,10 @@
+{
+  "tag_slug": "workflow-testing",
+  "display_name": "Workflow Testing",
+  "status": "accepted",
+  "scope": "example",
+  "description": "Public-safe tag for testing LabNote workflow mechanics.",
+  "created_by": "operator",
+  "date_created": null,
+  "notes": "Template example only."
+}

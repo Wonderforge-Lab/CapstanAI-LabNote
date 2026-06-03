@@ -1,0 +1,12 @@
+{
+  "response_id": "YYYYMMDD-example-response",
+  "date": "YYYY-MM-DD",
+  "responding_ai": "ExampleAI",
+  "source_packet_id": "YYYYMMDD-example-visitor-short-topic",
+  "status": "pending_review",
+  "path": "responses/example/YYYYMMDD-example-response.md",
+  "accepted_by": null,
+  "decision_date": null,
+  "tags": [],
+  "notes": ""
+}

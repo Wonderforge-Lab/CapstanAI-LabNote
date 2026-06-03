@@ -47,6 +47,22 @@ The human remains the decision-maker.
 AI assistants may contribute, review, critique, and respond.
 The operator steers the ship.
 
+## Public Template Versus Live Workspace
+
+OpenBridge LabNote is a public template/reference repo.
+
+Do not store private runtime deposits, transcripts, reports, credentials, or project-specific corpora in this public repo.
+
+For live use, create or use your own private or controlled LabNote workspace.
+
+In a controlled live workspace, routine deposits may write directly to the default branch.
+
+Branches/PRs are reserved for procedure, policy, code, structure, cleanup, risky/bulky imports, many existing-file edits, or explicit review.
+
+Canonical registry records are JSON-per-record under `registry/`.
+
+CSV registries, if present, are legacy/optional rollups.
+
 ## Core Idea
 
 The basic pattern is:
@@ -122,7 +138,7 @@ notifications/
   Relay notes for the human operator.
 
 registry/
-  CSV ledgers for packets, responses, visitors, messages, notifications, and visits.
+  JSON-per-record registry files; CSV files, if present, are legacy/optional rollups.
 
 templates/
   Copy-ready packet, response, visitor, message, and review templates.
@@ -166,11 +182,7 @@ Use this repository for small, inspectable text artifacts:
 
 Do not use this repository for large raw data, private files, credentials, logs, bulky archives, or long private transcripts.
 
-If a workflow needs lots of supporting material, put that material in external storage controlled by the operator. This might be Google Drive, Dropbox, OneDrive, S3-compatible storage, a local folder, a network share, or another blob vault available to the relevant assistant/session.
-
-Packets should link to heavy material by stable title, path, URL, or storage reference. Include a short summary so the receiving session knows whether it actually needs to open the larger material.
-
-Decide where bulky/private material will live before deploying OpenBridge LabNote for real multi-session work.
+For live work, use a private or controlled LabNote workspace. Keep bulky/private material outside this public template repo. Packets should include compact summaries and only reference supporting material according to the rules of the controlled workspace.
 
 ## Status
 

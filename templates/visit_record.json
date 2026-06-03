@@ -1,0 +1,12 @@
+{
+  "visit_id": "YYYYMMDD-example-visitor-short-topic-visit",
+  "date": "YYYY-MM-DD",
+  "visitor_id": "example-visitor",
+  "visitor_family": "example-ai",
+  "checked_messages": false,
+  "answered_messages": false,
+  "created_messages": false,
+  "relay_needed": false,
+  "signoff_path": "responses/signoffs/YYYYMMDD-example-visitor-short-topic-signoff.md",
+  "notes": ""
+}

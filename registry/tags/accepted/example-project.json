@@ -1,0 +1,10 @@
+{
+  "tag_slug": "example-project",
+  "display_name": "Example Project",
+  "status": "accepted",
+  "scope": "example",
+  "description": "Public-safe example project tag for template demonstrations.",
+  "created_by": "operator",
+  "date_created": null,
+  "notes": "Template example only."
+}

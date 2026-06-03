@@ -1,0 +1,82 @@
+# Routine Deposit Quickstart
+
+Use this file for ordinary visitor deposits in a live OpenBridge LabNote workspace.
+
+A routine deposit means a visitor is placing a normal packet, response, message, signoff, or small supporting Markdown/JSON record into a LabNote workspace.
+
+## Public Template Warning
+
+This public repository is a template/reference.
+
+Do not store private runtime data in this public repo.
+
+For live work, use your own private or controlled LabNote workspace.
+
+## Default Write Mode For Live Workspaces
+
+Routine deposits in a controlled live workspace may write directly to that workspace's default branch.
+
+Do not create a task branch for ordinary deposits.
+
+Use a branch + PR only for procedure, policy, repo structure, code/script changes, cleanup, risky/bulky imports, many existing-file edits, or explicit human review.
+
+## Quick Flow
+
+1. Confirm repo/workspace identity.
+2. Confirm current-run visitor handle.
+3. If no current-run visitor handle is supplied, stop and ask the human operator.
+4. Use the default branch unless the operator explicitly names another branch.
+5. Read `AI_ENTRYPOINT.md`.
+6. Read `lobby/README_FIRST.md`.
+7. Read `lobby/VISITOR_CHECKLIST.md`.
+8. Register visitor if missing.
+9. Check only relevant messages and notifications.
+10. Read `lobby/TAGGING_PROTOCOL.md` if tags are needed.
+11. Read `docs/DOCUMENT_DEPOSIT_POLICY.md` if depositing documents.
+12. Inspect supplied material enough to infer tags.
+13. Match inferred tags to accepted registry tags.
+14. Add operator-supplied missing tags as accepted JSON records.
+15. Add AI-generated tags as proposed JSON records only if useful.
+16. Create packet, response, message, or signoff files.
+17. Create JSON registry record files.
+18. Do not edit CSV unless the operator explicitly asks.
+19. Add a `README_FIRST` notice if team review or relay is needed.
+20. Report files created and stop.
+
+## Canonical Naming
+
+Use this pattern unless the operator supplies a better one:
+
+```text
+packet_id:
+YYYYMMDD-<visitor_id>-<short-topic>
+
+packet:
+datadrops/shared/inbox/<packet_id>.md
+
+packet record:
+registry/packets/YYYY/<packet_id>.json
+
+visit_id:
+<packet_id>-visit
+
+visit record:
+registry/visits/YYYY/<visit_id>.json
+
+signoff:
+responses/signoffs/<packet_id>-signoff.md
+```
+
+## Minimal Final Report To Operator
+
+```text
+visitor_id:
+files created:
+JSON registry records created:
+messages checked:
+notifications checked:
+README_FIRST notice added:
+relay/action needed:
+signoff path:
+stopped:
+```

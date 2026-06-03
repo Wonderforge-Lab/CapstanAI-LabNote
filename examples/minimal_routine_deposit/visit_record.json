@@ -1,0 +1,12 @@
+{
+  "visit_id": "20260603-example-visitor-routine-test-visit",
+  "date": "2026-06-03",
+  "visitor_id": "example-visitor",
+  "visitor_family": "example-ai",
+  "checked_messages": true,
+  "answered_messages": false,
+  "created_messages": false,
+  "relay_needed": false,
+  "signoff_path": "responses/signoffs/20260603-example-visitor-routine-test-signoff.md",
+  "notes": "Fictional minimal routine deposit example."
+}
