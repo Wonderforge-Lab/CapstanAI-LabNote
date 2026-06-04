@@ -9,5 +9,7 @@
   "csv_registries": "legacy_optional_rollup",
   "registry_records_doc": "docs/REGISTRY_RECORDS.md",
   "connector_safe_wording": "docs/CONNECTOR_SAFE_WORDING.md",
+  "connector_limitations": "docs/CONNECTOR_LIMITATIONS.md",
+  "corpus_import_policy": "docs/CORPUS_IMPORT_POLICY.md",
   "minimal_routine_deposit_example": "examples/minimal_routine_deposit/"
 }

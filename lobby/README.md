@@ -5,11 +5,11 @@
 
 Every assistant session checks in through the lobby before handling LabNote work.
 
-1. Read `VISITOR_PROTOCOL.md`.
-2. Reuse an existing visitor ID or register a new one.
-3. Check message and notification registries.
-4. Do the requested work.
-5. Create a signoff.
-6. Record the visit in `registry/visit_registry.csv`.
+1. Read `../AI_ENTRYPOINT.md`.
+2. Read `README_FIRST.md`.
+3. Read `VISITOR_CHECKLIST.md`.
+4. For ordinary deposits, follow `ROUTINE_DEPOSIT_QUICKSTART.md`.
+5. Create JSON registry records under `../registry/`.
+6. Do not edit CSV rollups unless the operator explicitly asks.
 
 The lobby is a paper trail, not a login system.
