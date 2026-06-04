@@ -1,0 +1,10 @@
+{
+  "tag_slug": "human-in-the-loop",
+  "display_name": "Human-in-the-loop",
+  "status": "accepted",
+  "scope": "workflow",
+  "description": "Work involving human review, approval, or routing.",
+  "created_by": "operator",
+  "date_created": null,
+  "notes": "Template example only."
+}

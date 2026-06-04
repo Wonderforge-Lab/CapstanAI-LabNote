@@ -1,0 +1,10 @@
+{
+  "tag_slug": "example-tag",
+  "display_name": "Example Tag",
+  "status": "proposed",
+  "scope": "example",
+  "description": "Short public-safe description of the tag.",
+  "created_by": "example-visitor",
+  "date_created": "YYYY-MM-DD",
+  "notes": ""
+}

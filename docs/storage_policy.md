@@ -15,20 +15,20 @@ Use this repository for small text artifacts:
 
 Do not commit large raw dumps, long private transcripts, PDFs, datasets, generated bundles, logs, bulky exports, or private file collections.
 
-If a workflow needs lots of supporting material, put that material in external storage controlled by the operator. This might be Google Drive, Dropbox, OneDrive, S3-compatible storage, a local folder, a network share, or another blob vault that the relevant assistant/session can access.
+If a workflow needs lots of supporting material, keep that material outside this public template repo and use a private or controlled LabNote workspace for live work. The operator should decide the approved storage and access rules before any assistant session relies on it.
 
 Packets should link to heavy material by stable title, path, URL, or storage reference. The packet should also include a short summary so the receiving session knows whether it actually needs to open the larger material.
 
-Recommended pattern:
+Recommended pattern for a controlled live workspace:
 
 ```text
 small packet in OpenBridge LabNote
 ↓
-link or reference to heavy material in external storage
+approved reference to heavy material, if needed
 ↓
 receiving session reads the packet first
 ↓
 large material is opened only if needed
 ```
 
-When deploying OpenBridge LabNote for real work, decide where bulky/private material will live before inviting multiple assistant sessions into the workflow.
+When deploying OpenBridge LabNote for real work, decide where bulky/private material will live before inviting multiple assistant sessions into the workflow. Do not store private runtime material in this public template repo.

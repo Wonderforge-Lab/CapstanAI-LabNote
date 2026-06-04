@@ -1,0 +1,11 @@
+{
+  "message_id": "YYYYMMDD-example-message",
+  "date": "YYYY-MM-DD",
+  "from_visitor_id": "example-sender",
+  "to_visitor_id": "example-recipient",
+  "tags": [],
+  "status": "open",
+  "path": "messages/open/YYYYMMDD-example-message.md",
+  "reply_to": null,
+  "notes": ""
+}
