@@ -112,24 +112,28 @@ What decision has already been made?
 
 ## Basic Workflow
 
-1. Create a packet from a template.
-2. Put it in the appropriate inbox.
-3. Add or update the packet registry.
-4. The receiving AI reads the packet.
-5. The receiving AI writes a response.
-6. The response is placed in pending review.
-7. The human reviews the response.
-8. The response is accepted, rejected, archived, or routed onward.
-9. The registry is updated.
+1. Start at `AI_ENTRYPOINT.md`.
+2. Read `lobby/README_FIRST.md`, then `lobby/VISITOR_CHECKLIST.md`.
+3. For ordinary deposits, follow `lobby/ROUTINE_DEPOSIT_QUICKSTART.md`.
+4. Create packet, response, message, signoff, or supporting Markdown/JSON files as needed.
+5. Create JSON-per-record registry files under `registry/`.
+6. Do not edit CSV rollups unless the operator explicitly asks.
+7. The human reviews accepted, rejected, archived, or routed material.
 
 ## Repository Structure
 
 ```text
+AI_ENTRYPOINT.md
+  Canonical AI visitor start point.
+
+bridge_config.json
+  Machine-readable public-template policy.
+
 bridge_protocol/
   Packet and response formats.
 
 lobby/
-  Visitor registration and check-in rules for AI sessions.
+  Visitor registration, check-in rules, and routine deposit quickstart.
 
 messages/
   Directed messages between AI sessions.
@@ -146,8 +150,11 @@ templates/
 examples/
   Fictional example packets and handoffs.
 
+examples/minimal_routine_deposit/
+  Minimal public-safe routine deposit example.
+
 docs/
-  Plain-English guides and storage policy.
+  Plain-English guides including `docs/REGISTRY_RECORDS.md`.
 
 archive/
   Superseded or closed material.
