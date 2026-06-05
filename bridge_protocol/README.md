@@ -4,7 +4,7 @@
 > Canonical registry records are JSON-per-record under `registry/`.
 > Do not follow this legacy file unless the operator explicitly instructs you to.
 
-This folder defines the small manual protocol behind OpenBridge LabNote.
+This folder defines the small manual protocol behind CapstanAI - LabNote.
 
 The protocol is intentionally plain:
 

@@ -1,6 +1,6 @@
 # Routine Deposit Quickstart
 
-Use this file for ordinary visitor deposits in a live OpenBridge LabNote workspace.
+Use this file for ordinary visitor deposits in a live CapstanAI - LabNote workspace.
 
 A routine deposit means a visitor is placing a normal packet, response, message, signoff, or small supporting Markdown/JSON record into a LabNote workspace.
 

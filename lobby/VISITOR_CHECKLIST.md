@@ -1,6 +1,6 @@
 # Visitor Checklist
 
-Use this checklist in a live OpenBridge LabNote workspace.
+Use this checklist in a live CapstanAI - LabNote workspace.
 
 Do not store private runtime data in this public template repo.
 

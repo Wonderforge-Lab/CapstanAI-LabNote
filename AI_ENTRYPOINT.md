@@ -1,6 +1,6 @@
 # AI Entrypoint
 
-This public repo is a template/reference.
+This public repo hosts `CapstanAI - LabNote` as a template/reference.
 
 Do not store private runtime data here.
 
@@ -8,7 +8,7 @@ Do not store private reports, credentials, private transcripts, private visitor 
 
 For live work, use a private or controlled LabNote workspace.
 
-If the repo identity does not match the expected OpenBridge LabNote workspace, stop and report the mismatch.
+If the repo identity does not match the expected CapstanAI - LabNote workspace, stop and report the mismatch.
 
 No current-run visitor handle, no write.
 
