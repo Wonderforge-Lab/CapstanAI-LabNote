@@ -1,5 +1,7 @@
 {
-  "lab_name": "OpenBridge LabNote",
+  "lab_name": "CapstanAI - LabNote",
+  "project_name": "CapstanAI - LabNote",
+  "project_slug": "capstanai-labnote",
   "public_template_repo": "Wonderforge-Lab/OpenBridge-LabNote",
   "private_runtime_data_policy": "do_not_store_private_runtime_data_in_public_template",
   "routine_deposit_quickstart": "lobby/ROUTINE_DEPOSIT_QUICKSTART.md",

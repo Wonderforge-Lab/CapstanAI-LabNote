@@ -1,6 +1,6 @@
 # Corpus Import Policy
 
-OpenBridge LabNote is the ledger, not the warehouse.
+CapstanAI - LabNote is the ledger, not the warehouse.
 
 This public repo is a template/reference. Do not store private runtime corpora, private transcripts, bulky archives, credentials, or project-specific runtime dumps here.
 

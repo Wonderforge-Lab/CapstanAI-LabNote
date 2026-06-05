@@ -1,6 +1,6 @@
 # Review Workflow
 
-OpenBridge LabNote is human-in-the-loop by design.
+CapstanAI - LabNote is human-in-the-loop by design.
 
 An assistant session may draft, critique, summarize, or propose. The human operator decides what is accepted, rejected, archived, or routed onward.
 

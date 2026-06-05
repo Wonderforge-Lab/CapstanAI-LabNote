@@ -2,7 +2,7 @@
 
 Different AI sessions may have different tool access. Some can read and write individual repository files directly. Some can only suggest patches. Some cannot safely handle multi-file archives or large imports.
 
-OpenBridge LabNote should fail closed when tool access is unclear.
+CapstanAI - LabNote should fail closed when tool access is unclear.
 
 ## GitHub File Connectors
 

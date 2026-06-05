@@ -2,11 +2,11 @@
   <img src="assets/wonderforge_logo.png" alt="WonderForge: Imagination, Engineered." width="100%">
 </p>
 
-# OpenBridge LabNote
+# CapstanAI - LabNote
 
 *A WonderForge project.*
 
-OpenBridge LabNote is the all-in-one human-in-the-loop notebook for coordinating AI sessions through labelled packets and provenance-rich handoffs, with every decision kept traceable.
+CapstanAI - LabNote is a human-in-the-loop notebook for coordinating AI sessions through labelled packets, provenance-rich handoffs, JSON registry records, and traceable decisions.
 
 It is designed for people who work across multiple AI sessions, assistants, models, or coding helpers, but do not want to pretend those systems share a single memory, identity, or brain.
 
@@ -19,7 +19,7 @@ Just a well-labelled bridge.
 
 ## What It Does
 
-OpenBridge LabNote gives you a simple file-based workflow for:
+CapstanAI - LabNote gives you a simple file-based workflow for:
 
 * passing tasks between AI sessions
 * recording who said what
@@ -33,7 +33,7 @@ It is deliberately boring in the places where boring is useful.
 
 ## What It Is Not
 
-OpenBridge LabNote is not:
+CapstanAI - LabNote is not:
 
 * an autonomous agent framework
 * a background runner
@@ -49,9 +49,9 @@ The operator steers the ship.
 
 ## Public Template Versus Live Workspace
 
-OpenBridge LabNote is a public template/reference repo.
+CapstanAI - LabNote is a public template/reference repo.
 
-Do not store private runtime deposits, transcripts, reports, credentials, or project-specific corpora in this public repo.
+This public repo is a template/reference scaffold. Do not store private runtime deposits, transcripts, credentials, private visitor records, or project-specific corpora here.
 
 For live use, create or use your own private or controlled LabNote workspace.
 
@@ -98,7 +98,7 @@ AI sessions are useful, but they often suffer from:
 * overlong chats
 * vague “we discussed this somewhere” memory sludge
 
-OpenBridge LabNote gives those sessions a shared external notebook without pretending they have shared internal memory.
+CapstanAI - LabNote gives those sessions a shared external notebook without pretending they have shared internal memory.
 
 It helps each assistant know:
 
@@ -162,7 +162,7 @@ archive/
 
 ## Human-In-The-Loop By Design
 
-OpenBridge LabNote assumes that humans remain responsible for:
+CapstanAI - LabNote assumes that humans remain responsible for:
 
 * deciding what is accepted
 * deciding what is shared
@@ -175,7 +175,7 @@ They do not own the factory.
 
 ## Storage Policy
 
-OpenBridge LabNote is the ledger, not the warehouse.
+CapstanAI - LabNote is the ledger, not the warehouse.
 
 Use this repository for small, inspectable text artifacts:
 
@@ -193,7 +193,23 @@ For live work, use a private or controlled LabNote workspace. Keep bulky/private
 
 ## Status
 
-OpenBridge LabNote is an early public scaffold.
+CapstanAI - LabNote is an early public scaffold.
+
+Current planned release:
+
+```text
+v0.2.0 - CapstanAI Identity Migration
+```
+
+`v0.1.0 - First Public Template` remains the historical first public template release under the OpenBridge LabNote name.
+
+## v0.2.0 - CapstanAI Identity Migration
+
+This release migrates the public-facing LabNote identity from OpenBridge LabNote to CapstanAI - LabNote.
+
+It preserves the existing human-in-the-loop workflow, JSON-per-record registry model, public/private boundary, routine deposit flow, and provenance-preserving examples.
+
+v0.1.0 remains preserved as the historical first public template release.
 
 Current focus:
 
@@ -204,7 +220,7 @@ Current focus:
 * human review
 * clean provenance
 
-Future OpenBridge components may explore richer relay, vault, or protocol layers, but LabNote starts with the simplest useful thing:
+CapstanAI may later grow richer relay, vault, and protocol modules; LabNote begins as the simplest useful ledger.
 
 ```text
 packets, provenance, replies, and decisions

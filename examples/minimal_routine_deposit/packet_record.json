@@ -9,7 +9,8 @@
   "response_expected": false,
   "response_packet_id": null,
   "tags": [
+    "capstanai-labnote",
     "workflow-testing"
   ],
-  "notes": "Fictional minimal routine deposit example."
+  "notes": "Fictional minimal routine deposit example. Renamed project identity from OpenBridge-LabNote to CapstanAI - LabNote; capstanai-labnote tag applied for discoverability."
 }

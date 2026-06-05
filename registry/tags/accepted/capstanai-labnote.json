@@ -1,0 +1,10 @@
+{
+  "tag_slug": "capstanai-labnote",
+  "display_name": "CapstanAI - LabNote",
+  "status": "accepted",
+  "scope": "project",
+  "description": "Public LabNote template component of the CapstanAI multi-AI workflow ecosystem.",
+  "created_by": "operator",
+  "date_created": "2026-06-05",
+  "notes": "Operator-selected replacement name for OpenBridge-LabNote."
+}

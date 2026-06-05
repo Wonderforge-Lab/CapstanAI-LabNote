@@ -1,6 +1,6 @@
 # Storage Policy
 
-OpenBridge LabNote is the ledger, not the warehouse.
+CapstanAI - LabNote is the ledger, not the warehouse.
 
 Use this repository for small text artifacts:
 
@@ -22,7 +22,7 @@ Packets should link to heavy material by stable title, path, URL, or storage ref
 Recommended pattern for a controlled live workspace:
 
 ```text
-small packet in OpenBridge LabNote
+small packet in CapstanAI - LabNote
 ↓
 approved reference to heavy material, if needed
 ↓
@@ -31,4 +31,4 @@ receiving session reads the packet first
 large material is opened only if needed
 ```
 
-When deploying OpenBridge LabNote for real work, decide where bulky/private material will live before inviting multiple assistant sessions into the workflow. Do not store private runtime material in this public template repo.
+When deploying CapstanAI - LabNote for real work, decide where bulky/private material will live before inviting multiple assistant sessions into the workflow. Do not store private runtime material in this public template repo.

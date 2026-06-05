@@ -1,6 +1,6 @@
 # Document Deposit Policy
 
-OpenBridge LabNote workspaces are ledgers first, warehouses second.
+CapstanAI - LabNote workspaces are ledgers first, warehouses second.
 
 ## Preferred Formats
 
