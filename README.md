@@ -195,6 +195,22 @@ For live work, use a private or controlled LabNote workspace. Keep bulky/private
 
 CapstanAI - LabNote is an early public scaffold.
 
+Current planned release:
+
+```text
+v0.2.0 - CapstanAI Identity Migration
+```
+
+`v0.1.0 - First Public Template` remains the historical first public template release under the OpenBridge LabNote name.
+
+## v0.2.0 - CapstanAI Identity Migration
+
+This release migrates the public-facing LabNote identity from OpenBridge LabNote to CapstanAI - LabNote.
+
+It preserves the existing human-in-the-loop workflow, JSON-per-record registry model, public/private boundary, routine deposit flow, and provenance-preserving examples.
+
+v0.1.0 remains preserved as the historical first public template release.
+
 Current focus:
 
 * manual handoffs

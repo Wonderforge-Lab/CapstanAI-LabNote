@@ -82,4 +82,13 @@ Preserved for historical/provenance references.
 - Update GitHub repository topics: the current topic list still includes `openbridge`; suggested replacements include `capstanai` and `capstanai-labnote`.
 - Review the GitHub repository description and decide whether to mention CapstanAI - LabNote explicitly.
 - Replace or rename the old social preview image if a refreshed CapstanAI asset is wanted.
-- Release `v0.1.0` still uses OpenBridge LabNote in its title and release notes. Decide whether to preserve it historically or publish a new CapstanAI-labeled release.
+- `v0.1.0` should remain preserved as the historical first public template release.
+- The next public release should be `v0.2.0 - CapstanAI Identity Migration`.
+
+## v0.2.0 - CapstanAI Identity Migration
+
+This release migrates the public-facing LabNote identity from OpenBridge LabNote to CapstanAI - LabNote.
+
+It preserves the existing human-in-the-loop workflow, JSON-per-record registry model, public/private boundary, routine deposit flow, and provenance-preserving examples.
+
+`v0.1.0` remains preserved as the historical first public template release.
