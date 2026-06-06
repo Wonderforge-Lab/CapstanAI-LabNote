@@ -6,9 +6,9 @@
 
 *A WonderForge project.*
 
-CapstanAI - LabNote is an API-free human-in-the-loop (HILP) notebook for coordinating AI sessions through labelled packets, provenance-rich handoffs, JSON registry records, and traceable decisions.
+CapstanAI - LabNote is an API-free human-in-the-loop notebook for coordinating AI sessions through labelled packets, provenance-rich handoffs, JSON registry records, and traceable decisions. Task-completion bias is avoided via use of nested hierarchical instructions.
 
-Conceptually, LabNote is meant to be a place for the HILP to *safely* allow any github-enabled AI to either deposit your notes/papers/proposals/etc, or just read them. This provides continuity for the HILP, and allows a 'fresh chat'AI, and other AI contributors, to catch up with any project being worked on.
+Conceptually, LabNote is meant to be a place for the human-in-the-loop to *safely* allow any github-enabled AI to either deposit your notes/papers/proposals/etc, or just read them. This provides continuity for the HILP, and allows a 'fresh chat'AI, and other AI contributors, to catch up with any project being worked on.
 
 It is designed for people who don't want a full-fat openclaw-type agent on their system, and who might be working across multiple AI sessions, assistants, models, or coding helpers, but do not want to pretend those systems share a single memory, identity, or a fully-fledged brain.
 
