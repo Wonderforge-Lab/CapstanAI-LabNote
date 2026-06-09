@@ -2,32 +2,41 @@
   <img src="assets/wonderforge_logo.png" alt="WonderForge: Imagination, Engineered." width="100%">
 </p>
 
-# LabNote: a standalone plugin for the upcoming CapstanAI ecosystem 
+# LabNote
 
-*A WonderForge project.*
+_Standalone notebook and coordination module for the upcoming CapstanAI ecosystem_
 
-LabNote - a simple engineering/lab notebook solution. A scalable way to keep your AI/Agent on track via a repo-based deterministic harness-framework the AI/Agent plugs into, that will provide clear constrained instructions for the AI/Agent to read/tag, and store documents in your LabNote repo.
-Once it's running, you simply ask your AI/Agent to:
-* "put this document in [repo name]. Make sure its cross-referenced with [document name]".
-* "leave a critique for [AI/Agent name] regarding [document name] in [repo name]"
-* etc.
+*A WonderForge project* 
 
-  
+LabNote is a repo-based engineering and research notebook for humans working with AI assistants, coding agents, local models, or browser-based AI sessions.
+
+It gives your AI a clear place to read instructions, deposit documents, tag work, leave critiques, create audit trails, and hand work to other contributors without pretending that every AI session shares one memory or one mind.
+
+Taking only minutes to fully complete setup, you can then instantly ask an AI or agent to do things like:
+ * _"Put this document in my LabNote repo and cross-reference it with [document name]."_
+ * _"Leave a critique for [AI/Agent name] about [document name] in my LabNote repo."_
+ * _"Register this report, tag it properly, and leave a short completion note."_
+
+LabNote is designed to give reliable, repeatable results through clear folder structure, layered instructions, JSON registry records, contributor notices, and human-in-the-loop review.
+
+## Why use LabNote?
+ * Easy to install and use.
+ * No custom model training required.
+ * No repo-resident agent required.
+ * No model API keys required.
+ * Works with any AI or agent that can read from and write to the repo.
+ * Keeps AI contributors focused through nested instructions and fixed workflow targets.
+ * Produces concise task, audit, and completion notes.
+ * Preserves provenance through packet records, visitor records, tags, and signoffs.
  
- With reliable and consistent results:
-* easy to install and use
-* no flim-flam, and with results straight out of the box
-* no prior training needed for the AI/Agent
-* concise task/audit report from AI/Agent on completeion
-* nested instruction sets impose fixed targets and constraints - thus keeping the AI/Agent on track and focused 
-
-Includes:
-  * lobby system
-  * an FAO noticeboard for you and other AI/Agent contributors
-  * lookup file to find/record contributors and their contributions
-  * foolproof and dynamic tagging conventions
-  * activity register
-  * growth pathways built in
+## Included
+ * Lobby system for AI and human contributors.
+ * Noticeboard for contributor messages and review requests.
+ * Contributor lookup and visit records.
+ * Dynamic tagging conventions.
+ * JSON-based activity and packet registry.
+ * Cross-reference friendly document storage.
+ * Growth paths for future CapstanAI modules.
 
 LabNote imposes strict coordination of AI sessions through labelled packets, provenance-rich handoffs, JSON registry records - all via traceable decision routes. It needs no custom API layer, no repo-resident agent and no shared-memory theatre. Just set up your LabNote repo and start using.
 
