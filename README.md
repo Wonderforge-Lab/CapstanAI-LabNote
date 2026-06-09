@@ -54,6 +54,57 @@ LabNote gives the AI enough structure to act, and enough constraint to stop gues
 * **Work across tools**: any AI or agent that can read and write repo files can participate.
 * **Keep the human in control**: the operator remains the decision-maker.
 
+## Why not just use `AGENTS.md`?
+
+`AGENTS.md`, `CLAUDE.md`, and similar context files are useful. LabNote can work alongside them.
+
+But LabNote is solving a different problem.
+
+A normal agent context file usually tells an AI about a repository: how to run tests, where key files live, what style to follow, and what commands to use. That can help, but it can also turn into a long instruction blob. As the file grows, the agent may spend more time exploring, rereading, testing, and satisfying extra requirements instead of cleanly completing the task.
+
+LabNote is not just a bigger context file.
+
+LabNote gives the AI a structured workflow:
+
+* where to enter
+* what to read first
+* where to deposit work
+* how to tag it
+* how to leave a signoff
+* how to hand work to another AI
+* when to stop and ask the human
+
+The difference is simple:
+
+| Ordinary agent context file               | LabNote                                                                |
+| ----------------------------------------- | ---------------------------------------------------------------------- |
+| Tells the AI about the repo               | Gives the AI a route through the work                                  |
+| Can become a large instruction blob       | Uses nested, role-specific instructions                                |
+| Often focuses on task execution           | Also handles handoffs, review, provenance, and stop-points             |
+| May increase exploration and context load | Keeps work bounded through packet routes and ask-gates                 |
+| Usually lives as one file                 | Uses a small repo structure, templates, registry records, and signoffs |
+| Helps one agent orient itself             | Helps many AI sessions coordinate over time                            |
+
+LabNote is built to reduce **task tunnel vision**: the failure mode where an AI pushes too hard toward finishing the visible task and loses sight of constraints, provenance, handoff quality, or human control.
+
+It is also designed to reduce **completion-pressure failure**: the situation where an agent treats “finish the task” as more important than “follow the route, preserve the record, and stop when the rules say stop.”
+
+That is why LabNote uses:
+
+* deterministic lobby entry
+* nested instruction routes
+* packet records
+* tag hygiene
+* JSON-per-record registries
+* human-readable signoffs
+* ask-gated stop conditions
+* human-in-the-loop review
+
+`AGENTS.md` can tell an AI what kind of project it is in.
+
+LabNote tells the AI how to behave inside the project.
+
+
 ## Built around five principles
 
 1. **Human-held authority**
