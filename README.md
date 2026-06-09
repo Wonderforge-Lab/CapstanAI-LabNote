@@ -4,71 +4,118 @@
 
 # LabNote
 
-_Standalone notebook and coordination module for the upcoming CapstanAI ecosystem_
+*Repo-native coordination for AI-assisted research and engineering.*
+*A WonderForge project for the upcoming CapstanAI ecosystem.*
 
-*A WonderForge project* 
+Most AI work starts in a blank room.
 
-LabNote is a repo-based engineering and research notebook for humans working with AI assistants, coding agents, local models, or browser-based AI sessions.
+A fresh chat does not know what happened before. A coding agent may follow a task too narrowly. A browser AI may lose the thread. A local model may need the same context rebuilt by hand. Ordinary context files can help, but they often become instruction blobs: useful in small doses, brittle when they grow.
 
-It gives your AI a clear place to read instructions, deposit documents, tag work, leave critiques, create audit trails, and hand work to other contributors without pretending that every AI session shares one memory or one mind.
+LabNote gives your AI a room with labels on the drawers.
 
-Taking only minutes to fully complete setup, you can then instantly ask an AI or agent to do things like:
- * _"Put this document in my LabNote repo and cross-reference it with [document name]."_
- * _"Leave a critique for [AI/Agent name] about [document name] in my LabNote repo."_
- * _"Register this report, tag it properly, and leave a short completion note."_
+It is a lightweight repo-based notebook and coordination layer for humans working with AI assistants, coding agents, local models, and browser-based AI sessions. It gives each AI a deterministic lobby to enter, clear rules to read, fixed places to write, tagging conventions to follow, and stop-points where it must ask the human what to do next.
 
-LabNote is designed to give reliable, repeatable results through clear folder structure, layered instructions, JSON registry records, contributor notices, and human-in-the-loop review.
+LabNote is not a heavyweight local agent stack.
+
+No daemon.
+No database.
+No repo-resident agent.
+No model API keys.
+No custom model training.
+No shared-memory theatre.
+
+Just ordinary repo files, structured so AI contributors can preserve the research signal across fresh sessions, model switches, agent handoffs, critiques, reviews, and long-running projects.
+
+Once LabNote is set up, you can ask an AI or agent to do things like:
+
+```text
+Put this document in my LabNote repo and cross-reference it with [document name].
+```
+
+```text
+Leave a critique for [AI/Agent name] about [document name].
+```
+
+```text
+Register this report, tag it properly, and leave a short completion note.
+```
+
+LabNote gives the AI enough structure to act, and enough constraint to stop guessing.
 
 ## Why use LabNote?
- * Easy to install and use.
- * No custom model training required.
- * No repo-resident agent required.
- * No model API keys required.
- * Works with any AI or agent that can read from and write to the repo.
- * Keeps AI contributors focused through nested instructions and fixed workflow targets.
- * Produces concise task, audit, and completion notes.
- * Preserves provenance through packet records, visitor records, tags, and signoffs.
- 
+
+* **Preserve research signal** across AI sessions, tools, models, and handoffs.
+* **Reduce task tunnel vision** by giving agents fixed routes, not vague vibes.
+* **Control completion pressure** with ask-gates, stop-points, signoffs, and human review.
+* **Keep handoffs auditable** through packets, responses, reviews, decisions, and signoffs.
+* **Use tag hygiene from the start** with clear conventions and a proposal path for new tags.
+* **Stay repo-native and low-bloat**: LabNote stores ordinary text records, not hidden runtime machinery.
+* **Avoid local-agent overhead**: no daemon, database, API server, or background automation required.
+* **Work across tools**: any AI or agent that can read and write repo files can participate.
+* **Keep the human in control**: the operator remains the decision-maker.
+
+## Built around five principles
+
+1. **Human-held authority**
+   LabNote supports the human-in-the-loop. It does not replace them.
+
+2. **Deterministic entry**
+   Every AI enters through the lobby, reads the same rules, and follows the same route.
+
+3. **Bounded action**
+   The AI gets fixed targets, allowed paths, stop conditions, and ask-gates.
+
+4. **Traceable work**
+   Documents, critiques, tags, decisions, handoffs, and signoffs leave a clear trail.
+
+5. **Growth without bloat**
+   LabNote can grow into richer workflows without requiring a local daemon, database, model install, or repo-resident agent.
+
 ## Included
- * Lobby system for AI and human contributors.
- * Noticeboard for contributor messages and review requests.
- * Contributor lookup and visit records.
- * Dynamic tagging conventions.
- * JSON-based activity and packet registry.
- * Cross-reference friendly document storage.
- * Growth paths for future CapstanAI modules.
 
-LabNote imposes strict coordination of AI sessions through labelled packets, provenance-rich handoffs, JSON registry records - all via traceable decision routes. It needs no custom API layer, no repo-resident agent and no shared-memory theatre. Just set up your LabNote repo and start using.
+* Lobby system for AI and human contributors.
+* Noticeboard for contributor messages and review requests.
+* Contributor lookup and visit records.
+* Packet, response, review, and signoff templates.
+* JSON-per-record activity and packet registry.
+* Dynamic tagging conventions with hygiene rules.
+* Proposal path for new tags.
+* Cross-reference-friendly document storage.
+* Growth paths for future CapstanAI modules.
 
-Multiple AIs, one tool, and a structured harness to work within - LabNote gives the human operator a controlled place where GitHub-enabled AI sessions can deposit any document - notes, papers, proposals, reports, reviews, and signoffs - or simply read what has already been placed there. This gives the project continuity without pretending that fresh AI chats, coding helpers, browser assistants, or local models all share one memory, one identity, or one fully-fledged brain.
+## Design stance
 
-It's designed for people working across multiple AI sessions, assistants, models, or coding tools - but who don't want to run a full local agent stack just to keep the work coherent. The workflow uses nested instructions, named visitors, packet records, and human review to reduce task-completion drift, and keep decisions traceable.
+LabNote is deliberately boring where boring is useful.
 
-No model API keys required.
 No ghosts.
-No repo-resident agents.
+No hidden agent.
+No secret automation layer.
 No shared-memory theatre.
 No Skynet... we hope.
 
-Just a well-labelled bridge.
+The repo is the ledger.
+The human is the authority.
+The AI is a contributor with a route to follow.
 
-## What It Does
+## What it does
 
-CapstanAI - LabNote gives you a simple file-based workflow for:
+CapstanAI LabNote gives you a simple file-based workflow for:
 
 * passing tasks between AI sessions
 * recording who said what
-* tracking packets, responses, and decisions
+* tracking packets, responses, reviews, and decisions
 * keeping outputs reviewable
 * preserving provenance
 * avoiding giant paste-dumps and context confusion
-* making AI assistants identifiable contributors instead of mysterious blobs of helpful fog
+* giving AI assistants identifiable contributor roles instead of letting them remain mysterious blobs of helpful fog
 
-It is deliberately boring in the places where boring is useful.
+It is designed for people working across multiple AI sessions, assistants, models, or coding tools who do not want to run a full local agent stack just to keep the work coherent.
 
-## What It Is Not
+The workflow uses nested instructions, named visitors, packet records, tag hygiene, and human review to reduce task tunnel vision and completion-pressure failure.
 
-CapstanAI - LabNote is not:
+## What it is not
+
+CapstanAI LabNote is not:
 
 * an autonomous agent framework
 * a background runner
@@ -82,23 +129,32 @@ The human remains the decision-maker.
 AI assistants may contribute, review, critique, and respond.
 The operator steers the ship.
 
-## Public Template Versus Live Workspace
+## Public template versus live workspace
 
-CapstanAI - LabNote is a public template/reference repo.
+CapstanAI LabNote is a public template and reference scaffold.
 
-This public repo is a template/reference scaffold. Do not store private runtime deposits, transcripts, credentials, private visitor records, or project-specific corpora here.
+Do not store private runtime deposits, transcripts, credentials, private visitor records, or project-specific corpora in this public template repo.
 
 For live use, create or use your own private or controlled LabNote workspace.
 
 In a controlled live workspace, routine deposits may write directly to the default branch.
 
-Branches/PRs are reserved for procedure, policy, code, structure, cleanup, risky/bulky imports, many existing-file edits, or explicit review.
+Branches and pull requests are reserved for:
+
+* procedure changes
+* policy changes
+* code changes
+* structural changes
+* cleanup
+* risky or bulky imports
+* many existing-file edits
+* explicit review
 
 Canonical registry records are JSON-per-record under `registry/`.
 
-CSV registries, if present, are legacy/optional rollups.
+CSV registries, if present, are legacy or optional rollups.
 
-## Core Idea
+## Core idea
 
 The basic pattern is:
 
@@ -122,7 +178,17 @@ Each handoff should leave a clear trail:
 packet → response → review → decision
 ```
 
-## Why This Exists
+A good handoff should carry:
+
+* source
+* status
+* tags
+* linked references
+* contributor identity
+* signoff
+* next action or stop condition
+
+## Why this exists
 
 AI sessions are useful, but they often suffer from:
 
@@ -132,20 +198,27 @@ AI sessions are useful, but they often suffer from:
 * messy handoffs
 * overlong chats
 * vague “we discussed this somewhere” memory sludge
+* task tunnel vision
+* completion-pressure failure
+* context-bloat drift
 
-CapstanAI - LabNote gives those sessions a shared external notebook without pretending they have shared internal memory.
+CapstanAI LabNote gives those sessions a shared external notebook without pretending they have shared internal memory.
 
 It helps each assistant know:
 
 ```text
 Who am I in this workflow?
 What has been handed to me?
+Where should I look?
+Where should I write?
+How should I tag this?
 Who is waiting for my answer?
 What should I tell the operator?
 What decision has already been made?
+When should I stop and ask?
 ```
 
-## Basic Workflow
+## Basic workflow
 
 1. Start at `AI_ENTRYPOINT.md`.
 2. Read `lobby/README_FIRST.md`, then `lobby/VISITOR_CHECKLIST.md`.
@@ -155,7 +228,7 @@ What decision has already been made?
 6. Do not edit CSV rollups unless the operator explicitly asks.
 7. The human reviews accepted, rejected, archived, or routed material.
 
-## Repository Structure
+## Repository structure
 
 ```text
 AI_ENTRYPOINT.md
@@ -195,22 +268,22 @@ archive/
   Superseded or closed material.
 ```
 
-## Human-In-The-Loop By Design
+## Human-in-the-loop by design
 
-CapstanAI - LabNote assumes that humans remain responsible for:
+CapstanAI LabNote assumes that humans remain responsible for:
 
 * deciding what is accepted
 * deciding what is shared
 * deciding what is acted on
 * deciding what is archived
-* deciding what leaves the local/private workspace
+* deciding what leaves the local or private workspace
 
 AI assistants can help keep the factory running.
 They do not own the factory.
 
-## Storage Policy
+## Storage policy
 
-CapstanAI - LabNote is the ledger, not the warehouse.
+CapstanAI LabNote is the ledger, not the warehouse.
 
 Use this repository for small, inspectable text artifacts:
 
@@ -222,13 +295,21 @@ Use this repository for small, inspectable text artifacts:
 * review notes
 * signoffs
 
-Do not use this repository for large raw data, private files, credentials, logs, bulky archives, or long private transcripts.
+Do not use this repository for:
 
-For live work, use a private or controlled LabNote workspace. Keep bulky/private material outside this public template repo. Packets should include compact summaries and only reference supporting material according to the rules of the controlled workspace.
+* large raw data
+* private files
+* credentials
+* logs
+* bulky archives
+* long private transcripts
+* unreviewed sensitive dumps
+
+For live work, use a private or controlled LabNote workspace. Keep bulky or private material outside this public template repo. Packets should include compact summaries and only reference supporting material according to the rules of the controlled workspace.
 
 ## Status
 
-CapstanAI - LabNote is an early public scaffold.
+CapstanAI LabNote is an early public scaffold.
 
 Current planned release:
 
@@ -240,11 +321,11 @@ v0.2.0 - CapstanAI Identity Migration
 
 ## v0.2.0 - CapstanAI Identity Migration
 
-This release migrates the public-facing LabNote identity from OpenBridge LabNote to CapstanAI - LabNote.
+This release migrates the public-facing LabNote identity from OpenBridge LabNote to CapstanAI LabNote.
 
 It preserves the existing human-in-the-loop workflow, JSON-per-record registry model, public/private boundary, routine deposit flow, and provenance-preserving examples.
 
-v0.1.0 remains preserved as the historical first public template release.
+`v0.1.0 - First Public Template` remains preserved as the historical first public template release.
 
 Current focus:
 
@@ -254,9 +335,10 @@ Current focus:
 * message routing
 * human review
 * clean provenance
+* tag hygiene
+* bounded workflow routes
 
-
-CapstanAI may later grow a richer deterministic layer, along with relay, vault, and protocol modules; LabNote begins as the simplest useful ledger.
+CapstanAI may later grow a richer deterministic layer, along with relay, vault, and protocol modules. LabNote begins as the simplest useful ledger.
 
 ```text
 packets, provenance, replies, and decisions
@@ -265,10 +347,11 @@ packets, provenance, replies, and decisions
 ## Motto
 
 ```text
-
 Mind the gap. Mark the crossing.
 ```
 
 ## License
 
 Apache License 2.0.
+
+
