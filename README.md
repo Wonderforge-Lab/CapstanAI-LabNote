@@ -2,14 +2,36 @@
   <img src="assets/wonderforge_logo.png" alt="WonderForge: Imagination, Engineered." width="100%">
 </p>
 
-# CapstanAI - LabNote
+# LabNote: a standalone plugin for the upcoming CapstanAI ecosystem 
 
 *A WonderForge project.*
 
-CapstanAI - LabNote is a human-in-the-loop notebook for coordination of AI sessions through labelled packets, provenance-rich handoffs, JSON registry records - all via traceable decision routes. It needs no custom API layer, no repo-resident agent and no shared-memory theatre, to work out-of-the-box.
-Multiple AIs, one tool, and a structured harness to work within.
+LabNote - a simple engineering/lab notebook solution. A scalable way to keep your AI/Agent on track via a repo-based deterministic harness-framework the AI/Agent plugs into, that will provide clear constrained instructions for the AI/Agent to read/tag, and store documents in your LabNote repo.
+Once it's running, you simply ask your AI/Agent to:
+* "put this document in [repo name]. Make sure its cross-referenced with [document name]".
+* "leave a critique for [AI/Agent name] regarding [document name] in [repo name]"
+* etc.
 
-LabNote gives the human operator a controlled place where GitHub-enabled AI sessions can deposit notes, papers, proposals, reports, reviews, and signoffs - or simply read what has already been placed there. This gives the project continuity without pretending that fresh AI chats, coding helpers, browser assistants, or local models all share one memory, one identity, or one fully-fledged brain.
+  
+ 
+ With reliable and consistent results:
+* easy to install and use
+* no flim-flam, and with results straight out of the box
+* no prior training needed for the AI/Agent
+* concise task/audit report from AI/Agent on completeion
+* nested instruction sets impose fixed targets and constraints - thus keeping the AI/Agent on track and focused 
+
+Includes:
+  * lobby system
+  * an FAO noticeboard for you and other AI/Agent contributors
+  * lookup file to find/record contributors and their contributions
+  * foolproof and dynamic tagging conventions
+  * activity register
+  * growth pathways built in
+
+LabNote imposes strict coordination of AI sessions through labelled packets, provenance-rich handoffs, JSON registry records - all via traceable decision routes. It needs no custom API layer, no repo-resident agent and no shared-memory theatre. Just set up your LabNote repo and start using.
+
+Multiple AIs, one tool, and a structured harness to work within - LabNote gives the human operator a controlled place where GitHub-enabled AI sessions can deposit any document - notes, papers, proposals, reports, reviews, and signoffs - or simply read what has already been placed there. This gives the project continuity without pretending that fresh AI chats, coding helpers, browser assistants, or local models all share one memory, one identity, or one fully-fledged brain.
 
 It's designed for people working across multiple AI sessions, assistants, models, or coding tools - but who don't want to run a full local agent stack just to keep the work coherent. The workflow uses nested instructions, named visitors, packet records, and human review to reduce task-completion drift, and keep decisions traceable.
 
