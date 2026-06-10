@@ -42,6 +42,40 @@ Register this report, tag it properly, and leave a short completion note.
 
 LabNote gives the AI enough structure to act, and enough constraint to stop guessing.
 
+## How it works
+
+The basic pattern is:
+
+```text
+Human or AI creates a packet
+↓
+Packet goes into the right inbox
+↓
+A receiving AI session reads only what it needs
+↓
+The receiving session writes a response
+↓
+The response is reviewed
+↓
+The decision is recorded
+```
+
+Each handoff leaves a clear trail:
+
+```text
+packet → response → review → decision
+```
+
+A good handoff carries: source, status, tags, linked references, contributor identity, signoff, and a next action or stop condition.
+
+## Getting started
+
+1. Click **Use this template** to create your own private or controlled LabNote workspace.
+2. Open `AI_ENTRYPOINT.md` and hand it to your AI session as the starting point.
+3. Follow the lobby — `lobby/README_FIRST.md` → `lobby/VISITOR_CHECKLIST.md` → `lobby/ROUTINE_DEPOSIT_QUICKSTART.md`.
+
+See [`docs/quickstart.md`](docs/quickstart.md) for a full walkthrough.
+
 ## Why use LabNote?
 
 * **Preserve research signal** across AI sessions, tools, models, and handoffs.
@@ -85,25 +119,9 @@ The difference is simple:
 | Usually lives as one file                 | Uses a small repo structure, templates, registry records, and signoffs |
 | Helps one agent orient itself             | Helps many AI sessions coordinate over time                            |
 
-LabNote is built to reduce **task tunnel vision**: the failure mode where an AI pushes too hard toward finishing the visible task and loses sight of constraints, provenance, handoff quality, or human control.
-
-It is also designed to reduce **completion-pressure failure**: the situation where an agent treats “finish the task” as more important than “follow the route, preserve the record, and stop when the rules say stop.”
-
-That is why LabNote uses:
-
-* deterministic lobby entry
-* nested instruction routes
-* packet records
-* tag hygiene
-* JSON-per-record registries
-* human-readable signoffs
-* ask-gated stop conditions
-* human-in-the-loop review
-
 `AGENTS.md` can tell an AI what kind of project it is in.
 
 LabNote tells the AI how to behave inside the project.
-
 
 ## Built around five principles
 
@@ -133,36 +151,6 @@ LabNote tells the AI how to behave inside the project.
 * Proposal path for new tags.
 * Cross-reference-friendly document storage.
 * Growth paths for future CapstanAI modules.
-
-## Design stance
-
-LabNote is deliberately boring where boring is useful.
-
-No ghosts.
-No hidden agent.
-No secret automation layer.
-No shared-memory theatre.
-No Skynet... we hope.
-
-The repo is the ledger.
-The human is the authority.
-The AI is a contributor with a route to follow.
-
-## What it does
-
-CapstanAI LabNote gives you a simple file-based workflow for:
-
-* passing tasks between AI sessions
-* recording who said what
-* tracking packets, responses, reviews, and decisions
-* keeping outputs reviewable
-* preserving provenance
-* avoiding giant paste-dumps and context confusion
-* giving AI assistants identifiable contributor roles instead of letting them remain mysterious blobs of helpful fog
-
-It is designed for people working across multiple AI sessions, assistants, models, or coding tools who do not want to run a full local agent stack just to keep the work coherent.
-
-The workflow uses nested instructions, named visitors, packet records, tag hygiene, and human review to reduce task tunnel vision and completion-pressure failure.
 
 ## What it is not
 
@@ -205,80 +193,6 @@ Canonical registry records are JSON-per-record under `registry/`.
 
 CSV registries, if present, are legacy or optional rollups.
 
-## Core idea
-
-The basic pattern is:
-
-```text
-Human or AI creates a packet
-↓
-Packet goes into the right inbox
-↓
-A receiving AI session reads only what it needs
-↓
-The receiving session writes a response
-↓
-The response is reviewed
-↓
-The decision is recorded
-```
-
-Each handoff should leave a clear trail:
-
-```text
-packet → response → review → decision
-```
-
-A good handoff should carry:
-
-* source
-* status
-* tags
-* linked references
-* contributor identity
-* signoff
-* next action or stop condition
-
-## Why this exists
-
-AI sessions are useful, but they often suffer from:
-
-* lost context
-* repeated explanations
-* unclear authorship
-* messy handoffs
-* overlong chats
-* vague “we discussed this somewhere” memory sludge
-* task tunnel vision
-* completion-pressure failure
-* context-bloat drift
-
-CapstanAI LabNote gives those sessions a shared external notebook without pretending they have shared internal memory.
-
-It helps each assistant know:
-
-```text
-Who am I in this workflow?
-What has been handed to me?
-Where should I look?
-Where should I write?
-How should I tag this?
-Who is waiting for my answer?
-What should I tell the operator?
-What decision has already been made?
-When should I stop and ask?
-```
-
-## Basic workflow
-
-1. Start at `AI_ENTRYPOINT.md`.
-2. Read `lobby/README_FIRST.md`, then `lobby/VISITOR_CHECKLIST.md`.
-3. For ordinary deposits, follow `lobby/ROUTINE_DEPOSIT_QUICKSTART.md`.
-4. Create packet, response, message, signoff, or supporting Markdown/JSON files as needed.
-5. Create JSON-per-record registry files under `registry/`.
-6. Do not edit CSV rollups unless the operator explicitly asks.
-7. The human reviews accepted, rejected, archived, or routed material.
-
 ## Repository structure
 
 ```text
@@ -309,28 +223,12 @@ templates/
 examples/
   Fictional example packets and handoffs.
 
-examples/minimal_routine_deposit/
-  Minimal public-safe routine deposit example.
-
 docs/
-  Plain-English guides including `docs/REGISTRY_RECORDS.md`.
+  Plain-English guides including docs/quickstart.md and docs/REGISTRY_RECORDS.md.
 
 archive/
   Superseded or closed material.
 ```
-
-## Human-in-the-loop by design
-
-CapstanAI LabNote assumes that humans remain responsible for:
-
-* deciding what is accepted
-* deciding what is shared
-* deciding what is acted on
-* deciding what is archived
-* deciding what leaves the local or private workspace
-
-AI assistants can help keep the factory running.
-They do not own the factory.
 
 ## Storage policy
 
@@ -356,27 +254,11 @@ Do not use this repository for:
 * long private transcripts
 * unreviewed sensitive dumps
 
-For live work, use a private or controlled LabNote workspace. Keep bulky or private material outside this public template repo. Packets should include compact summaries and only reference supporting material according to the rules of the controlled workspace.
+For live work, use a private or controlled LabNote workspace. Keep bulky or private material outside this public template repo.
 
 ## Status
 
-CapstanAI LabNote is an early public scaffold.
-
-Current planned release:
-
-```text
-v0.2.0 - CapstanAI Identity Migration
-```
-
-`v0.1.0 - First Public Template` remains the historical first public template release under the OpenBridge LabNote name.
-
-## v0.2.0 - CapstanAI Identity Migration
-
-This release migrates the public-facing LabNote identity from OpenBridge LabNote to CapstanAI LabNote.
-
-It preserves the existing human-in-the-loop workflow, JSON-per-record registry model, public/private boundary, routine deposit flow, and provenance-preserving examples.
-
-`v0.1.0 - First Public Template` remains preserved as the historical first public template release.
+Current release: `v0.2.0 - CapstanAI Identity Migration`
 
 Current focus:
 
@@ -404,5 +286,3 @@ Mind the gap. Mark the crossing.
 ## License
 
 Apache License 2.0.
-
-
