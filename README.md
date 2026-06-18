@@ -4,7 +4,7 @@
 
 # LabNote
 
-*Free Repo-native coordination for AI-assisted research and engineering ~ A WonderForge project for the upcoming CapstanAI ecosystem.*
+*Free repo-native coordination for AI-assisted research and engineering ~ A WonderForge project for the upcoming CapstanAI ecosystem*
 
 #### *For people using multiple AI sessions, Claude Code, ChatGPT, Codex, local LLMs, or browser AIs who need handoffs, audit trails, and continuity without building a full agent stack*
 
