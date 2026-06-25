@@ -39,7 +39,7 @@ CapstanAI is named for capstan machinery:
 - Existing packet IDs and example IDs.
 - The current GitHub repository name, `Wonderforge-Lab/OpenBridge-LabNote`, unless the HITL later decides to rename it.
 - The repository identifier field `public_template_repo` in `bridge_config.json`, because it currently points to the real GitHub repository.
-- The old social preview asset filename `assets/openbridge_social_preview.png`; it is not referenced by active docs and can be replaced in a separate asset refresh.
+- The old OpenBridge social-preview banner asset; it was not referenced by active docs and has since been retired and removed.
 - Wording in migration/provenance notes that names the retired project identity.
 
 ## Tag-Discoverability Rule
@@ -74,7 +74,7 @@ Preserved for historical/provenance references.
 - `registry/tags/accepted/capstanai-labnote.json`: note mentions OpenBridge-LabNote. Classification: historical/provenance, intentionally preserved.
 - `examples/minimal_routine_deposit/packet_record.json`: note mentions OpenBridge-LabNote. Classification: historical/provenance, intentionally preserved.
 - `docs/migrations/20260605_openbridge_to_capstanai_labnote.md`: this migration note names retired identities. Classification: historical/provenance, intentionally preserved.
-- `assets/openbridge_social_preview.png`: old-name asset filename. Classification: asset metadata needing HITL follow-up if a refreshed CapstanAI social preview is wanted.
+- The old OpenBridge social-preview banner (old-name asset). Classification: asset metadata; retired and removed per HITL decision.
 
 ## HITL Follow-Up Items
 
