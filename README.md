@@ -1,12 +1,13 @@
-<p align="left">
-  <img src="assets/capstanai_labnote_raven.png" alt="CapstanAI LabNote raven perched on a lab notebook with a pearl and fountain pen" width="40%">
-</p>
 
 # LabNote
 
 *Free repo-native coordination for AI-assisted research and engineering ~ A WonderForge project for the upcoming CapstanAI ecosystem*
 
 #### *For people using multiple AI sessions, Claude Code, ChatGPT, Codex, local LLMs, or browser AIs who need handoffs, audit trails, and continuity without building a full agent stack*
+
+<p align="left">
+  <img src="assets/capstanai_labnote_raven.png" alt="CapstanAI LabNote raven perched on a lab notebook with a pearl and fountain pen" width="40%">
+</p>
 
 Most AI work starts in a blank room.
 
