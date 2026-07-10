@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/wonderforge_logo.png" alt="WonderForge: Imagination, Engineered." width="60%">
+  <img src="assets/capstanai_labnote_raven.svg" alt="CapstanAI LabNote raven perched on a lab notebook with a pearl and fountain pen" width="60%">
 </p>
 
 # LabNote
