@@ -7,18 +7,19 @@
   <img src="assets/capstanai_labnote_raven.png" alt="CapstanAI LabNote raven perched on a lab notebook with a pearl and fountain pen" width="40%">
 </p>
 
-I put LabNote together out of necessity because I realised how many tokens and how much project/compute time was being eaten up just stopping a project becoming an unmanageable blob.  
-So I automated big chunks of the admin using novel neural net-like deterministic logic loops (DL) in order to keep track of everything via indexed storage and tagging. The AI is relegated to a low-token and low-compute archivist and DL nudger - getting told exactly what to do and how to do it, so there's little room for the AI to pull any stunts or get sweaty.
-
-Fact is, I'm a one man band with a terrible memory, and I'm pretty disorganised.  
+Fact is, these days I'm a one man band with a terrible memory, and I'm disgracefully disorganised.  
 For me, even a small project can burn out and bloat a chat way before the project is finished, and even a medium-size project can involve two or more models and coding agents, and usually spans several chats. 
 
-So I often ended up spending too much time as a messenger and coordinator, as I passed around updates, progress reports, results of adversarial sweeps, hand-off sheets, etc, just to make sure all the AI elements were up to speed and on the same page.  
-Hence the development of LabNote.  
-I know we all see these tech-bros getting sweaty over one-shotting everything, but in the real world that's a token-gobbling fantasy even with the latest frontier models set at highest thinking levels.  
+So I often ended up spending too much time as a messenger and coordinator, as I burned tokens and compute passing around updates, progress reports, results of adversarial sweeps, hand-off sheets, etc, just to make sure all the AI elements were up to speed and on the same page.  
+ 
+So I automated big chunks of the anti-FUBAR measures by developing novel neural net-like deterministic logic loops (DL) in order to keep track of everything via indexed storage and tagging. The AI is relegated to a low-token and low-compute archivist and DL nudger - getting told exactly what to do and how to do it, so there's little room for the AI to pull any stunts or get sweaty.  
+So LabNote was made as a tool for a specific job, although it became quite a bit more than that.  
 
+It's my daily driver now. I make a new LabNote at the start of each project nowadays, and even use it to dust down old projects. LabNote makes it a million miles easier for me to transition a project from inception to planning and development, and then on to production and revision rounds.
+
+I know we all see these tech-bros getting sweaty over one-shotting everything, but in the real world that's a token-gobbling fantasy even with the latest frontier models set at highest thinking levels.  
 LabNote, meanwhile, was built from the ground up for a real-world problem faced by people from all walks of life across all sorts of disciplines, engaged in all sorts of projects.  
-Whether you're a student, an author, or a project manager...whether you're part of a team, or are just one guy using several AI elements - LabNote is for you.  
+Whether you're a student, an author, or a project manager...whether you're part of a team, or are just one guy using several AI elements - LabNote will fit the bill.  
 Just set up your own LabNote repo, and take it from there.
 
 **So you bloated out a chat part-way through a project?**  
@@ -26,9 +27,11 @@ That's ok - just open a new one and point it at LabNote for a seamless handover.
 **Sick of manually passing documents/text/reports/plans/etc between Codex and chatgpt, or between different models?**  
 So why not get them to coordinate and work off the same song-sheet using LabNote instead? Save your time and tokens.  
 **You're using AI to find out if onion is bad for your dog [it is] and you get an idea for a project you're working on**  
-No need to drop out of the chat you're in - just tell the AI to drop your idea into LabNote where you can pick it up later. 
-
-
+No need to drop out of the chat you're in - just tell the AI to drop your idea into LabNote where you can pick it up later.  
+**You had to stop working on a project a few months before and you can't remember the details**  
+"Hey, pls go into Labnote [project name] and bring me up to speed"
+<br>
+<br>
 #### With that said, here's the official blurb with more details:  
 Most AI work starts in a blank room.
 
