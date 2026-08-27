@@ -13,9 +13,9 @@ Use this repository for small text artifacts:
 - signoffs,
 - protocol docs.
 
-Do not commit large raw dumps, long private transcripts, PDFs, datasets, generated bundles, logs, bulky exports, or private file collections.
+Do not commit large raw dumps, long private transcripts, PDFs, datasets, generated bundles, logs, bulky exports, or private file collections unless the operator has explicitly approved the workspace and storage policy for that material.
 
-If a workflow needs lots of supporting material, keep that material outside this public template repo and use a private or controlled LabNote workspace for live work. The operator should decide the approved storage and access rules before any assistant session relies on it.
+If a workflow needs lots of supporting material, keep that material outside LabNote or in another operator-approved storage location. The operator should decide the approved storage and access rules before any assistant session relies on it.
 
 Packets should link to heavy material by stable title, path, URL, or storage reference. The packet should also include a short summary so the receiving session knows whether it actually needs to open the larger material.
 
@@ -31,4 +31,4 @@ receiving session reads the packet first
 large material is opened only if needed
 ```
 
-When deploying CapstanAI - LabNote for real work, decide where bulky/private material will live before inviting multiple assistant sessions into the workflow. Do not store private runtime material in this public template repo.
+Before inviting multiple assistant sessions into a workflow, confirm where bulky/private material will live and whether the current LabNote workspace is appropriate for live deposits. Public/reference workspaces must not receive private runtime material.
