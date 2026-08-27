@@ -12,14 +12,13 @@ For me, even a small project can burn out and bloat a chat way before the projec
 
 So I often ended up spending too much time as a messenger and coordinator, as I burned tokens and compute passing around updates, progress reports, results of adversarial sweeps, hand-off sheets, etc, just to make sure all the AI elements were up to speed and on the same page.  
  
-So to keep track of things, I automated big chunks of the process using neural-net-like deterministic logic loops (DL) and with indexed storage and tagging. The AI is relegated to a low-token and low-compute archivist and DL nudger - getting told exactly what to do and how to do it, so there's little room for the AI to pull any stunts or get sweaty.  
-So LabNote was made as a tool for a specific job, although it became quite a bit more than that.  
+So to keep track of things, I automated big chunks of the admin process using neural-net-like deterministic logic loops (DL) and with indexed storage and tagging. The AI is relegated to a low-token and low-compute archivist and DL nudger - getting told exactly what to do and how to do it, so there's little room for the AI to pull any stunts or get sweaty.  
 
-It's my daily driver now. I make a new LabNote at the start of each project nowadays, and even use it to dust down old projects. LabNote makes it a million miles easier for me to transition a project from inception to planning and development, and then on to production and revision rounds.
+So LabNote was made in response for the need for an admin tool for a specific job, because I kept losing track of things - although it became quite a bit more useful than that.  
+Because it lets a chat specialise in a single part of a project while pooling with other chats on the same LabNote-project repo, it helps span some of the distance between what an individual can do, and what an entire office or lab can.
 
-I know we all see these tech-bros getting sweaty over one-shotting everything, but in the real world that's a token-gobbling fantasy even with the latest frontier models set at highest thinking levels.  
-LabNote, meanwhile, was built from the ground up for a real-world problem faced by people from all walks of life across all sorts of disciplines, engaged in all sorts of projects.  
-Whether you're a student, an author, or a project manager...whether you're part of a team, or are just one guy using several AI elements - LabNote will fit the bill.  
+It's my daily driver now, and I don't start anything without it. I make a new LabNote at the start of each project nowadays, and even use it to dust down old projects. LabNote makes it a million miles easier for me to transition a project from inception to planning and development, and then on to production and revision rounds.
+
 Just set up your own LabNote repo, and take it from there.
 
 **So you bloated out a chat part-way through a project?**  
