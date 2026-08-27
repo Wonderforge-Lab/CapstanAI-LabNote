@@ -1,7 +1,7 @@
 
 # LabNote
 
-#### *For people using multiple AI sessions, Claude Code, ChatGPT, Codex, local LLMs, or browser AIs who need handoffs, audit trails, and continuity without building a full agent stack*
+#### *For people using multiple AI sessions, Claude Code, Codex, local LLMs, or browser AIs who need handoffs, audit trails, and continuity without building a full agent stack*
 
 <p align="left">
   <img src="assets/capstanai_labnote_raven.png" alt="CapstanAI LabNote raven perched on a lab notebook with a pearl and fountain pen" width="40%">
