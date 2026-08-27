@@ -1,20 +1,20 @@
 # AI Entrypoint
 
-This public repo hosts `CapstanAI - LabNote` as a template/reference.
+This repository contains a `CapstanAI - LabNote` workspace.
 
-Do not store private runtime data here.
+Do not assume the workspace is public, private, local, remote, or tied to any particular repository name. Confirm the current workspace context from the repository and the human operator before writing.
 
-Do not store private reports, credentials, private transcripts, private visitor records, or project-specific corpora in this public template repo.
+If this is a public or reference-only workspace, do not deposit private reports, credentials, private transcripts, private visitor records, or project-specific corpora.
 
-For live work, use a private or controlled LabNote workspace.
+If this is a private or otherwise controlled live workspace, normal LabNote deposits may proceed under the rules below.
 
-If the repo identity does not match the expected CapstanAI - LabNote workspace, stop and report the mismatch.
+Validate LabNote by its expected structure and entrypoint, not by a fixed repository owner or slug. If the expected LabNote structure is missing or materially inconsistent, stop and report the mismatch.
 
 No current-run visitor handle, no write.
 
 Do not reuse visitor handles, branches, storage locations, or permissions from earlier conversation context unless the human operator explicitly confirms them for this run.
 
-If source report/documents are pasted or uploaded in the current prompt, treat that material as the source material.
+If source reports/documents are pasted or uploaded in the current prompt, treat that material as the source material.
 
 ## Routine Deposits
 
