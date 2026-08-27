@@ -18,6 +18,8 @@ The AI should determine whether it can access GitHub, whether it can run termina
 
 This is the preferred route when you want both a local working copy and a private GitHub workspace.
 
+For the simple flow below, the private destination repository should be new and empty. If GitHub offers to initialise it with a README, `.gitignore`, or licence, leave those options off. If the destination already contains commits or files, stop and let the AI choose a safe alternative rather than force-pushing over them.
+
 The browser AI should tailor the commands to your operating system, shell, chosen folder, and private destination repository. A typical Git flow is:
 
 ```bash
@@ -35,7 +37,7 @@ Before asking you to run them, the AI should explain that these commands:
 - connect your working copy to your own repository as `origin`,
 - push the initial LabNote workspace to your repository.
 
-The AI should also confirm that the destination repository is the one you intend to use and is suitable for the push. It must not guess or invent a private repository URL.
+The AI should also confirm that the destination repository is the one you intend to use, is empty for this flow, and is suitable for the push. It must not guess or invent a private repository URL, and it must not use force-push as a shortcut around a non-empty destination.
 
 ### Browser AI without terminal access: GitHub-only
 
