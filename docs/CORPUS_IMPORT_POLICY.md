@@ -2,7 +2,7 @@
 
 CapstanAI - LabNote is the ledger, not the warehouse.
 
-This public repo is a template/reference. Do not store private runtime corpora, private transcripts, bulky archives, credentials, or project-specific runtime dumps here.
+Do not store private runtime corpora, private transcripts, bulky archives, credentials, or project-specific runtime dumps in a public/reference workspace. In a private or otherwise controlled workspace, use the operator-approved storage policy below.
 
 ## Default Rule: Manifest First
 
@@ -39,5 +39,5 @@ Stop and report if:
 - the archive is too large for safe repo import,
 - the operator has not approved full import,
 - the storage location is missing or unclear,
-- the material appears private or sensitive,
+- the material appears private or sensitive and the workspace policy is unclear,
 - the repo appears to be the wrong workspace.
