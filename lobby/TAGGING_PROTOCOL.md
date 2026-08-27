@@ -18,7 +18,7 @@ If the operator supplies a tag that is not already accepted, create `registry/ta
 
 AI-generated tags must be proposed, not accepted.
 
-Do not port private tag lists into the public template.
+Do not move private or workspace-specific tag lists into a public/reference workspace.
 
 Do not create near-duplicate tags.
 
