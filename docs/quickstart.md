@@ -4,23 +4,20 @@ CapstanAI LabNote has three stages: acquire a copy, bootstrap the workspace, the
 
 ## 1. Acquire LabNote
 
-Choose the simplest route for the environment you are using.
+If you are already talking to an AI, the simplest starting point is:
 
-### Browser AI + terminal available
+```text
+Help me set up CapstanAI LabNote for this project. First work out what access you have, then recommend the simplest safe route for me. I want you to explain any terminal commands before I run them.
+```
 
-Ask the browser AI to guide you through creating a local copy and, if wanted, connecting it to a private GitHub repository. The AI should explain the commands before asking you to run them.
+Preferred routes:
 
-### Browser AI without terminal access
+- **Browser AI + terminal available:** AI-guided local clone, with a private GitHub `origin` if wanted.
+- **Browser AI without terminal access:** GitHub **Use this template** into a private or otherwise controlled repository.
+- **Coding agent or terminal-capable AI:** the agent can normally perform the clone/setup directly, subject to operator approval and repository permissions.
+- **Local-only use:** clone locally; no private remote is required.
 
-Use a GitHub template/import/copy route to create a private or otherwise controlled repository, then give the AI access to that workspace.
-
-### Coding agent or terminal-capable AI
-
-The agent may clone/copy the repository and configure the destination directly, subject to the operator's normal approval and repository permissions.
-
-### Local-only use
-
-Clone or copy LabNote locally and do not configure a remote unless one is wanted.
+For exact beginner-friendly steps and example terminal commands, see [`docs/ACQUISITION.md`](ACQUISITION.md).
 
 The acquisition method does not change how LabNote works after the copy exists.
 
