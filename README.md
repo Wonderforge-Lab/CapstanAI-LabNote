@@ -12,7 +12,7 @@ For me, even a small project can burn out and bloat a chat way before the projec
 
 So I often ended up spending too much time as a messenger and coordinator, as I burned tokens and compute passing around updates, progress reports, results of adversarial sweeps, hand-off sheets, etc, just to make sure all the AI elements were up to speed and on the same page.  
  
-So I automated big chunks of the anti-FUBAR measures by developing novel neural net-like deterministic logic loops (DL) in order to keep track of everything via indexed storage and tagging. The AI is relegated to a low-token and low-compute archivist and DL nudger - getting told exactly what to do and how to do it, so there's little room for the AI to pull any stunts or get sweaty.  
+So to keep track of things, I automated big chunks of the process using neural-net-like deterministic logic loops (DL) in order to keep track of everything via indexed storage and tagging. The AI is relegated to a low-token and low-compute archivist and DL nudger - getting told exactly what to do and how to do it, so there's little room for the AI to pull any stunts or get sweaty.  
 So LabNote was made as a tool for a specific job, although it became quite a bit more than that.  
 
 It's my daily driver now. I make a new LabNote at the start of each project nowadays, and even use it to dust down old projects. LabNote makes it a million miles easier for me to transition a project from inception to planning and development, and then on to production and revision rounds.
