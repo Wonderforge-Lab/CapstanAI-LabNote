@@ -12,11 +12,11 @@ Prefer text-first, reviewable formats:
 - CSV `.csv` for small tables or optional rollups.
 - Plain text `.txt` for simple notes.
 
-## Public Template Rule
+## Workspace Context
 
-Do not store private runtime documents in this public template repo.
+Do not assume the current LabNote workspace is public, private, local, remote, or tied to a particular repository name.
 
-For live LabNote work, create or use your own private or controlled workspace.
+Before depositing documents, confirm the current workspace context. Do not store private runtime documents in a public or reference-only workspace. In a private or otherwise controlled live workspace, normal document deposits may proceed under the rules below.
 
 ## Live Workspace Routine Deposits
 
