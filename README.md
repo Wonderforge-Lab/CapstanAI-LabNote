@@ -13,9 +13,9 @@ For me, even a small project can burn out and bloat a chat way before the projec
 
 So I often ended up spending too much time as a messenger and coordinator, as I burned tokens and compute passing around updates, progress reports, results of adversarial sweeps, hand-off sheets, etc, just to make sure all the AI elements were up to speed and on the same page.
 
-To keep track of things, I automated big chunks of that admin using deterministic rules, indexed storage and tagging. The AI is mostly relegated to a low-token and low-compute archivist and workflow nudger, getting told what to do, where to put it, and when to stop, so there's little room for the AI to pull any stunts or get sweaty.
+To keep track of things, I automated big chunks of that admin using deterministic rules, indexed storage and tagging. The AI is mostly relegated to a low-token and low-compute archivist and coordinator, getting told what to do, where to put it, and when to stop, so there's little room for the AI to pull any stunts or get sweaty.
 
-So LabNote was made in response to the need for an admin tool for a specific job, because I kept losing track of things, although it became quite a bit more useful than that.  
+So LabNote was made because I needed an admin tool for a specific job. I kept losing track of things, although it became quite a bit more useful than that.  
 Because it lets a chat specialise in a single part of a project while pooling with other chats on the same LabNote project repo, it helps span some of the distance between what an individual can do, and what an entire office or lab can.
 
 It's my daily driver now, and I don't start anything without it. I make a new LabNote at the start of each project nowadays, and even use it to dust down old projects. LabNote makes it a million miles easier for me to transition a project from inception to planning and development, and then on to production and revision rounds.
