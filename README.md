@@ -6,7 +6,7 @@
   <img src="assets/capstanai_labnote_raven.png" alt="CapstanAI LabNote raven perched on a lab notebook with a pearl and fountain pen" width="40%">
 </p>
 
-LabNote is a lightweight repo-based notebook and coordination layer for humans working across AI sessions, coding agents, local models, and browser AIs. It keeps handoffs, provenance, and project continuity in ordinary files, without requiring a full agent stack.
+LabNote is a lightweight repo-based notebook and coordination layer for humans working with AI sessions, coding agents, local models, and browser AIs. It keeps handoffs, provenance, and project continuity in ordinary files, without requiring a full agent stack.
 
 Fact is, these days I'm a one man band with a terrible memory, and I'm disgracefully disorganised.  
 For me, even a small project can burn out and bloat a chat way before the project is finished, and even a medium-size project can involve two or more models and coding agents, and usually spans several chats.
@@ -144,7 +144,7 @@ See [`docs/quickstart.md`](docs/quickstart.md) for the longer walkthrough.
 
 `AGENTS.md`, `CLAUDE.md`, and similar context files are useful. LabNote can work alongside them, but it is solving a different problem.
 
-A normal agent context file usually tells an AI about a repository: how to run tests, where key files live, what style to follow, and what commands to use. That can help, but it can also turn into a long instruction blob as the project grows.
+A typical agent context file usually tells an AI about a repository: how to run tests, where key files live, what style to follow, and what commands to use. That can help, but it can also turn into a long instruction blob as the project grows.
 
 LabNote is not just a bigger context file. It gives the AI a structured workflow: where to enter, what to read first, where to deposit work, how to tag it, how to sign off, how to hand work onward, and when to stop and ask the human.
 
@@ -202,7 +202,7 @@ Detailed runtime rules live in those canonical files rather than being duplicate
 
 Latest published scaffold release: `v0.2.0 - CapstanAI Identity Migration`.
 
-Current canonical development focus includes:
+Current development work includes:
 
 * portable acquisition and bootstrap,
 * traceable multi-session coordination,
