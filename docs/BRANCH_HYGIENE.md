@@ -15,7 +15,7 @@ Use branch + PR for:
 
 Do not create branches for ordinary datadrops, response packets, messages, signoffs, or JSON registry records.
 
-For this public template repo, use branches/PRs for template changes.
+If the current workspace is a public/reference repository, use branches/PRs for changes to the distributed LabNote scaffold rather than treating those changes as routine deposits.
 
 Do not delete branches without operator approval.
 

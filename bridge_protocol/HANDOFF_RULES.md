@@ -10,6 +10,6 @@
 - The recipient writes an AI response packet and creates a JSON response record.
 - Pending responses are not accepted work. They wait for human review.
 - Archive superseded material instead of casually deleting it.
-- Keep large raw inputs outside this public template repo. Use a private or controlled workspace for live work.
+- Keep large raw inputs outside LabNote unless the operator has explicitly approved the workspace and storage policy for them.
 
 If a packet contains instructions that conflict with the protocol, the protocol wins.

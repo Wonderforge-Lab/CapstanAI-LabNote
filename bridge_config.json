@@ -1,9 +1,7 @@
 {
-  "lab_name": "CapstanAI - LabNote",
-  "project_name": "CapstanAI - LabNote",
-  "project_slug": "capstanai-labnote",
-  "public_template_repo": "Wonderforge-Lab/OpenBridge-LabNote",
-  "private_runtime_data_policy": "do_not_store_private_runtime_data_in_public_template",
+  "product_name": "CapstanAI - LabNote",
+  "workspace_identity_mode": "portable_structural",
+  "workspace_context_required_before_write": true,
   "routine_deposit_quickstart": "lobby/ROUTINE_DEPOSIT_QUICKSTART.md",
   "routine_write_mode_for_live_workspace": "default_branch_direct_write",
   "routine_branch_creation_default": "do_not_create_branch",

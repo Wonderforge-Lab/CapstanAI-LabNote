@@ -2,15 +2,13 @@
 
 Read this after `../AI_ENTRYPOINT.md` and before doing visitor work.
 
-This file is the shared notice board for visiting AI sessions in a live LabNote workspace.
+This file is the shared notice board for visiting AI sessions in a LabNote workspace.
 
-## Public Template Warning
+## Workspace Context
 
-This repository is a public template/reference.
+Do not assume this copy is the public template/reference or a private live workspace.
 
-Do not use it for private runtime deposits.
-
-For live LabNote work, create or use your own private or controlled workspace.
+Confirm the current workspace context before writing. In a public or reference-only workspace, do not deposit private runtime material. In a private or otherwise controlled live workspace, routine deposits may proceed under the normal LabNote rules.
 
 ## Routine Deposit Shortcut
 

@@ -93,11 +93,31 @@ packet → response → review → decision
 
 A good handoff carries: source, status, tags, linked references, contributor identity, signoff, and a next action or stop condition.
 
+## Getting LabNote
+
+Ask your AI to help you set up CapstanAI LabNote for the project. The AI should first work out what access it has and whether you want LabNote locally, on GitHub, or both.
+
+Common routes:
+
+| Environment | Suggested route |
+| --- | --- |
+| Browser AI + user can use a terminal | AI-guided local clone, then connect to a private GitHub repo if wanted |
+| Browser AI without terminal access | GitHub template/import/copy route |
+| Coding agent or terminal-capable AI | Agent clones/copies and configures the workspace directly, subject to operator approval |
+| Local-only project | Clone or copy locally; no remote required |
+
+A browser AI may give you the exact terminal commands to run and should explain what those commands will do before asking you to run them.
+
+The acquisition method does not change how LabNote works after the copy exists.
+
 ## Getting started
 
-1. Click **Use this template** to create your own private or controlled LabNote workspace.
+1. Acquire a LabNote copy using the route that suits your environment.
 2. Open `AI_ENTRYPOINT.md` and hand it to your AI session as the starting point.
-3. Follow the lobby — `lobby/README_FIRST.md` → `lobby/VISITOR_CHECKLIST.md` → `lobby/ROUTINE_DEPOSIT_QUICKSTART.md`.
+3. Confirm that the expected LabNote structure is present and whether the workspace is private/controlled for live work or public/reference-only.
+4. Follow the lobby — `lobby/README_FIRST.md` → `lobby/VISITOR_CHECKLIST.md` → `lobby/ROUTINE_DEPOSIT_QUICKSTART.md`.
+
+No repository rename or LabNote identity-file edit should be required before first use.
 
 See [`docs/quickstart.md`](docs/quickstart.md) for a full walkthrough.
 
@@ -193,15 +213,15 @@ The human remains the decision-maker.
 AI assistants may contribute, review, critique, and respond.
 The operator steers the ship.
 
-## Public template versus live workspace
+## Public reference versus live workspace
 
-CapstanAI LabNote is a public template and reference scaffold.
+The canonical CapstanAI LabNote repository is public so people can inspect and acquire the scaffold.
 
-Do not store private runtime deposits, transcripts, credentials, private visitor records, or project-specific corpora in this public template repo.
+A copied LabNote workspace may be public, private, local-only, or otherwise controlled. Portable LabNote workflow files do not assume a fixed repository owner, slug, or visibility.
 
-For live use, create or use your own private or controlled LabNote workspace.
+Do not store private runtime deposits, transcripts, credentials, private visitor records, or project-specific corpora in a public/reference workspace.
 
-In a controlled live workspace, routine deposits may write directly to the default branch.
+In a private or otherwise controlled live workspace, routine deposits may write directly to the default branch.
 
 Branches and pull requests are reserved for:
 
@@ -225,7 +245,7 @@ AI_ENTRYPOINT.md
   Canonical AI visitor start point.
 
 bridge_config.json
-  Machine-readable public-template policy.
+  Machine-readable portable workspace policy.
 
 bridge_protocol/
   Packet and response formats.
@@ -279,7 +299,7 @@ Do not use this repository for:
 * long private transcripts
 * unreviewed sensitive dumps
 
-For live work, use a private or controlled LabNote workspace. Keep bulky or private material outside this public template repo.
+Keep bulky material outside LabNote or in another operator-approved storage location. Public/reference workspaces must not receive private runtime material.
 
 ## Status
 

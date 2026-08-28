@@ -1,8 +1,8 @@
 # Visitor Checklist
 
-Use this checklist in a live CapstanAI - LabNote workspace.
+Use this checklist in a CapstanAI - LabNote workspace.
 
-Do not store private runtime data in this public template repo.
+Before writing, confirm that the current workspace is private or otherwise controlled for live work. If it is public or reference-only, do not deposit private runtime material.
 
 For ordinary deposits, use `lobby/ROUTINE_DEPOSIT_QUICKSTART.md` after completing required safety checks.
 
@@ -10,7 +10,7 @@ Do not create branches for ordinary datadrops, responses, messages, signoffs, or
 
 ## Required Safety Checks
 
-0. Confirm repo/workspace identity.
+0. Confirm that the expected LabNote structure is present and determine the current workspace context.
 1. Confirm current-run visitor handle.
 2. If no current-run visitor handle is supplied, stop and ask the human operator.
 3. Use the default branch unless the operator explicitly names another branch.

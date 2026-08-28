@@ -4,13 +4,11 @@ Use this file for ordinary visitor deposits in a live CapstanAI - LabNote worksp
 
 A routine deposit means a visitor is placing a normal packet, response, message, signoff, or small supporting Markdown/JSON record into a LabNote workspace.
 
-## Public Template Warning
+## Workspace Context
 
-This public repository is a template/reference.
+Do not assume this copy is public, private, local, remote, or tied to a particular repository name.
 
-Do not store private runtime data in this public repo.
-
-For live work, use your own private or controlled LabNote workspace.
+Before writing, confirm that it is a private or otherwise controlled live workspace. If it is public or reference-only, do not deposit private runtime material.
 
 ## Default Write Mode For Live Workspaces
 
@@ -22,7 +20,7 @@ Use a branch + PR only for procedure, policy, repo structure, code/script change
 
 ## Quick Flow
 
-1. Confirm repo/workspace identity.
+1. Confirm that the expected LabNote structure is present and determine the current workspace context.
 2. Confirm current-run visitor handle.
 3. If no current-run visitor handle is supplied, stop and ask the human operator.
 4. Use the default branch unless the operator explicitly names another branch.

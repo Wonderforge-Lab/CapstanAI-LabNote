@@ -1,7 +1,7 @@
 # Lobby
 
 > Current visitor workflow starts at `AI_ENTRYPOINT.md`, then `lobby/README_FIRST.md`, `lobby/VISITOR_CHECKLIST.md`, and for ordinary deposits `lobby/ROUTINE_DEPOSIT_QUICKSTART.md`.
-> This public repo is a template/reference. Do not store private runtime data here.
+> Confirm the current workspace context before writing. Public/reference workspaces must not receive private runtime data.
 
 Every assistant session checks in through the lobby before handling LabNote work.
 
