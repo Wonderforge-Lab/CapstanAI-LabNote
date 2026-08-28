@@ -119,6 +119,8 @@ The acquisition method does not change how LabNote works after the copy exists.
 
 The canonical CapstanAI LabNote repository is public so people can inspect and acquire the scaffold. A copied workspace may be private, public, local-only, or otherwise controlled. Portable LabNote workflow files do not depend on a fixed repository owner, slug, or visibility.
 
+If the current workspace is public or reference-only, do not deposit private runtime material there. Controlled live workspaces follow the runtime and storage rules linked below.
+
 ## First use
 
 1. Acquire the workspace.
@@ -198,9 +200,9 @@ Detailed runtime rules live in those canonical files rather than being duplicate
 
 ## Status
 
-Latest published release: `v0.2.0 - CapstanAI Identity Migration`.
+Latest published scaffold release: `v0.2.0 - CapstanAI Identity Migration`.
 
-Current development focus on `main` includes:
+Current canonical development focus includes:
 
 * portable acquisition and bootstrap,
 * traceable multi-session coordination,
