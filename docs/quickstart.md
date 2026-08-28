@@ -27,7 +27,7 @@ The acquisition method does not change how LabNote works after the copy exists.
 2. Confirm that the expected LabNote structure is present.
 3. Confirm whether the current workspace is private/controlled for live work or public/reference-only.
 4. Follow the lobby reading order: `lobby/README_FIRST.md` -> `lobby/VISITOR_CHECKLIST.md`.
-5. Create or identify a visitor/session ID before writing.
+5. Confirm the current-run visitor handle supplied by the human operator. If none is supplied, stop and ask before writing.
 
 No repository rename or LabNote identity-file edit should be required before first use.
 
