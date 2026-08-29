@@ -8,7 +8,7 @@
 
 LabNote helps you keep track of long-running projects that involve AI.
 
-If a project outlives one chat, moves between different AI tools, gets picked up again months later, or simply becomes too complicated to hold in your head, then LabNote will give the work somewhere stable to live.
+If a project outlives one chat, moves between different AI tools, gets picked up again months later, or simply becomes too complicated to hold in your head, LabNote gives the work somewhere stable to live.
 
 It's a lightweight, repo-based notebook and coordination layer built from ordinary files. AI sessions can leave behind useful work, provenance, decisions, critiques, handoffs and next steps, so the next session does not have to start from a blank room.
 
@@ -19,10 +19,10 @@ You can use it with ChatGPT, Codex, Claude Code, local models, browser AIs, codi
 LabNote is deliberately general-purpose.
 
 **Software and technical projects**  
-Coordinate planning, implementation, testing, review and handoffs, across different AI tools.
+Coordinate planning, implementation, testing, review and handoffs across different AI tools.
 
 **Research and investigations**  
-Keep sources, findings, competing hypotheses, evidence and synthesis, organised across separate sessions.
+Keep sources, findings, competing hypotheses, evidence and synthesis organised across separate sessions.
 
 **Writing and creative work**  
 Carry outlines, drafts, critiques, continuity notes and editorial decisions through a long project.
@@ -45,9 +45,9 @@ If the work lasts longer than one chat, benefits from more than one AI session, 
 Fact is, I got sick and tired of the context window for chats filling up long before I'd even finished thrashing out an idea for a project. Sure, you can generate a handoff sheet for the next AI, but that means asking it to synthesise the whole chat, which means some finer points and even entire avenues of thought can be lost.  
 At the same time, I'd keep catching myself coming up with development ideas on an unrelated chat, or even on a chat with another model. This meant that things would get scattered and I'd lose track to the point that sometimes I'd even abandon a project and start from scratch.  
 
-To try and mitigate against the sprawl, I burned time, tokens and compute, passing around progress reports, handover sheets, documents, critiques and reminders - all just to keep everything on the same page.
-Frontier models have tried to address the question of continuity with things like canvas, branch chats and project areas. But these aren't good solutions and they just don't do the job for me.  
-I needed something simpler and more intuitive; something that would let one AI chat seamlessly flow into another, and would also let me keep track of projects without things turning into a full-on second-brain.  
+To try and keep the sprawl under control, I burned time, tokens and compute, passing around progress reports, handover sheets, documents, critiques and reminders - all just to keep everything on the same page.
+AI platforms have tried to address continuity with things like project areas, canvases and branching chats. They help, but they still don't do the job for me.  
+I needed something simpler and more intuitive; something that would let one AI chat flow naturally into another, and would also let me keep track of projects without things turning into a full-on second-brain.  
 Hence LabNote.  
 What started as a fix for my own terrible project memory turned into something considerably more useful.
   
