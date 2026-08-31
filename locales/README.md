@@ -9,7 +9,7 @@ Current localization work:
 | Locale | Language | Status |
 | --- | --- | --- |
 | `en` | English | canonical source |
-| `zh-CN` | Simplified Chinese | README reviewed; operational layer in development |
+| `zh-CN` | Simplified Chinese | README + onboarding reviewed; governance batch in review; deeper operational layer in development |
 
 ## Rules
 
@@ -56,4 +56,4 @@ locales/
     └── examples/
 ```
 
-The reviewed glossary gates terminology across the locale. The Chinese README is now reviewed and linked from the root front door. Remaining operational material should be populated in stages so each surface can receive protocol and Chinese-language review before the locale is marked fully supported.
+The reviewed glossary gates terminology across the locale. The Chinese README and onboarding route are now reviewed. The governance batch is in Chinese-language review. Remaining operational material should be populated in stages so each surface can receive protocol and Chinese-language review before the locale is marked fully supported.
