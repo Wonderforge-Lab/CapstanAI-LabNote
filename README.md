@@ -2,6 +2,8 @@
 
 #### *A lightweight project notebook for keeping AI-assisted work coherent across sessions, tools and time.*
 
+**English** | [简体中文](locales/zh-CN/README.md)
+
 <p align="left">
   <img src="assets/capstanai_labnote_raven.png" alt="CapstanAI LabNote raven perched on a lab notebook with a pearl and fountain pen" width="40%">
 </p>
