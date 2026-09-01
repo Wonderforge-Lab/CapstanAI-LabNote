@@ -19,4 +19,4 @@ If the current workspace is a public/reference repository, use branches/PRs for 
 
 Do not delete branches without operator approval.
 
-Do not force-push unless explicitly instructed.
+Do not force-push unless explicitly instructed by the operator.
