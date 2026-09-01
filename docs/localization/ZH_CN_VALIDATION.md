@@ -94,7 +94,7 @@ human-authority parity failures: 0
 
 Localization exposed stale English communication guidance that still pointed routine work at shared CSV registries.
 
-The branch repairs:
+The canonical English repairs cover:
 
 - `messages/README.md`;
 - `messages/ROUTING_RULES.md`;
@@ -102,7 +102,7 @@ The branch repairs:
 
 Routine communication records now follow the repository's existing canonical JSON-per-record policy; CSV files remain legacy/optional rollups.
 
-The branch also refreshes older English examples so their Markdown shapes and registry guidance match current canonical templates and policies.
+Older English examples were also refreshed so their Markdown shapes and registry guidance match current canonical templates and policies.
 
 See `docs/localization/COMMUNICATION_REGISTRY_SOURCE_DRIFT.md` for the source-level consistency note.
 
