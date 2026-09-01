@@ -1,25 +1,31 @@
 # Visit Signoff
 
 visit_id: 20260603-example-visitor-routine-test-visit
-visitor_id: example-visitor
 date: 2026-06-03
-status: complete
+visitor_id: example-visitor
+session_family: example-ai
+checked_messages: true
+answered_messages: false
+created_messages: false
+human_relay_needed: false
+signoff_path: responses/signoffs/20260603-example-visitor-routine-test-signoff.md
 
-## Summary
+## Work Completed
 
-Created a fictional routine deposit example.
+- Created a fictional routine deposit packet using the current Markdown template shape.
+- Created the canonical JSON packet record.
+- Created the canonical JSON visit record.
+- Did not edit CSV registries.
+- Did not create a task branch for ordinary live-workspace runtime work.
 
-## Files Created
-
-- `datadrops/shared/inbox/20260603-example-visitor-routine-test.md`
-- `registry/packets/2026/20260603-example-visitor-routine-test.json`
-- `registry/visits/2026/20260603-example-visitor-routine-test-visit.json`
-- `responses/signoffs/20260603-example-visitor-routine-test-signoff.md`
-
-## Registry Notes
-
-JSON registry records were created. CSV registries were not edited.
-
-## Relay / Action Needed
+## Open Items
 
 None.
+
+## Relay Notes
+
+No human relay needed.
+
+## Signoff
+
+The fictional example run is complete.
