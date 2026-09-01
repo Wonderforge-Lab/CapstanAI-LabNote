@@ -48,8 +48,8 @@ lobby/ROUTINE_DEPOSIT_QUICKSTART.md
 2. `locales/zh-CN/lobby/README_FIRST.md`
 3. `locales/zh-CN/lobby/VISITOR_CHECKLIST.md`
 
-需要打标签时，读取 `locales/zh-CN/lobby/TAGGING_PROTOCOL.md`；在该本地化文件尚未提供前，读取英文基准文件 `lobby/TAGGING_PROTOCOL.md`。
+需要打标签时，读取 `locales/zh-CN/lobby/TAGGING_PROTOCOL.md`。
 
-需要投递文档时，读取 `locales/zh-CN/docs/DOCUMENT_DEPOSIT_POLICY.md`；在该本地化文件尚未提供前，读取英文基准文件 `docs/DOCUMENT_DEPOSIT_POLICY.md`。
+需要投递文档时，读取 `locales/zh-CN/docs/DOCUMENT_DEPOSIT_POLICY.md`。
 
-只有任务确实需要分支时，才读取 `locales/zh-CN/docs/BRANCH_HYGIENE.md`；在该本地化文件尚未提供前，读取英文基准文件 `docs/BRANCH_HYGIENE.md`。
+只有任务确实需要分支时，才读取 `locales/zh-CN/docs/BRANCH_HYGIENE.md`。
