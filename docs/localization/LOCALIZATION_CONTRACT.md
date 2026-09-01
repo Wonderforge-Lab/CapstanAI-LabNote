@@ -1,8 +1,8 @@
 # Localization Contract
 
-Status: draft for review
+Status: **active**
 Canonical source language: English (`en`)
-First target locale: Simplified Chinese (`zh-CN`)
+First supported locale: Simplified Chinese (`zh-CN`)
 
 ## Purpose
 
@@ -106,7 +106,7 @@ status: new | in_review | answered | superseded | archived
 
 ## 背景
 ## 任务
-## 证据 / 来源材料
+## 依据材料 / 来源材料
 ```
 
 Do not create translated JSON keys such as `数据包编号` in place of `packet_id`.
@@ -129,18 +129,22 @@ A localized layer may supply a translated display name and description keyed to 
 - Historical material under `archive/` is outside the first localization release unless specifically selected later.
 - Localized legal or policy explanations must not be presented as replacing authoritative source text unless formally reviewed for that purpose.
 
-## Review status
+## Review and support status
 
-All first-pass `zh-CN` terminology and translations are provisional until reviewed for:
+A locale begins as provisional and must be reviewed for:
 
 1. protocol fidelity,
-2. natural Simplified Chinese,
+2. natural target-language usage,
 3. cultural fit and register,
 4. terminology consistency,
 5. ambiguity around AI-session roles,
 6. preservation of stop conditions and human authority.
 
-External Chinese-language review, including DeepSeek review, is explicitly welcome before a translation is marked canonical.
+External native-language review is welcome and should be adjudicated against the canonical English protocol rather than accepted automatically.
+
+The first `zh-CN` release has completed terminology review, native-language/cultural review, end-to-end compatibility testing, and paired adversarial behavioural-parity testing. Its current support status is recorded in `locales/README.md`.
+
+Future locales must complete their own review and parity gates before being marked supported.
 
 ## Compatibility test
 
