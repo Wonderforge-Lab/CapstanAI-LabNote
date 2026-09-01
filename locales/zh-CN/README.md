@@ -144,7 +144,7 @@ LabNote 给 AI 足够的结构去行动，也给它足够的边界，让它知�
 | 编程智能体或可使用终端的 AI | 在操作者（human operator）批准的前提下，由智能体克隆/复制并配置工作区 |
 | 仅本地项目 | 直接在本地克隆或复制；不需要远程仓库 |
 
-具体的入门步骤和终端说明，请参阅英文基准文档 [`docs/ACQUISITION.md`](../../docs/ACQUISITION.md)。
+具体的入门步骤和终端说明，请参阅简体中文指南 [`docs/ACQUISITION.md`](docs/ACQUISITION.md)。
 
 一旦工作区副本已经存在，采用哪种获取方式并不会改变 LabNote 后续的工作方式。
 
@@ -163,7 +163,7 @@ CapstanAI LabNote 的基准（canonical）仓库是公开的，方便任何人�
 
 第一次使用前，不应要求你先改仓库名称，也不需要修改 LabNote 的身份文件。你更不必先学完整套归档系统，才有资格开始用它。
 
-更完整的流程请参阅英文基准文档 [`docs/quickstart.md`](../../docs/quickstart.md)。
+更完整的流程请参阅简体中文指南 [`docs/quickstart.md`](docs/quickstart.md)。
 
 ## 它为什么有用？
 
@@ -217,19 +217,19 @@ LabNote 是工作台账（ledger），不是大型资料仓库（warehouse）。
 
 | 区域 | 需要做什么 | 阅读 |
 | --- | --- | --- |
-| **开始** | 设置 LabNote | [`docs/ACQUISITION.md`](../../docs/ACQUISITION.md) |
-| **开始** | 入门流程 | [`docs/quickstart.md`](../../docs/quickstart.md) |
-| **开始** | 给 AI 起始说明 | [`AI_ENTRYPOINT.md`](../../AI_ENTRYPOINT.md) |
-| **工作** | 做一次常规投递 | [`lobby/ROUTINE_DEPOSIT_QUICKSTART.md`](../../lobby/ROUTINE_DEPOSIT_QUICKSTART.md) |
-| **工作** | 理解访客会话（visitor）身份 | [`docs/visitor_lobby_model.md`](../../docs/visitor_lobby_model.md) |
-| **工作** | 在会话之间路由消息 | [`docs/message_routing_model.md`](../../docs/message_routing_model.md) |
-| **工作** | 审阅回复或决定 | [`docs/review_workflow.md`](../../docs/review_workflow.md) |
-| **参考** | 分支与 PR 规则 | [`docs/BRANCH_HYGIENE.md`](../../docs/BRANCH_HYGIENE.md) |
-| **参考** | 登记库（registry）的记录与路径 | [`docs/REGISTRY_RECORDS.md`](../../docs/REGISTRY_RECORDS.md) |
-| **参考** | 存储规则 | [`docs/storage_policy.md`](../../docs/storage_policy.md) |
-| **参考** | 文档与二进制文件的投递规则 | [`docs/DOCUMENT_DEPOSIT_POLICY.md`](../../docs/DOCUMENT_DEPOSIT_POLICY.md) |
+| **开始** | 设置 LabNote | [`docs/ACQUISITION.md`](docs/ACQUISITION.md) |
+| **开始** | 入门流程 | [`docs/quickstart.md`](docs/quickstart.md) |
+| **开始** | 给 AI 起始说明 | [`AI_ENTRYPOINT.md`](AI_ENTRYPOINT.md) |
+| **工作** | 做一次常规投递 | [`lobby/ROUTINE_DEPOSIT_QUICKSTART.md`](lobby/ROUTINE_DEPOSIT_QUICKSTART.md) |
+| **工作** | 理解访客会话（visitor）身份 | [`docs/visitor_lobby_model.md`](docs/visitor_lobby_model.md) |
+| **工作** | 在会话之间路由消息 | [`docs/message_routing_model.md`](docs/message_routing_model.md) |
+| **工作** | 审阅回复或决定 | [`docs/review_workflow.md`](docs/review_workflow.md) |
+| **参考** | 分支与 PR 规则 | [`docs/BRANCH_HYGIENE.md`](docs/BRANCH_HYGIENE.md) |
+| **参考** | 登记库（registry）的记录与路径 | [`docs/REGISTRY_RECORDS.md`](docs/REGISTRY_RECORDS.md) |
+| **参考** | 存储规则 | [`docs/storage_policy.md`](docs/storage_policy.md) |
+| **参考** | 文档与二进制文件的投递规则 | [`docs/DOCUMENT_DEPOSIT_POLICY.md`](docs/DOCUMENT_DEPOSIT_POLICY.md) |
 
-详细的运行规则保存在这些英文基准文件里，而不是在这里重复一遍。
+这些简体中文文件是已审阅的本地化说明。若其协议含义与英文基准文件冲突，以英文基准文件为准。
 
 ## 状态
 
