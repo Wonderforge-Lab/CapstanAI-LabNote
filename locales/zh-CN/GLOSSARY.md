@@ -200,4 +200,4 @@ A change to one of these terms later is a controlled terminology revision, not a
 
 The first external Simplified-Chinese terminology review was supplied to the project through the human operator on 2026-08-31. The review tested naturalness, technical clarity, mainland-China usage, cultural connotation and protocol fit. Its recommendations were then adjudicated against the English LabNote workflow semantics before this baseline was frozen.
 
-See `REVIEW_ADJUDICATION.md` for the principal accepted recommendations and deliberate protocol-fidelity deviations.
+See [`../../docs/localization/ZH_CN_VALIDATION.md`](../../docs/localization/ZH_CN_VALIDATION.md) for the durable validation summary.
