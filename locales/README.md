@@ -9,7 +9,7 @@ Current localization work:
 | Locale | Language | Status |
 | --- | --- | --- |
 | `en` | English | canonical source |
-| `zh-CN` | Simplified Chinese | README + onboarding + governance + operational entry + control policies + routing/review/storage + session/connector/relay + communication surface + Markdown templates reviewed; canonical locale routing active; end-to-end compatibility specimen in review |
+| `zh-CN` | Simplified Chinese | first-release translation surface complete candidate; end-to-end specimen reviewed; final completeness review in progress; adversarial parity next |
 
 ## Rules
 
@@ -54,7 +54,7 @@ Localized instruction paths do not change canonical runtime artifact paths or ma
 
 ## Locale layout
 
-Target shape:
+Current first-release shape:
 
 ```text
 locales/
@@ -67,8 +67,15 @@ locales/
     ├── lobby/
     ├── messages/
     ├── notifications/
+    ├── registry/
     ├── templates/
     └── examples/
 ```
 
-The reviewed glossary gates terminology across the locale. The Chinese README, onboarding route, front-door governance batch, operational entry/lobby cluster, tagging/document/branch/registry control-policy cluster, message-routing/review/storage/corpus-import cluster, visitor/session-model + connector + human-relay cluster, corrected concrete communication surface, and localized Markdown template layer are reviewed. Canonical locale routing to the reviewed `zh-CN` operational entrypoint is active on the localization branch. During localization, stale shared-CSV instructions were repaired in the English message/notification surface to match the canonical JSON-per-record registry policy. Machine-facing JSON templates remain canonical and untranslated. A complete Simplified-Chinese routine-deposit compatibility specimen is now in review; it uses Chinese-facing Markdown while preserving canonical runtime paths, IDs, statuses, JSON keys, and JSON-per-record semantics.
+The reviewed glossary gates terminology across the locale. The Chinese README, onboarding route, front-door governance batch, operational entry/lobby control cluster, tagging/document/branch/registry policies, message-routing/review/storage/corpus-import cluster, visitor/session-model + connector + human-relay cluster, corrected concrete communication surface, localized Markdown templates, and complete routine-deposit compatibility specimen have passed their review gates.
+
+Canonical locale routing to the reviewed `zh-CN` operational entrypoint is active on the localization branch. During localization, stale shared-CSV instructions were repaired in the English message/notification surface to match the canonical JSON-per-record registry policy. Machine-facing JSON templates remain canonical and untranslated.
+
+A final completeness sweep identified the remaining inventory/support surfaces: localized `lobby/README.md`, localized `registry/README.md`, and a Simplified-Chinese tag display catalog keyed to canonical tag slugs. Those are now in review. Temporary fallback-to-English clauses were removed where reviewed Chinese companions now exist.
+
+After that narrow completeness gate, the next stage is adversarial behavioural parity testing. The locale must not be marked fully `supported` until that parity gate passes.
