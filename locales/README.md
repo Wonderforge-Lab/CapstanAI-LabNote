@@ -9,7 +9,7 @@ Current localization work:
 | Locale | Language | Status |
 | --- | --- | --- |
 | `en` | English | canonical source |
-| `zh-CN` | Simplified Chinese | README + onboarding + governance + operational entry + control policies + routing/review/storage + session/connector/relay + communication surface + Markdown templates reviewed; canonical locale routing active; compatibility example in development |
+| `zh-CN` | Simplified Chinese | README + onboarding + governance + operational entry + control policies + routing/review/storage + session/connector/relay + communication surface + Markdown templates reviewed; canonical locale routing active; end-to-end compatibility specimen in review |
 
 ## Rules
 
@@ -71,4 +71,4 @@ locales/
     └── examples/
 ```
 
-The reviewed glossary gates terminology across the locale. The Chinese README, onboarding route, front-door governance batch, operational entry/lobby cluster, tagging/document/branch/registry control-policy cluster, message-routing/review/storage/corpus-import cluster, visitor/session-model + connector + human-relay cluster, corrected concrete communication surface, and localized Markdown template layer are reviewed. Canonical locale routing to the reviewed `zh-CN` operational entrypoint is active on the localization branch. During localization, stale shared-CSV instructions were repaired in the English message/notification surface to match the canonical JSON-per-record registry policy. Machine-facing JSON templates remain canonical and untranslated. Work is now moving into a complete Simplified-Chinese compatibility example that must produce canonical runtime artifacts, paths, IDs, statuses, and JSON records without creating a parallel localized storage layout.
+The reviewed glossary gates terminology across the locale. The Chinese README, onboarding route, front-door governance batch, operational entry/lobby cluster, tagging/document/branch/registry control-policy cluster, message-routing/review/storage/corpus-import cluster, visitor/session-model + connector + human-relay cluster, corrected concrete communication surface, and localized Markdown template layer are reviewed. Canonical locale routing to the reviewed `zh-CN` operational entrypoint is active on the localization branch. During localization, stale shared-CSV instructions were repaired in the English message/notification surface to match the canonical JSON-per-record registry policy. Machine-facing JSON templates remain canonical and untranslated. A complete Simplified-Chinese routine-deposit compatibility specimen is now in review; it uses Chinese-facing Markdown while preserving canonical runtime paths, IDs, statuses, JSON keys, and JSON-per-record semantics.
