@@ -1,7 +1,5 @@
 # 入口区
 
-> 翻译状态：已完成中文语言与协议一致性审阅。若本译文与英文基准文件在协议含义上出现冲突，以英文基准文件为准。
-
 > 当前访客会话工作流从 `../AI_ENTRYPOINT.md` 开始，然后依次读取 `README_FIRST.md`、`VISITOR_CHECKLIST.md`；普通投递还要读取 `ROUTINE_DEPOSIT_QUICKSTART.md`。
 > 写入之前必须确认当前工作区环境。公共/仅供参考工作区不得接收私密运行期数据。
 

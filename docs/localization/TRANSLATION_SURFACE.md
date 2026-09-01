@@ -1,7 +1,6 @@
 # Translation Surface Inventory
 
 Status: **implemented first-release inventory**
-Branch: `i18n/zh-cn-language-layer`
 Canonical source language: English (`en`)
 First supported locale: Simplified Chinese (`zh-CN`)
 
