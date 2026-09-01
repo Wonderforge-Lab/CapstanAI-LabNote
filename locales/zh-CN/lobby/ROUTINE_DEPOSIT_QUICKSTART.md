@@ -31,14 +31,14 @@
 7. 读取 `locales/zh-CN/lobby/VISITOR_CHECKLIST.md`。
 8. 如果访客会话尚未登记，则进行登记。
 9. 只检查与当前任务相关的消息和通知。
-10. 如果需要标签，读取 `locales/zh-CN/lobby/TAGGING_PROTOCOL.md`；在该本地化文件尚未提供前，读取英文基准文件 `lobby/TAGGING_PROTOCOL.md`。
-11. 如果要投递文档，读取 `locales/zh-CN/docs/DOCUMENT_DEPOSIT_POLICY.md`；在该本地化文件尚未提供前，读取英文基准文件 `docs/DOCUMENT_DEPOSIT_POLICY.md`。
+10. 如果需要标签，读取 `locales/zh-CN/lobby/TAGGING_PROTOCOL.md`。
+11. 如果要投递文档，读取 `locales/zh-CN/docs/DOCUMENT_DEPOSIT_POLICY.md`。
 12. 对所提供材料进行足够检查，以推断合适的标签。
 13. 将推断出的标签与登记库中已接受的标签进行匹配。
 14. 对于操作者提供但当前缺少的标签，添加状态为 `accepted` 的 JSON 标签记录。
 15. 对于 AI 自行生成的标签，只有确有帮助时才添加状态为 `proposed` 的 JSON 标签记录。
-16. 创建工作包、回复、消息或签退记录文件。
-17. 创建 JSON 登记库记录文件。
+16. 创建工作包、回复、消息或签退记录文件。使用 `locales/zh-CN/templates/` 下已审阅的 Markdown 模板；机器字段和状态值保持英文基准形式。
+17. 创建 JSON 登记库记录文件。JSON 模板和机器结构保持基准形式，不进行本地化。
 18. 除非操作者明确要求，否则不要编辑 CSV。
 19. 如果需要团队审阅或人工转递（human relay），在 `README_FIRST` 中添加通知。
 20. 报告所创建的文件，然后**停止。**
