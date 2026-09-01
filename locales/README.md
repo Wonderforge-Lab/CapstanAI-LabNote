@@ -9,7 +9,7 @@ Current localization work:
 | Locale | Language | Status |
 | --- | --- | --- |
 | `en` | English | canonical source |
-| `zh-CN` | Simplified Chinese | README + onboarding + governance + operational entry + control policies reviewed; canonical locale routing active; routing/review/storage cluster in review; deeper operational layer in development |
+| `zh-CN` | Simplified Chinese | README + onboarding + governance + operational entry + control policies + routing/review/storage reviewed; canonical locale routing active; session/connector/relay cluster in review; deeper operational layer in development |
 
 ## Rules
 
@@ -71,4 +71,4 @@ locales/
     └── examples/
 ```
 
-The reviewed glossary gates terminology across the locale. The Chinese README, onboarding route, front-door governance batch, operational entry/lobby cluster, and tagging/document/branch/registry control-policy cluster are reviewed. Canonical locale routing to the reviewed `zh-CN` operational entrypoint is active on the localization branch. The message-routing/review/storage/corpus-import cluster is now in protocol and Chinese-language review. Remaining operational material should be populated in stages so each surface can receive protocol and Chinese-language review before the locale is marked fully supported.
+The reviewed glossary gates terminology across the locale. The Chinese README, onboarding route, front-door governance batch, operational entry/lobby cluster, tagging/document/branch/registry control-policy cluster, and message-routing/review/storage/corpus-import cluster are reviewed. Canonical locale routing to the reviewed `zh-CN` operational entrypoint is active on the localization branch. The visitor/session-model, connector-safety/limitations, and human-relay cluster is now in protocol and Chinese-language review. Remaining operational material should be populated in stages so each surface can receive protocol and Chinese-language review before the locale is marked fully supported.
