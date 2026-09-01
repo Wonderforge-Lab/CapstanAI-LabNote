@@ -1,0 +1,12 @@
+{
+  "visit_id": "20260901-zhcn-example-routine-test-visit",
+  "date": "2026-09-01",
+  "visitor_id": "zhcn-example",
+  "visitor_family": "example-ai",
+  "checked_messages": true,
+  "answered_messages": false,
+  "created_messages": false,
+  "relay_needed": false,
+  "signoff_path": "responses/signoffs/20260901-zhcn-example-routine-test-signoff.md",
+  "notes": "虚构的简体中文常规投递兼容性示例。"
+}

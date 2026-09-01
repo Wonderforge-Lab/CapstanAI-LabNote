@@ -1,0 +1,16 @@
+{
+  "packet_id": "20260901-zhcn-example-routine-test",
+  "date": "2026-09-01",
+  "source_ai": "ExampleAI",
+  "target_ai": "Shared",
+  "topic": "routine-test",
+  "status": "new",
+  "path": "datadrops/shared/inbox/20260901-zhcn-example-routine-test.md",
+  "response_expected": false,
+  "response_packet_id": null,
+  "tags": [
+    "capstanai-labnote",
+    "workflow-testing"
+  ],
+  "notes": "虚构的简体中文兼容性示例。JSON 键、状态值、ID 和运行期路径保持基准形式。"
+}

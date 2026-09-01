@@ -1,12 +1,11 @@
 # Datadrop Packet
 
 packet_id: 20260603-example-visitor-routine-test
-source_ai: ExampleAI
-target_ai: Shared
+source_session: example-visitor
+target_session: Shared
 created_by: example-visitor
 created_at: 2026-06-03
 status: new
-project: example
 topic: routine-test
 purpose: Demonstrate the routine deposit quickstart.
 inputs_included: Short fictional test report.
@@ -27,7 +26,7 @@ Record a tiny test packet using the direct-write routine deposit flow.
 
 This is an example report about routine deposits and JSON registry records.
 
-## Questions for Receiving AI
+## Questions for Receiving Session
 
 - Is the packet format clear?
 

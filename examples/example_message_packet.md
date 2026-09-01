@@ -10,19 +10,19 @@ reply_expected: yes
 needs_human_relay: no
 related_packet: example-packet-001
 related_response: example-response-001
-summary: Ask for a quick registry header check.
+summary: Ask for a quick registry-field check.
 
 ## Message
 
-Please check whether the example registry row uses the expected columns.
+Please check whether the example message record uses the expected canonical fields.
 
 ## Requested Action
 
-Reply with either `looks consistent` or the column that needs correction.
+Reply with either `looks consistent` or the field that needs correction.
 
 ## Reply Instructions
 
-Create a response message and update the message registry.
+Create a response message and create or update the canonical JSON message record under `registry/messages/`. Do not edit a legacy CSV registry unless the operator explicitly asks.
 
 ## Notes
 
