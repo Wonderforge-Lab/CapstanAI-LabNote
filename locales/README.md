@@ -9,7 +9,7 @@ Current localization work:
 | Locale | Language | Status |
 | --- | --- | --- |
 | `en` | English | canonical source |
-| `zh-CN` | Simplified Chinese | first-release translation surface complete; all planned translation/review gates passed; adversarial behavioural parity in progress |
+| `zh-CN` | Simplified Chinese | first-release translation surface complete; all planned translation/review gates passed; paired blind adversarial behavioural parity in progress |
 
 ## Rules
 
@@ -76,4 +76,4 @@ The reviewed glossary gates terminology across the locale. The Chinese README, o
 
 Canonical locale routing to the reviewed `zh-CN` operational entrypoint is active on the localization branch. During localization, stale shared-CSV instructions were repaired in the English message/notification surface to match the canonical JSON-per-record registry policy. Machine-facing JSON templates remain canonical and untranslated. Temporary fallback-to-English clauses were removed where reviewed Chinese companions now exist.
 
-The first-release translation surface is now complete. The current gate is adversarial behavioural parity testing across English and Simplified-Chinese routes. The locale must not be marked fully `supported` until that parity gate passes.
+The first-release translation surface is complete. The current gate is paired blind adversarial behavioural parity testing. The first blind `zh-CN` run has been frozen and given an interim adjudication; a fresh blind English baseline run is now required before any scenario-level difference is attributed to translation drift or localized routing. The locale must not be marked fully `supported` until that paired parity gate passes.
