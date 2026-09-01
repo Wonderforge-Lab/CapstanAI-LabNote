@@ -35,13 +35,15 @@ CapstanAI LabNote 分为三个阶段：获取副本、初始化（bootstrap）�
 
 ## 3. 使用 LabNote
 
-1. 复制 `templates/datadrop_packet.md`，创建一个新的工作包（packet）。
-2. 填写工作包头部字段和任务部分。
+1. 复制 `locales/zh-CN/templates/datadrop_packet.md`，创建一个新的工作包（packet）。
+2. 填写工作包头部字段和任务部分。字段名和状态值保持英文机器形式。
 3. 如果工作包依赖较大的文件，请加入经过操作者批准的引用和简短摘要，而不要把整份原始材料直接提交进仓库。
-4. 在 `registry/packets/<year>/` 下创建一个 JSON 工作包记录。
+4. 使用基准 JSON 模板，在 `registry/packets/<year>/` 下创建一个 JSON 工作包记录。
 5. 把工作包交给目标助手会话。
-6. 复制 `templates/ai_response_packet.md`，用于填写回复。
-7. 在 `registry/responses/<year>/` 下创建一个 JSON 回复记录。
+6. 复制 `locales/zh-CN/templates/ai_response_packet.md`，用于填写回复。
+7. 使用基准 JSON 模板，在 `registry/responses/<year>/` 下创建一个 JSON 回复记录。
 8. 在把任何内容标记为 `accepted` 之前，先审阅回复。
+
+本地化 Markdown 模板只改变人类可读的标题和章节；JSON 键、状态值、ID 和运行期路径仍使用基准机器形式。
 
 小文件，清楚的标签，不靠模糊记忆。诀窍就这么简单。
