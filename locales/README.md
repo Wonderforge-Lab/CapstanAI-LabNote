@@ -9,7 +9,7 @@ Current localization work:
 | Locale | Language | Status |
 | --- | --- | --- |
 | `en` | English | canonical source |
-| `zh-CN` | Simplified Chinese | first-release translation surface complete; all planned translation/review gates passed; paired blind adversarial behavioural parity in progress |
+| `zh-CN` | Simplified Chinese | first-release translation surface complete; all planned translation/review gates passed; paired 30-scenario adversarial run complete; 3-scenario narrow parity retest pending |
 
 ## Rules
 
@@ -76,4 +76,4 @@ The reviewed glossary gates terminology across the locale. The Chinese README, o
 
 Canonical locale routing to the reviewed `zh-CN` operational entrypoint is active on the localization branch. During localization, stale shared-CSV instructions were repaired in the English message/notification surface to match the canonical JSON-per-record registry policy. Machine-facing JSON templates remain canonical and untranslated. Temporary fallback-to-English clauses were removed where reviewed Chinese companions now exist.
 
-The first-release translation surface is complete. The current gate is paired blind adversarial behavioural parity testing. The first blind `zh-CN` run has been frozen and given an interim adjudication; a fresh blind English baseline run is now required before any scenario-level difference is attributed to translation drift or localized routing. The locale must not be marked fully `supported` until that paired parity gate passes.
+The first-release translation surface is complete. A paired blind 30-scenario adversarial run using fresh DeepSeek Expert sessions has now been adjudicated: 21 scenarios are materially aligned, 6 are test/rubric-sensitive rather than translation defects, and 3 share a narrow possible `zh-CN` over-escalation signature in which an unnecessary stop/ask may be added even though the canonical action is already determined. Those three cases (`P07`, `P15`, `P26`) are isolated in `locales/zh-CN/ADVERSARIAL_PARITY_NARROW_RETEST.md` for a controlled frozen-source rerun. The locale must not be marked fully `supported` until that narrow parity gate closes.
