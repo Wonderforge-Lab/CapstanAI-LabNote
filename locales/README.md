@@ -9,7 +9,7 @@ Current localization work:
 | Locale | Language | Status |
 | --- | --- | --- |
 | `en` | English | canonical source |
-| `zh-CN` | Simplified Chinese | README + onboarding + governance + operational entry + control policies + routing/review/storage + session/connector/relay + communication surface reviewed; canonical locale routing active; templates/examples layer in development |
+| `zh-CN` | Simplified Chinese | README + onboarding + governance + operational entry + control policies + routing/review/storage + session/connector/relay + communication surface reviewed; canonical locale routing active; Markdown template layer in review; compatibility examples next |
 
 ## Rules
 
@@ -71,4 +71,4 @@ locales/
     └── examples/
 ```
 
-The reviewed glossary gates terminology across the locale. The Chinese README, onboarding route, front-door governance batch, operational entry/lobby cluster, tagging/document/branch/registry control-policy cluster, message-routing/review/storage/corpus-import cluster, visitor/session-model + connector + human-relay cluster, and corrected concrete communication surface are reviewed. Canonical locale routing to the reviewed `zh-CN` operational entrypoint is active on the localization branch. During localization, stale shared-CSV instructions were repaired in the English message/notification surface to match the canonical JSON-per-record registry policy. Work is now moving into localized Markdown templates and compatibility examples while machine-facing JSON keys, status values, IDs, and runtime paths remain canonical.
+The reviewed glossary gates terminology across the locale. The Chinese README, onboarding route, front-door governance batch, operational entry/lobby cluster, tagging/document/branch/registry control-policy cluster, message-routing/review/storage/corpus-import cluster, visitor/session-model + connector + human-relay cluster, and corrected concrete communication surface are reviewed. Canonical locale routing to the reviewed `zh-CN` operational entrypoint is active on the localization branch. During localization, stale shared-CSV instructions were repaired in the English message/notification surface to match the canonical JSON-per-record registry policy. The localized Markdown template layer is now in protocol and Chinese-language review. Machine-facing JSON templates remain canonical and untranslated. Compatibility examples will follow after the template wording is stable.
