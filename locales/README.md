@@ -9,7 +9,7 @@ Current localization work:
 | Locale | Language | Status |
 | --- | --- | --- |
 | `en` | English | canonical source |
-| `zh-CN` | Simplified Chinese | first-release translation surface complete; all planned translation/review gates passed; paired 30-scenario adversarial run complete; 3-scenario narrow parity retest pending |
+| `zh-CN` | Simplified Chinese | **supported** — first-release translation, review, end-to-end compatibility, and adversarial behavioural-parity gates passed |
 
 ## Rules
 
@@ -33,13 +33,13 @@ draft
 -> supported
 ```
 
-For `zh-CN`, first-pass translations receive an additional Chinese-language nuance and cultural-alignment review before being marked supported.
+For `zh-CN`, first-pass translations received an additional Chinese-language nuance and cultural-alignment review before being marked supported.
 
-A reviewed front-door document does not by itself make the entire locale supported. Operational documents and workflow paths must complete their own translation and parity gates.
+A reviewed front-door document does not by itself make an entire locale supported. Operational documents and workflow paths must complete their own translation and parity gates.
 
 ## Locale routing
 
-The canonical `AI_ENTRYPOINT.md` may route a current interaction to a reviewed localized operational entrypoint when the human operator has selected that locale.
+The canonical `AI_ENTRYPOINT.md` may route a current interaction to a supported localized operational entrypoint when the human operator has selected that locale.
 
 For Simplified Chinese:
 
@@ -74,6 +74,38 @@ locales/
 
 The reviewed glossary gates terminology across the locale. The Chinese README, onboarding route, front-door governance batch, operational entry/lobby control cluster, tagging/document/branch/registry policies, message-routing/review/storage/corpus-import cluster, visitor/session-model + connector + human-relay cluster, corrected concrete communication surface, localized Markdown templates, complete routine-deposit compatibility specimen, localized lobby index, localized registry index, and tag display catalog have passed their translation/review gates.
 
-Canonical locale routing to the reviewed `zh-CN` operational entrypoint is active on the localization branch. During localization, stale shared-CSV instructions were repaired in the English message/notification surface to match the canonical JSON-per-record registry policy. Machine-facing JSON templates remain canonical and untranslated. Temporary fallback-to-English clauses were removed where reviewed Chinese companions now exist.
+Canonical locale routing to the supported `zh-CN` operational entrypoint is active on the localization branch. During localization, stale shared-CSV instructions were repaired in the English message/notification surface to match the canonical JSON-per-record registry policy. Machine-facing JSON templates remain canonical and untranslated. Temporary fallback-to-English clauses were removed where reviewed Chinese companions now exist.
 
-The first-release translation surface is complete. A paired blind 30-scenario adversarial run using fresh DeepSeek Expert sessions has now been adjudicated: 21 scenarios are materially aligned, 6 are test/rubric-sensitive rather than translation defects, and 3 share a narrow possible `zh-CN` over-escalation signature in which an unnecessary stop/ask may be added even though the canonical action is already determined. Those three cases (`P07`, `P15`, `P26`) are isolated in `locales/zh-CN/ADVERSARIAL_PARITY_NARROW_RETEST.md` for a controlled frozen-source rerun. The locale must not be marked fully `supported` until that narrow parity gate closes.
+## zh-CN support decision
+
+The first-release Simplified-Chinese language layer has completed:
+
+- localization contract and translation-surface classification,
+- frozen terminology review,
+- front-door and onboarding review,
+- governance and operational-policy review,
+- session, connector, relay, routing, storage and corpus review,
+- Markdown template review,
+- a complete Chinese-facing routine-deposit compatibility specimen,
+- final inventory/completeness review,
+- a paired 30-scenario adversarial English / Simplified-Chinese behavioural test,
+- a controlled three-scenario frozen-source narrow retest.
+
+The final parity adjudication records:
+
+```text
+unresolved translation drift: 0
+unresolved localized routing defects: 0
+machine/path invariance failures: 0
+safety/stop/ask parity failures attributable to localization: 0
+human-authority parity failures: 0
+```
+
+See:
+
+```text
+locales/zh-CN/ADVERSARIAL_PARITY_PAIRED_ADJUDICATION.md
+locales/zh-CN/ADVERSARIAL_PARITY_NARROW_RETEST.md
+```
+
+`zh-CN` is therefore supported for the first-release language surface while English remains the canonical protocol source.
