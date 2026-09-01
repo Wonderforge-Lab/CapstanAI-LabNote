@@ -1,29 +1,31 @@
 # Translation Surface Inventory
 
-Status: Stage 0 inventory
+Status: **implemented first-release inventory**
 Branch: `i18n/zh-cn-language-layer`
 Canonical source language: English (`en`)
-First target locale: Simplified Chinese (`zh-CN`)
+First supported locale: Simplified Chinese (`zh-CN`)
 
 ## Classification key
 
-- **A - translate for first release:** essential human or AI-facing material needed for complete `zh-CN` use.
+- **A - translate for first release:** essential human or AI-facing material needed for complete localized use.
 - **B - translate after core route:** useful supporting material, but not required for first successful end-to-end use.
 - **C - keep canonical, localize around it:** machine/protocol structure should remain unchanged; translated explanation may be added elsewhere.
 - **D - defer:** historical, empty runtime, binary, or otherwise outside the first localization release.
+
+For `zh-CN`, all Class A surfaces and the selected Class B support surfaces needed for the first supported release have been implemented and reviewed. Treatment text below describes the intended handling of each surface, not unfinished work status. Current locale support status is recorded in `locales/README.md`.
 
 ## Top-level files
 
 | Path | Class | Treatment | Reason |
 | --- | --- | --- | --- |
-| `README.md` | A | Full natural-language translation; add language selector to canonical README later | Public front door and project explanation |
+| `README.md` | A | Full natural-language companion; language selector implemented in canonical README | Public front door and project explanation |
 | `AI_ENTRYPOINT.md` | A | Localized companion preserving paths, gates, stop conditions and force | Deterministic AI entry route |
 | `CONTRIBUTING.md` | B | Translate contributor-facing prose | Useful public guidance, not required for operation |
 | `PRIVACY.md` | A | Translate with strict semantic parity | Public/private boundary |
 | `SECURITY.md` | A | Translate with strict semantic parity | Safety-critical guidance |
 | `LICENSE` | C | Keep authoritative English license unchanged | Legal source text |
 | `.gitignore` | C | No translation | Machine file |
-| `bridge_config.json` | C | Preserve keys/values and canonical paths; later consider locale-discovery fields | Machine-readable routing/config |
+| `bridge_config.json` | C | Preserve keys/values and canonical paths; locale discovery may be added later only as an explicit protocol/config change | Machine-readable routing/config |
 
 ## `docs/`
 
@@ -116,11 +118,11 @@ Treatment:
 
 | Area | Class | Treatment |
 | --- | --- | --- |
-| top-level Markdown examples | B | Produce localized companion examples after templates stabilize |
-| `examples/minimal_routine_deposit/` Markdown | A | Create one complete `zh-CN` worked example |
+| top-level Markdown examples | B | Optional localized companion examples; not required for the first supported locale |
+| `examples/minimal_routine_deposit/` Markdown | A | Create one complete localized worked example |
 | example JSON records | C | Preserve canonical keys/statuses; human-readable strings may be localized |
 
-The first Chinese release should contain at least one complete worked path that demonstrates:
+The first supported localized release should contain at least one complete worked path that demonstrates:
 
 ```text
 packet -> registry record -> visit record -> signoff
@@ -154,7 +156,7 @@ Binary images do not require translation. Alt text and surrounding prose in loca
 
 ## First-release minimum route
 
-A `zh-CN` locale should not be called operationally supported until a user and fresh AI session can complete this route without depending on English explanatory prose:
+A locale should not be called operationally supported until a user and fresh AI session can complete this route without depending on English explanatory prose:
 
 ```text
 localized README
@@ -176,6 +178,6 @@ localized README
 - translating tag slugs,
 - translating Git syntax,
 - translating the historical archive,
-- maintaining a separate Chinese fork,
+- maintaining a separate language fork,
 - claiming legal equivalence for an unofficial translated license,
 - treating Simplified Chinese as equivalent to all Chinese locales.
