@@ -4,42 +4,24 @@ CapstanAI - LabNote uses one canonical workflow substrate with localized human-f
 
 Canonical source language: English (`en`).
 
-Current localization work:
-
 | Locale | Language | Status |
 | --- | --- | --- |
 | `en` | English | canonical source |
-| `zh-CN` | Simplified Chinese | **supported** — first-release translation, review, end-to-end compatibility, and adversarial behavioural-parity gates passed |
+| `zh-CN` | Simplified Chinese | **supported** |
 
 ## Rules
 
-Localized material must follow [`docs/localization/LOCALIZATION_CONTRACT.md`](../docs/localization/LOCALIZATION_CONTRACT.md).
+Localized material follows [`docs/localization/LOCALIZATION_CONTRACT.md`](../docs/localization/LOCALIZATION_CONTRACT.md).
 
-The translation surface is classified in [`docs/localization/TRANSLATION_SURFACE.md`](../docs/localization/TRANSLATION_SURFACE.md).
+The first-release translation surface is classified in [`docs/localization/TRANSLATION_SURFACE.md`](../docs/localization/TRANSLATION_SURFACE.md).
 
 Core protocol identifiers remain language-invariant. This includes paths, JSON keys, status/enum values, IDs, tag slugs, commands and machine-readable configuration values.
 
-Localized material may translate prose, headings, prompts, explanations and template section labels while preserving protocol meaning.
-
-## Review workflow
-
-A translation should move through these states:
-
-```text
-draft
--> protocol review
--> native-language / cultural review
--> parity test
--> supported
-```
-
-For `zh-CN`, first-pass translations received an additional Chinese-language nuance and cultural-alignment review before being marked supported.
-
-A reviewed front-door document does not by itself make an entire locale supported. Operational documents and workflow paths must complete their own translation and parity gates.
+Localized material may translate prose, headings, prompts, explanations and Markdown template section labels while preserving protocol meaning.
 
 ## Locale routing
 
-The canonical `AI_ENTRYPOINT.md` may route a current interaction to a supported localized operational entrypoint when the human operator has selected that locale.
+The canonical root `AI_ENTRYPOINT.md` routes to a supported localized operational entrypoint only when the human operator selects that locale.
 
 For Simplified Chinese:
 
@@ -50,11 +32,11 @@ AI_ENTRYPOINT.md
 -> locales/zh-CN/lobby/VISITOR_CHECKLIST.md
 ```
 
+If no localized route is selected, English remains the default.
+
 Localized instruction paths do not change canonical runtime artifact paths or machine-readable values.
 
 ## Locale layout
-
-Current first-release shape:
 
 ```text
 locales/
@@ -72,26 +54,13 @@ locales/
     └── examples/
 ```
 
-The reviewed glossary gates terminology across the locale. The Chinese README, onboarding route, front-door governance batch, operational entry/lobby control cluster, tagging/document/branch/registry policies, message-routing/review/storage/corpus-import cluster, visitor/session-model + connector + human-relay cluster, corrected concrete communication surface, localized Markdown templates, complete routine-deposit compatibility specimen, localized lobby index, localized registry index, and tag display catalog have passed their translation/review gates.
+Machine-facing JSON templates remain canonical and untranslated. Localized Markdown templates preserve canonical field identifiers and status values.
 
-Canonical locale routing to the supported `zh-CN` operational entrypoint is active on the localization branch. During localization, stale shared-CSV instructions were repaired in the English message/notification surface to match the canonical JSON-per-record registry policy. Machine-facing JSON templates remain canonical and untranslated. Temporary fallback-to-English clauses were removed where reviewed Chinese companions now exist.
+## Validation
 
-## zh-CN support decision
+`zh-CN` has completed terminology, native-language/cultural, operational-policy, end-to-end compatibility and adversarial behavioural-parity validation.
 
-The first-release Simplified-Chinese language layer has completed:
-
-- localization contract and translation-surface classification,
-- frozen terminology review,
-- front-door and onboarding review,
-- governance and operational-policy review,
-- session, connector, relay, routing, storage and corpus review,
-- Markdown template review,
-- a complete Chinese-facing routine-deposit compatibility specimen,
-- final inventory/completeness review,
-- a paired 30-scenario adversarial English / Simplified-Chinese behavioural test,
-- a controlled three-scenario frozen-source narrow retest.
-
-The final parity adjudication records:
+Final validation outcome:
 
 ```text
 unresolved translation drift: 0
@@ -101,11 +70,6 @@ safety/stop/ask parity failures attributable to localization: 0
 human-authority parity failures: 0
 ```
 
-See:
+See [`docs/localization/ZH_CN_VALIDATION.md`](../docs/localization/ZH_CN_VALIDATION.md) for the consolidated validation record.
 
-```text
-locales/zh-CN/ADVERSARIAL_PARITY_PAIRED_ADJUDICATION.md
-locales/zh-CN/ADVERSARIAL_PARITY_NARROW_RETEST.md
-```
-
-`zh-CN` is therefore supported for the first-release language surface while English remains the canonical protocol source.
+English remains the canonical protocol source.
