@@ -25,10 +25,10 @@ CapstanAI LabNote 分为三个阶段：获取副本、初始化（bootstrap）�
 
 ## 2. 初始化工作区
 
-1. 用将要使用该工作区的 AI 打开 `AI_ENTRYPOINT.md`。
+1. 用将要使用该工作区的 AI 打开仓库根目录的 `AI_ENTRYPOINT.md`。如果本次交互已选择 `zh-CN`，根入口会路由到已支持的简体中文操作入口。
 2. 确认预期的 LabNote 结构存在。
 3. 确认当前工作区属于适合实际工作的私有/受控工作区，还是公共/仅供参考工作区。
-4. 按入口区（lobby）的阅读顺序继续：`lobby/README_FIRST.md` -> `lobby/VISITOR_CHECKLIST.md`。
+4. 按简体中文入口区（lobby）的阅读顺序继续：`locales/zh-CN/lobby/README_FIRST.md` -> `locales/zh-CN/lobby/VISITOR_CHECKLIST.md`。
 5. 确认由操作者提供的本次运行访客会话标识（visitor handle）。如果没有提供，必须停止并询问，然后才能写入。
 
 第一次使用前，不应要求你先修改仓库名称，也不需要修改 LabNote 的身份文件。
