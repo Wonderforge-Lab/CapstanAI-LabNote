@@ -1,6 +1,6 @@
 # Communication Registry Source Drift Repair
 
-Status: **source-level consistency repair on localization branch**
+Status: **source-level consistency repair merged into the canonical English source**
 
 ## Finding
 
@@ -22,7 +22,7 @@ These define JSON-per-record registry files as canonical and CSV files as legacy
 
 ## Repair
 
-The three communication files were updated on `i18n/zh-cn-language-layer` so that routine work now:
+The three canonical communication files were updated so that routine work now:
 
 - creates canonical JSON records under `registry/messages/` or `registry/notifications/`,
 - treats CSV registries as legacy / optional rollups,
