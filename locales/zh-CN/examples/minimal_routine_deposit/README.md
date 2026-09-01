@@ -22,8 +22,8 @@
 
 本地化语言层不会创建 `locales/zh-CN/datadrops/`、`locales/zh-CN/registry/` 或其他平行运行期存储树。
 
-## 关于英文最小示例
+## 与英文最小示例的关系
 
-英文 `examples/minimal_routine_deposit/` 中的 Markdown 示例早于当前 Markdown 模板，部分头部字段和签退章节仍使用旧形态。本简体中文兼容性示例以**当前基准模板和规则**为准，不把旧示例形态复制进新的语言层。
+英文 `examples/minimal_routine_deposit/` 与本简体中文示例现在都按照当前 Markdown 模板形态和基准 JSON 记录结构展示同一套运行协议。
 
-JSON 记录结构仍与当前基准 JSON 模板保持兼容。
+两种语言可以使用不同的人类可读正文和章节标题，但机器字段、状态值、ID 与运行期路径保持兼容。
