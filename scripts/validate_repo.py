@@ -138,6 +138,28 @@ def validate_references(records: list[tuple[Path, dict]]) -> list[str]:
     return errors
 
 
+def validate_tags(records: list[tuple[Path, dict]]) -> list[str]:
+    available = {
+        record["tag_slug"]
+        for _, record in records
+        if record.get("record_type") == "tag"
+        and record.get("status") in {"proposed", "accepted"}
+        and isinstance(record.get("tag_slug"), str)
+    }
+    errors: list[str] = []
+    for path, record in records:
+        tags = record.get("tags")
+        if not isinstance(tags, list):
+            continue
+        for tag in tags:
+            if not isinstance(tag, str) or tag not in available:
+                errors.append(
+                    f"{path}: tags: no proposed or accepted tag record for {tag!r} "
+                    "in the validation set"
+                )
+    return errors
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("paths", nargs="*", type=Path)
@@ -145,6 +167,7 @@ def main() -> int:
     parser.add_argument("--examples", action="store_true")
     parser.add_argument("--enforce-filename", action="store_true")
     parser.add_argument("--check-references", action="store_true")
+    parser.add_argument("--check-tags", action="store_true")
     args = parser.parse_args()
 
     paths = list(args.paths)
@@ -159,11 +182,13 @@ def main() -> int:
         (path, *validate_document(path, args.enforce_filename)) for path in paths
     ]
     errors = [item for _, _, messages in documents for item in messages]
+    valid_records = [
+        (path, record) for path, record, _ in documents if record is not None
+    ]
     if args.check_references:
-        valid_records = [
-            (path, record) for path, record, _ in documents if record is not None
-        ]
         errors.extend(validate_references(valid_records))
+    if args.check_tags:
+        errors.extend(validate_tags(valid_records))
 
     print("\n".join(errors) if errors else f"validated {len(paths)} record(s)")
     return 1 if errors else 0
