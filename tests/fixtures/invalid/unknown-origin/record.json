@@ -1,22 +1,22 @@
 {
   "record_type": "packet",
   "schema_version": 1,
-  "packet_id": "20260902-example-session-mismatch",
+  "packet_id": "20260902-example-session-unknown-origin",
   "created_at": "2026-09-02T12:00:00Z",
   "created_by": "example-session",
   "deposited_by": "example-session",
-  "content_origin": "operator_authored",
+  "content_origin": "unknown",
   "source_refs": [],
   "source_note": "",
   "derivative_of": [],
-  "provenance_coverage": "record_level",
+  "provenance_coverage": "partial",
   "source_session": "example-session",
   "target_session": "review-session",
-  "topic": "mismatch",
+  "topic": "unknown-origin",
   "status": "new",
   "path": "tests/fixtures/valid/packet/artifact.md",
   "response_expected": false,
   "response_packet_id": null,
   "tags": [],
-  "notes": "Invalid: canonical filename does not match packet_id."
+  "notes": "Invalid: unknown origin does not explain the uncertainty."
 }

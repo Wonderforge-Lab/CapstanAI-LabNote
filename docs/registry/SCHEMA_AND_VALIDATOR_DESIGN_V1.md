@@ -35,9 +35,9 @@ IDs are validated as complete date-led values, then checked against filename and
 
 ## Conditional provenance
 
-Packets and responses require `created_by`, `deposited_by`, `content_origin`, `source_refs`, `derivative_of`, and `provenance_coverage` according to the contract.
+Packets and responses require `created_by`, `deposited_by`, `content_origin`, `source_refs`, `source_note`, `derivative_of`, and `provenance_coverage` according to the contract.
 
-For `third_party`, `web`, and `mixed`, `source_refs` must be non-empty. For a derivative/summarising artifact, `derivative_of` and coverage must be non-empty. The schema checks field presence/shape; the validator resolves `derivative_of` entries to packet or response records in the validation set. Visitor identifiers remain routing handles and do not require a corresponding visitor-registration record.
+For `third_party`, `web`, and `mixed`, `source_refs` must be non-empty. For `unknown`, `source_note` must state why origin cannot be determined. For a derivative/summarising artifact, `derivative_of` and coverage must be non-empty. The schema checks field presence/shape; the validator resolves `derivative_of` entries to packet or response records in the validation set. Visitor identifiers remain routing handles and do not require a corresponding visitor-registration record.
 
 Messages may carry provenance when relaying source-bearing content. Notifications inherit through their required `message_id`. Visits do not require provenance.
 
@@ -47,10 +47,10 @@ Messages may carry provenance when relaying source-bearing content. Notification
 2. Validate JSON Schema.
 3. Assert ID equals filename stem.
 4. Assert identifier-date/`created_at` agreement and, where a canonical registry record is filed under a four-digit year directory, year-directory agreement.
-5. Assert path safety, existence and artifact/registry bucket agreement.
+5. Assert path safety, existence, record-type artifact-prefix and artifact/registry bucket agreement.
 6. Assert uniqueness of IDs by namespace.
 7. Resolve packet, response, message, notification, tag and derivative references; visitor handles remain intentionally unregistered-capable.
-8. Check tag status/path agreement and proposed/accepted/deprecated lifecycle rules.
+8. Check tag status/direct-child path agreement and proposed/accepted/deprecated lifecycle rules.
 9. Compare a PR base/head when available to reject illegal state transitions, including AI-proposed tags accepted in the same change set. Push validation detects the same condition after a direct write; repository review rules are required if prevention is required before acceptance.
 10. Validate examples as isolated fixtures.
 11. Check canonical Markdown links.

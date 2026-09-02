@@ -6,7 +6,7 @@ import argparse
 import json
 import re
 from functools import lru_cache
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 from jsonschema import Draft202012Validator, FormatChecker
 from referencing import Registry, Resource
@@ -27,6 +27,22 @@ VALID_FIXTURES = ROOT / "tests" / "fixtures" / "valid"
 CONTRACT_EXAMPLES = ROOT / "examples" / "contract_v1"
 CANONICAL_RECORD_ROOTS = (REGISTRY_ROOT, CONTRACT_EXAMPLES)
 PATH_FIELDS = ("path", "signoff_path", "profile_path")
+ARTIFACT_PATH_PREFIXES = {
+    "packet": ("path", PurePosixPath("datadrops")),
+    "response": ("path", PurePosixPath("responses")),
+    "visit": ("signoff_path", PurePosixPath("responses") / "signoffs"),
+}
+GENERATED_REGISTRY_VIEWS = frozenset(
+    {
+        "INDEX.md",
+        "packet_registry.csv",
+        "response_registry.csv",
+        "message_registry.csv",
+        "notification_registry.csv",
+        "visit_registry.csv",
+        "visitor_registry.csv",
+    }
+)
 ID_FIELDS = {
     "packet": "packet_id",
     "response": "response_id",
@@ -208,6 +224,23 @@ def validate_path_fields(record: dict) -> list[str]:
     return errors
 
 
+def validate_artifact_path_prefix(record: dict, location: Path) -> list[str]:
+    """Keep canonical artifact records out of control-plane and unrelated paths."""
+    if not is_under(location, REGISTRY_ROOT):
+        return []
+    constraint = ARTIFACT_PATH_PREFIXES.get(record.get("record_type"))
+    if constraint is None:
+        return []
+    field, prefix = constraint
+    value = record.get(field)
+    if value is None or not isinstance(value, str):
+        return []
+    path = PurePosixPath(value)
+    if not path.is_relative_to(prefix):
+        return [f"{field}: {record['record_type']} artifacts must be under {prefix}/"]
+    return []
+
+
 def validate_lifecycle_path(record: dict, location: Path, enforce: bool) -> list[str]:
     if not (enforce or is_under(location, REGISTRY_ROOT)):
         return []
@@ -234,7 +267,12 @@ def validate_lifecycle_path(record: dict, location: Path, enforce: bool) -> list
     errors: list[str] = []
     try:
         relative_location = location.resolve().relative_to(ROOT.resolve())
-        if not relative_location.is_relative_to(record_prefix):
+        if record_type == "tag" and relative_location.parent != record_prefix:
+            errors.append(
+                f"lifecycle: tag status {status!r} requires a direct record under "
+                f"{record_prefix}/"
+            )
+        elif not relative_location.is_relative_to(record_prefix):
             errors.append(
                 f"lifecycle: status {status!r} requires record location under {record_prefix}/"
             )
@@ -279,6 +317,10 @@ def validate_document(
             f"{path}: {message}" for message in validate_identifier_date(record, path)
         )
         messages.extend(f"{path}: {message}" for message in validate_path_fields(record))
+        messages.extend(
+            f"{path}: {message}"
+            for message in validate_artifact_path_prefix(record, path)
+        )
         messages.extend(
             f"{path}: {message}"
             for message in validate_lifecycle_path(record, path, check_lifecycle)
@@ -369,6 +411,26 @@ def registry_paths() -> list[Path]:
     )
 
 
+def validate_registry_inventory(
+    record_paths: list[Path], registry_root: Path = REGISTRY_ROOT, schemas: Path = SCHEMAS
+) -> list[str]:
+    """Reject registry files that are neither contract support nor validated records."""
+    known_records = {path.resolve() for path in record_paths}
+    errors: list[str] = []
+    for path in sorted(candidate for candidate in registry_root.rglob("*") if candidate.is_file()):
+        relative = path.resolve().relative_to(registry_root.resolve())
+        if path.name == ".gitkeep":
+            continue
+        if is_under(path, schemas) and path.name.endswith(".schema.json"):
+            continue
+        if relative.parent == Path(".") and path.name in GENERATED_REGISTRY_VIEWS | {"README.md"}:
+            continue
+        if path.resolve() in known_records:
+            continue
+        errors.append(f"{path}: registry inventory contains an unvalidated or unsupported file")
+    return errors
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("paths", nargs="*", type=Path)
@@ -411,6 +473,8 @@ def main() -> int:
         errors.extend(validate_tags(valid_records))
     if check_unique_ids:
         errors.extend(validate_unique_ids(valid_records))
+    if args.registry:
+        errors.extend(validate_registry_inventory(paths))
 
     print("\n".join(errors) if errors else f"validated {len(paths)} record(s)")
     return 1 if errors else 0

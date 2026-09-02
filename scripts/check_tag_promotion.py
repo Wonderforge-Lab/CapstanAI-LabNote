@@ -24,7 +24,7 @@ def tag_slugs(paths: list[str], bucket: str) -> set[str]:
     return {
         PurePosixPath(path).stem
         for path in paths
-        if PurePosixPath(path).parent == prefix and path.endswith(".json")
+        if path.endswith(".json") and PurePosixPath(path).is_relative_to(prefix)
     }
 
 

@@ -7,6 +7,7 @@
   "deposited_by": "example-operator",
   "content_origin": "operator_authored",
   "source_refs": [],
+  "source_note": "",
   "derivative_of": [],
   "provenance_coverage": "record_level",
   "source_session": "assistant-session-a",

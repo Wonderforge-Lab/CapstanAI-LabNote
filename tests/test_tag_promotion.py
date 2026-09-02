@@ -61,6 +61,19 @@ def main() -> int:
     with tempfile.TemporaryDirectory() as temporary:
         repository = Path(temporary)
         base = init_repository(repository)
+        accepted = repository / "registry" / "tags" / "accepted" / "sub"
+        accepted.mkdir(parents=True)
+        git(repository, "rm", "registry/tags/proposed/ai-suggested.json")
+        (accepted / "ai-suggested.json").write_text("{}\n", encoding="utf-8")
+        git(repository, "add", ".")
+        git(repository, "commit", "--quiet", "-m", "accept tag in nested path")
+        result = run_guard(repository, base, git(repository, "rev-parse", "HEAD"))
+        if result.returncode == 0:
+            raise AssertionError("same-change-set nested tag move was accepted")
+
+    with tempfile.TemporaryDirectory() as temporary:
+        repository = Path(temporary)
+        base = init_repository(repository)
         accepted = repository / "registry" / "tags" / "accepted"
         accepted.mkdir(parents=True)
         (accepted / "operator-supplied.json").write_text("{}\n", encoding="utf-8")

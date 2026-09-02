@@ -20,8 +20,8 @@ RECORD_DIRS = {
     "tag": REGISTRY / "tags",
 }
 CSV_VIEWS = {
-    "packet": ("packet_registry.csv", ["packet_id", "date", "created_at", "created_by", "deposited_by", "content_origin", "source_session", "target_session", "topic", "status", "path", "response_expected", "response_packet_id", "tags", "notes"]),
-    "response": ("response_registry.csv", ["response_id", "date", "created_at", "created_by", "deposited_by", "content_origin", "responding_session", "source_packet_id", "status", "path", "accepted_by", "decision_at", "tags", "notes"]),
+    "packet": ("packet_registry.csv", ["packet_id", "date", "created_at", "created_by", "deposited_by", "content_origin", "source_note", "source_session", "target_session", "topic", "status", "path", "response_expected", "response_packet_id", "tags", "notes"]),
+    "response": ("response_registry.csv", ["response_id", "date", "created_at", "created_by", "deposited_by", "content_origin", "source_note", "responding_session", "source_packet_id", "status", "path", "accepted_by", "decision_at", "tags", "notes"]),
     "message": ("message_registry.csv", ["message_id", "date", "created_at", "from_visitor_id", "to_visitor_id", "to_group", "status", "path", "reply_to", "reply_expected", "response_message_id", "needs_human_relay", "related_packet", "related_response", "summary", "tags", "notes"]),
     "notification": ("notification_registry.csv", ["notification_id", "date", "created_at", "from_visitor_id", "to_visitor_id", "message_id", "status", "path", "needs_human_action", "summary", "notes"]),
     "visit": ("visit_registry.csv", ["visit_id", "date", "created_at", "visitor_id", "session_family", "checked_messages", "answered_messages", "created_messages", "relay_needed", "signoff_path", "notes"]),
