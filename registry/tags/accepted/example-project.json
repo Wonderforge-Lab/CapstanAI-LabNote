@@ -1,10 +1,15 @@
 {
+  "record_type": "tag",
+  "schema_version": 1,
   "tag_slug": "example-project",
   "display_name": "Example Project",
   "status": "accepted",
   "scope": "example",
   "description": "Public-safe example project tag for template demonstrations.",
   "created_by": "operator",
-  "date_created": null,
-  "notes": "Template example only."
+  "created_at": "2026-06-03T22:00:16Z",
+  "accepted_by": "operator",
+  "accepted_at": "2026-06-03T22:00:16Z",
+  "acceptance_basis": "operator_supplied",
+  "notes": "Template example only. Historical timestamps derive from the first known committed record."
 }
