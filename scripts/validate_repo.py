@@ -11,6 +11,15 @@ from jsonschema import Draft202012Validator, FormatChecker, RefResolver
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY_ROOT = ROOT / "registry"
 SCHEMAS = REGISTRY_ROOT / "schemas"
+REGISTRY_RECORD_DIRS = (
+    REGISTRY_ROOT / "packets",
+    REGISTRY_ROOT / "responses",
+    REGISTRY_ROOT / "messages",
+    REGISTRY_ROOT / "notifications",
+    REGISTRY_ROOT / "visits",
+    REGISTRY_ROOT / "visitors",
+    REGISTRY_ROOT / "tags",
+)
 VALID_FIXTURES = ROOT / "tests" / "fixtures" / "valid"
 CONTRACT_EXAMPLES = ROOT / "examples" / "contract_v1"
 CANONICAL_RECORD_ROOTS = (REGISTRY_ROOT, CONTRACT_EXAMPLES)
@@ -224,11 +233,18 @@ def validate_tags(records: list[tuple[Path, dict]]) -> list[str]:
     return errors
 
 
+def registry_paths() -> list[Path]:
+    return sorted(
+        path for directory in REGISTRY_RECORD_DIRS for path in directory.rglob("*.json")
+    )
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("paths", nargs="*", type=Path)
     parser.add_argument("--fixtures", action="store_true")
     parser.add_argument("--examples", action="store_true")
+    parser.add_argument("--registry", action="store_true")
     parser.add_argument("--enforce-filename", action="store_true")
     parser.add_argument("--check-references", action="store_true")
     parser.add_argument("--check-tags", action="store_true")
@@ -240,20 +256,26 @@ def main() -> int:
         paths.extend(sorted(VALID_FIXTURES.rglob("*.json")))
     if args.examples:
         paths.extend(sorted(CONTRACT_EXAMPLES.rglob("*.json")))
+    if args.registry:
+        paths.extend(registry_paths())
     if not paths:
-        parser.error("supply JSON paths, --fixtures, or --examples")
+        parser.error("supply JSON paths, --fixtures, --examples, or --registry")
 
+    enforce_filename = args.enforce_filename or args.registry
+    check_references = args.check_references or args.registry
+    check_tags = args.check_tags or args.registry
+    check_lifecycle = args.check_lifecycle or args.registry
     documents = [
-        (path, *validate_document(path, args.enforce_filename, args.check_lifecycle))
+        (path, *validate_document(path, enforce_filename, check_lifecycle))
         for path in paths
     ]
     errors = [item for _, _, messages in documents for item in messages]
     valid_records = [
         (path, record) for path, record, _ in documents if record is not None
     ]
-    if args.check_references:
+    if check_references:
         errors.extend(validate_references(valid_records))
-    if args.check_tags:
+    if check_tags:
         errors.extend(validate_tags(valid_records))
 
     print("\n".join(errors) if errors else f"validated {len(paths)} record(s)")
