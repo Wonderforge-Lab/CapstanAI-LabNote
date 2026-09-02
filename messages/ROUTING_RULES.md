@@ -4,7 +4,7 @@
 - Use `to_group` for a family or broad recipient group.
 - Check exact visitor messages before group messages.
 - Create the canonical JSON message record under `registry/messages/`.
-- Do not edit legacy CSV message registries for routine visitor work unless the operator explicitly asks.
+- Do not edit generated CSV message registries or `registry/INDEX.md` manually.
 - Link related packets and responses when useful.
 - Set `needs_human_relay` when the operator must carry the message to another session.
 - Do not assume delivery until the recipient replies, the operator confirms, or the message is closed.

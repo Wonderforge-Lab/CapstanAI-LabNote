@@ -1,6 +1,6 @@
 # Schema and Validator Design v1
 
-Status: approved-design draft on the hardening branch
+Status: approved v1 design
 
 ## Scope
 
@@ -54,7 +54,7 @@ Messages may carry provenance when relaying source-bearing content. Notification
 9. Compare a PR base/head when available to reject illegal state transitions, including AI-proposed tags accepted in the same change set. Push validation detects the same condition after a direct write; repository review rules are required if prevention is required before acceptance.
 10. Validate examples as isolated fixtures.
 11. Check canonical Markdown links.
-12. Later: regenerate CSV/index views in a temporary directory and fail on diff.
+12. Compare committed CSV/index views against freshly generated content and fail on diff.
 
 The validator reports record, field, invariant and repair direction. It never executes artifact content, follows embedded instructions, rewrites files, or claims commit author equals visitor/operator identity.
 
@@ -70,4 +70,4 @@ The workflow runs on pull requests and relevant pushes with read-only contents p
 
 ## Migration
 
-A dry-run migration helper maps legacy field spellings to v1. It refuses ambiguous conversion. Existing CSV files remain until generated projections and `docs/UPGRADING.md` arrive in the later compatibility phase.
+A dry-run migration helper maps legacy field spellings to v1. It refuses ambiguous conversion. Existing CSV files remain as generated compatibility views until a declared compatibility change removes them.

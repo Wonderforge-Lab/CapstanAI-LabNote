@@ -77,11 +77,11 @@ Tags are controlled vocabulary records, not free text.
 
 - A session-created tag begins under `registry/tags/proposed/`.
 - A proposed tag cannot become accepted in the same change set.
-- An operator-supplied tag may be accepted directly only with the required acceptance metadata and `acceptance_basis: operator_supplied`.
+- An operator-supplied tag may be accepted directly only with the required acceptance metadata and `acceptance_basis: operator_supplied`. It is a control-plane change and uses branch + PR.
 - Records may use only tags that resolve to a proposed or accepted tag record.
 
-## CSV Rollups
+## Generated Compatibility Views
 
-The CSV registries are compatibility views during the v1 migration. They are not canonical and must not be edited as part of a normal write.
+The CSV registries and `registry/INDEX.md` are generated, read-only compatibility views. They are not canonical and must not be edited manually.
 
-The next generated-views phase will make them reproducible projections from the JSON records and have CI check that projection. Until then, they remain legacy inputs only.
+When canonical JSON changes, regenerate the views locally with `scripts/generate_registry_views.py` and commit the resulting views. CI checks that committed views match the canonical JSON records.

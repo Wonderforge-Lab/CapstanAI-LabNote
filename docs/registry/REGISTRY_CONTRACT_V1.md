@@ -1,6 +1,6 @@
 # Registry Contract v1
 
-Status: draft canonical contract on the hardening branch
+Status: canonical contract v1
 
 ## Purpose
 

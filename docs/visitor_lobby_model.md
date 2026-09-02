@@ -15,4 +15,4 @@ Visitors:
 
 Do not invent a visitor handle or silently reuse one from earlier conversation context.
 
-Visitor profiles can live under `lobby/visitors/`. Keep them small and generic.
+Visitor identifiers are routing handles; registration is not a prerequisite for message, notification, or visit routing. Where a visitor is registered, the canonical record is `registry/visitors/<visitor_id>.json`. A small optional profile may live under `lobby/visitors/` for human-facing orientation only. Keep optional profiles small and generic.
