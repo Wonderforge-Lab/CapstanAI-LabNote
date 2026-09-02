@@ -1,0 +1,20 @@
+{
+  "record_type": "message",
+  "schema_version": 1,
+  "message_id": "20260602-chatgpt-20260602-1430-review-01-registry-check",
+  "created_at": "2026-06-02T14:50:00Z",
+  "from_visitor_id": "chatgpt-20260602-1430-review-01",
+  "to_visitor_id": "codex-20260602-1445-repo-maint-01",
+  "to_group": null,
+  "status": "open",
+  "path": "examples/example_message_packet.md",
+  "tags": [],
+  "reply_to": null,
+  "reply_expected": true,
+  "response_message_id": null,
+  "needs_human_relay": false,
+  "related_packet": "20260602-assistant-session-a-example-topic",
+  "related_response": "20260602-assistant-session-b-example-critique",
+  "summary": "Ask for a quick registry-field check.",
+  "notes": "Paired with the fictional message example."
+}

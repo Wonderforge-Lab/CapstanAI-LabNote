@@ -24,22 +24,21 @@ Use a branch + PR only for procedure, policy, repo structure, code/script change
 2. Confirm current-run visitor handle.
 3. If no current-run visitor handle is supplied, stop and ask the human operator.
 4. Use the default branch unless the operator explicitly names another branch.
-5. Read `AI_ENTRYPOINT.md`.
-6. Read `lobby/README_FIRST.md`.
-7. Read `lobby/VISITOR_CHECKLIST.md`.
-8. Register visitor if missing.
-9. Check only relevant messages and notifications.
-10. Read `lobby/TAGGING_PROTOCOL.md` if tags are needed.
-11. Read `docs/DOCUMENT_DEPOSIT_POLICY.md` if depositing documents.
-12. Inspect supplied material enough to infer tags.
-13. Match inferred tags to accepted registry tags.
-14. Add operator-supplied missing tags as accepted JSON records.
-15. Add AI-generated tags as proposed JSON records only if useful.
-16. Create packet, response, message, or signoff files.
-17. Create JSON registry record files.
-18. Do not edit CSV unless the operator explicitly asks.
-19. Add a `README_FIRST` notice if team review or relay is needed.
-20. Report files created and stop.
+5. Register visitor if missing.
+6. Check only relevant messages and notifications.
+7. Read `lobby/TAGGING_PROTOCOL.md` if tags are needed.
+8. Read `docs/DOCUMENT_DEPOSIT_POLICY.md` if depositing documents.
+9. Inspect supplied material enough to infer tags.
+10. Match inferred tags to accepted registry tags.
+11. Add operator-supplied missing tags as accepted JSON records.
+12. Add AI-generated tags as proposed JSON records only if useful.
+13. Create packet, response, message, or signoff files.
+14. Create JSON registry record files.
+15. Do not edit CSV unless the operator explicitly asks.
+16. Add a `README_FIRST` notice if team review or relay is needed.
+17. Report files created and stop.
+
+The entrypoint, lobby front door, and visitor checklist are prerequisites for this quickstart; this file does not repeat them.
 
 ## Canonical Naming
 

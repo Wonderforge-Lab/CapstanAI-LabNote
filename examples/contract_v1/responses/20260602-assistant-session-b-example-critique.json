@@ -1,0 +1,22 @@
+{
+  "record_type": "response",
+  "schema_version": 1,
+  "response_id": "20260602-assistant-session-b-example-critique",
+  "created_at": "2026-06-02T10:05:00Z",
+  "created_by": "assistant-session-b",
+  "deposited_by": "example-operator",
+  "content_origin": "model_generated",
+  "source_refs": [],
+  "derivative_of": [
+    "20260602-assistant-session-a-example-topic"
+  ],
+  "provenance_coverage": "record_level",
+  "responding_session": "assistant-session-b",
+  "source_packet_id": "20260602-assistant-session-a-example-topic",
+  "status": "pending_review",
+  "path": "examples/example_ai_response_packet.md",
+  "accepted_by": null,
+  "decision_at": null,
+  "tags": [],
+  "notes": "Paired with the fictional response example."
+}

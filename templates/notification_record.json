@@ -1,10 +1,14 @@
 {
-  "notification_id": "YYYYMMDD-example-notification",
-  "date": "YYYY-MM-DD",
-  "requested_by": "example-visitor",
-  "recipient": "operator",
-  "status": "open",
-  "path": "notifications/open/YYYYMMDD-example-notification.md",
-  "relay_needed": true,
+  "record_type": "notification",
+  "schema_version": 1,
+  "notification_id": "YYYYMMDD-example-sender-short-topic",
+  "created_at": "YYYY-MM-DDTHH:MM:SSZ",
+  "from_visitor_id": "example-sender",
+  "to_visitor_id": "operator",
+  "message_id": "YYYYMMDD-example-sender-short-topic",
+  "status": "needed",
+  "path": "notifications/open/YYYYMMDD-example-sender-short-topic.md",
+  "needs_human_action": true,
+  "summary": "",
   "notes": ""
 }

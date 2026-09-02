@@ -1,0 +1,14 @@
+{
+  "record_type": "visit",
+  "schema_version": 1,
+  "visit_id": "20260902-example-session-fixture-visit",
+  "created_at": "2026-09-02T12:00:00Z",
+  "visitor_id": "codex-20260902-1200-fixture-01",
+  "session_family": "codex",
+  "checked_messages": true,
+  "answered_messages": false,
+  "created_messages": true,
+  "relay_needed": "no",
+  "signoff_path": "tests/fixtures/invalid/visit/signoff.md",
+  "notes": "Invalid: relay_needed must be boolean."
+}

@@ -1,0 +1,13 @@
+{
+  "record_type": "visitor",
+  "schema_version": 1,
+  "visitor_id": "example-20260902-1200-short-purpose-01",
+  "created_at": "YYYY-MM-DDTHH:MM:SSZ",
+  "session_family": "example-session",
+  "session_type": "example",
+  "display_name": "Example visitor",
+  "status": "registered",
+  "last_seen": null,
+  "profile_path": null,
+  "notes": ""
+}

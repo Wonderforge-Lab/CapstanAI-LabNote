@@ -28,7 +28,7 @@ CapstanAI is named for capstan machinery:
 ## What Changed
 
 - Active public docs now identify the project as CapstanAI - LabNote.
-- `bridge_config.json` now includes `project_name: "CapstanAI - LabNote"` and `project_slug: "capstanai-labnote"`.
+- `bridge_config.json` now identifies the product as `CapstanAI - LabNote` and provides a machine-readable map of canonical workflow paths.
 - The active branding guide now describes CapstanAI as the ecosystem and LabNote as the first simple ledger component.
 - A new accepted JSON tag record was added at `registry/tags/accepted/capstanai-labnote.json`.
 - The minimal routine deposit example packet record now includes `capstanai-labnote` in its `tags` array for discoverability.
@@ -38,7 +38,6 @@ CapstanAI is named for capstan machinery:
 - Historical Git history and old commits.
 - Existing packet IDs and example IDs.
 - The current GitHub repository name, `Wonderforge-Lab/OpenBridge-LabNote`, unless the HITL later decides to rename it.
-- The repository identifier field `public_template_repo` in `bridge_config.json`, because it currently points to the real GitHub repository.
 - The old OpenBridge social-preview banner asset; it was not referenced by active docs and has since been retired and removed.
 - Wording in migration/provenance notes that names the retired project identity.
 
@@ -70,10 +69,8 @@ Preserved for historical/provenance references.
 
 ## Remaining Legacy References
 
-- `bridge_config.json`: `public_template_repo` still contains `Wonderforge-Lab/OpenBridge-LabNote`. Classification: repo metadata / real repository identifier, intentionally preserved.
 - `registry/tags/accepted/capstanai-labnote.json`: note mentions OpenBridge-LabNote. Classification: historical/provenance, intentionally preserved.
 - `examples/minimal_routine_deposit/packet_record.json`: note mentions OpenBridge-LabNote. Classification: historical/provenance, intentionally preserved.
-- `docs/migrations/20260605_openbridge_to_capstanai_labnote.md`: this migration note names retired identities. Classification: historical/provenance, intentionally preserved.
 - The old OpenBridge social-preview banner (old-name asset). Classification: asset metadata; retired and removed per HITL decision.
 
 ## HITL Follow-Up Items

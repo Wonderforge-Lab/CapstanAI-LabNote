@@ -114,6 +114,7 @@ The validation process surfaced several pre-existing canonical design questions 
 - corpus-import wording contains a sequencing question between manifest-first fallback and the missing-full-import-approval stop condition;
 - some Markdown and JSON artifacts use different canonical field names, including `source_session` / `target_session` versus `source_ai` / `target_ai`, and `session_family` / `human_relay_needed` versus `visitor_family` / `relay_needed`;
 - the public/reference runtime boundary could be stated more explicitly in a future canonical protocol clarification.
+- Registry Contract v1 now treats CSV files and `registry/INDEX.md` as generated compatibility views; `locales/zh-CN/registry/README.md` retains the earlier legacy/optional-rollup wording and is queued for Wave 4 correction.
 
 Any repair to those items should be made as an explicit English-source protocol/schema decision and then propagated to localized surfaces.
 

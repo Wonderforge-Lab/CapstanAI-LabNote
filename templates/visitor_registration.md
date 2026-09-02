@@ -1,11 +1,11 @@
 # Visitor Registration
 
 visitor_id:
-date_registered:
-session_family: chatgpt | codex | claude | claude-code | local-llm | other
+created_at:
+session_family:
 session_type:
 display_name:
-status: registered | active | dormant | retired | superseded
+status: use the visitor status table in [Registry Contract v1](../docs/registry/REGISTRY_CONTRACT_V1.md)
 last_seen:
 profile_path:
 notes:
