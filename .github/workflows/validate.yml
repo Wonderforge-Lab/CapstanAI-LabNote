@@ -3,6 +3,8 @@ name: Registry validation
 on:
   push:
     paths:
+      - "bridge_config.json"
+      - "config/**"
       - "registry/**/*.json"
       - "registry/*.csv"
       - "registry/INDEX.md"
@@ -13,6 +15,8 @@ on:
       - ".github/workflows/validate.yml"
   pull_request:
     paths:
+      - "bridge_config.json"
+      - "config/**"
       - "registry/**/*.json"
       - "registry/*.csv"
       - "registry/INDEX.md"
@@ -39,3 +43,4 @@ jobs:
       - run: python scripts/generate_registry_views.py --check
       - run: python tests/test_generated_views.py
       - run: python tests/test_markdown_links.py
+      - run: python tests/test_bridge_config.py
