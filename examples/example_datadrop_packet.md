@@ -1,10 +1,15 @@
 # Datadrop Packet
 
-packet_id: example-packet-001
+packet_id: 20260602-assistant-session-a-example-topic
 source_session: assistant-session-a
 target_session: assistant-session-b
 created_by: example-operator
+deposited_by: example-operator
 created_at: 2026-06-02T10:00:00Z
+content_origin: operator_authored
+source_refs:
+derivative_of:
+provenance_coverage: record_level
 status: new
 topic: example-topic
 purpose: Ask for a short review of a fictional handoff.
