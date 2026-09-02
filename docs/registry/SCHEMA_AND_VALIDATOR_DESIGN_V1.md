@@ -54,7 +54,7 @@ Messages may carry provenance when relaying source-bearing content. Notification
 9. Compare a PR base/head when available to reject illegal state transitions, including AI-proposed tags accepted in the same change set. Push validation detects the same condition after a direct write; repository review rules are required if prevention is required before acceptance.
 10. Validate examples as isolated fixtures.
 11. Check canonical Markdown links.
-12. Regenerate CSV/index views in a temporary directory and fail on diff.
+12. Compare committed CSV/index views against freshly generated content and fail on diff.
 
 The validator reports record, field, invariant and repair direction. It never executes artifact content, follows embedded instructions, rewrites files, or claims commit author equals visitor/operator identity.
 

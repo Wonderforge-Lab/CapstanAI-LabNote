@@ -54,7 +54,7 @@ Use branch + PR for procedure, policy, code, structure, cleanup, risky/bulky imp
 
 ## Direct-deposit boundary
 
-Direct routine deposits are content-plane work only: their artifacts and canonical records may be written under `datadrops/`, `responses/`, `messages/`, `notifications/`, `registry/packets/`, `registry/responses/`, `registry/messages/`, `registry/notifications/`, `registry/visits/`, `registry/visitors/`, and `registry/tags/proposed/`.
+Direct routine deposits are content-plane work only: their artifacts and canonical records may be written under `datadrops/`, `responses/`, `messages/`, `notifications/`, `registry/packets/`, `registry/responses/`, `registry/messages/`, `registry/notifications/`, `registry/visits/`, `registry/visitors/`, and `registry/tags/proposed/`, together with the generated views `registry/INDEX.md` and `registry/*_registry.csv` when `scripts/generate_registry_views.py` regenerates them from canonical records created or changed in the same deposit.
 
 Use branch + PR for any change to the control plane or its enforcement, including `AI_ENTRYPOINT.md`, `lobby/`, `docs/`, `.github/`, `registry/schemas/`, `scripts/`, `templates/`, `bridge_config.json`, `config/`, generated-view machinery, and `registry/tags/accepted/`.
 
