@@ -9,10 +9,11 @@ from pathlib import Path
 from jsonschema import Draft202012Validator, FormatChecker, RefResolver
 
 ROOT = Path(__file__).resolve().parents[1]
-SCHEMAS = ROOT / "registry" / "schemas"
+REGISTRY_ROOT = ROOT / "registry"
+SCHEMAS = REGISTRY_ROOT / "schemas"
 VALID_FIXTURES = ROOT / "tests" / "fixtures" / "valid"
 CONTRACT_EXAMPLES = ROOT / "examples" / "contract_v1"
-CANONICAL_RECORD_ROOTS = (ROOT / "registry", CONTRACT_EXAMPLES)
+CANONICAL_RECORD_ROOTS = (REGISTRY_ROOT, CONTRACT_EXAMPLES)
 PATH_FIELDS = ("path", "signoff_path", "profile_path")
 ID_FIELDS = {
     "packet": "packet_id",
@@ -34,6 +35,22 @@ REFERENCE_FIELDS = {
     ),
     "notification": (("message_id", "message"),),
 }
+MESSAGE_BUCKETS = {
+    "open": "open",
+    "acknowledged": "open",
+    "in_progress": "open",
+    "blocked": "open",
+    "answered": "answered",
+    "closed": "closed",
+    "archived": "archived",
+}
+NOTIFICATION_BUCKETS = {
+    "needed": "open",
+    "told_to_human": "open",
+    "delivered_by_human": "delivered",
+    "confirmed": "closed",
+    "cancelled": "closed",
+}
 
 
 def load_json(path: Path) -> dict:
@@ -51,11 +68,12 @@ def schema_for(record: dict) -> Path:
     return path
 
 
+def is_under(path: Path, root: Path) -> bool:
+    return path.resolve().is_relative_to(root.resolve())
+
+
 def is_canonical_record(path: Path) -> bool:
-    resolved = path.resolve()
-    return any(
-        resolved.is_relative_to(root.resolve()) for root in CANONICAL_RECORD_ROOTS
-    )
+    return any(is_under(path, root) for root in CANONICAL_RECORD_ROOTS)
 
 
 def validate_filename(record: dict, path: Path, enforce: bool) -> list[str]:
@@ -86,8 +104,50 @@ def validate_path_fields(record: dict) -> list[str]:
     return errors
 
 
+def validate_lifecycle_path(record: dict, location: Path, enforce: bool) -> list[str]:
+    if not (enforce or is_under(location, REGISTRY_ROOT)):
+        return []
+    record_type = record.get("record_type")
+    status = record.get("status")
+    if record_type == "message":
+        bucket = MESSAGE_BUCKETS.get(status)
+        if bucket is None:
+            return []
+        record_prefix = Path("registry") / "messages" / bucket
+        artifact_prefix = Path("messages") / bucket
+    elif record_type == "notification":
+        bucket = NOTIFICATION_BUCKETS.get(status)
+        if bucket is None:
+            return []
+        record_prefix = Path("registry") / "notifications" / bucket
+        artifact_prefix = Path("notifications") / bucket
+    elif record_type == "tag" and status in {"proposed", "accepted", "deprecated"}:
+        record_prefix = Path("registry") / "tags" / status
+        artifact_prefix = None
+    else:
+        return []
+
+    errors: list[str] = []
+    try:
+        relative_location = location.resolve().relative_to(ROOT.resolve())
+        if not relative_location.is_relative_to(record_prefix):
+            errors.append(
+                f"lifecycle: status {status!r} requires record location under {record_prefix}/"
+            )
+    except ValueError:
+        errors.append("lifecycle: record location escapes the repository")
+
+    artifact_path = record.get("path")
+    if artifact_prefix is not None and isinstance(artifact_path, str):
+        if not Path(artifact_path).is_relative_to(artifact_prefix):
+            errors.append(
+                f"lifecycle: status {status!r} requires artifact path under {artifact_prefix}/"
+            )
+    return errors
+
+
 def validate_document(
-    path: Path, enforce_filename: bool
+    path: Path, enforce_filename: bool, check_lifecycle: bool
 ) -> tuple[dict | None, list[str]]:
     try:
         record = load_json(path)
@@ -109,6 +169,10 @@ def validate_document(
             for message in validate_filename(record, path, enforce_filename)
         )
         messages.extend(f"{path}: {message}" for message in validate_path_fields(record))
+        messages.extend(
+            f"{path}: {message}"
+            for message in validate_lifecycle_path(record, path, check_lifecycle)
+        )
         return record, messages
     except (OSError, ValueError, json.JSONDecodeError) as error:
         return None, [f"{path}: {error}"]
@@ -168,6 +232,7 @@ def main() -> int:
     parser.add_argument("--enforce-filename", action="store_true")
     parser.add_argument("--check-references", action="store_true")
     parser.add_argument("--check-tags", action="store_true")
+    parser.add_argument("--check-lifecycle", action="store_true")
     args = parser.parse_args()
 
     paths = list(args.paths)
@@ -179,7 +244,8 @@ def main() -> int:
         parser.error("supply JSON paths, --fixtures, or --examples")
 
     documents = [
-        (path, *validate_document(path, args.enforce_filename)) for path in paths
+        (path, *validate_document(path, args.enforce_filename, args.check_lifecycle))
+        for path in paths
     ]
     errors = [item for _, _, messages in documents for item in messages]
     valid_records = [
