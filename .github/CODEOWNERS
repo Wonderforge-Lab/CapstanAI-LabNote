@@ -1,0 +1,12 @@
+# Control-plane review paths. These assignments request review on pull requests;
+# direct default-branch deposits remain governed by AI_ENTRYPOINT.md.
+/AI_ENTRYPOINT.md @Wonderforge-Lab
+/lobby/ @Wonderforge-Lab
+/docs/ @Wonderforge-Lab
+/.github/ @Wonderforge-Lab
+/registry/schemas/ @Wonderforge-Lab
+/scripts/ @Wonderforge-Lab
+/templates/ @Wonderforge-Lab
+/bridge_config.json @Wonderforge-Lab
+/config/ @Wonderforge-Lab
+/registry/tags/accepted/ @Wonderforge-Lab

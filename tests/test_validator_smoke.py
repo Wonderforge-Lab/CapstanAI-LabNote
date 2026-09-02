@@ -4,19 +4,27 @@ from __future__ import annotations
 
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 VALIDATOR = ROOT / "scripts" / "validate_repo.py"
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from validate_repo import validate_identifier_date, validate_record_type_location
+from validate_repo import (
+    validate_artifact_path_prefix,
+    validate_identifier_date,
+    validate_lifecycle_path,
+    validate_record_type_location,
+    validate_registry_inventory,
+)
 
 INVALID_FIXTURES = {
     "shared schema cannot be selected as a record": (
         "tests/fixtures/invalid/schema/common.json",
     ),
     "packet source provenance": ("tests/fixtures/invalid/packet/record.json",),
+    "unknown origin disclosure": ("tests/fixtures/invalid/unknown-origin/record.json",),
     "response derivation provenance": ("tests/fixtures/invalid/response/record.json",),
     "message recipient routing": ("tests/fixtures/invalid/message/record.json",),
     "notification status vocabulary": ("tests/fixtures/invalid/notification/record.json",),
@@ -105,6 +113,58 @@ def assert_direct_validator_invariants() -> None:
     )
     if not wrong_year:
         raise AssertionError("identifier/year-directory mismatch was accepted")
+
+    wrong_artifact_path = validate_artifact_path_prefix(
+        {"record_type": "packet", "path": "AI_ENTRYPOINT.md"},
+        ROOT / "registry" / "packets" / "2026" / "example.json",
+    )
+    if not wrong_artifact_path:
+        raise AssertionError("packet artifact path outside datadrops/ was accepted")
+
+    wrong_response_path = validate_artifact_path_prefix(
+        {"record_type": "response", "path": "AI_ENTRYPOINT.md"},
+        ROOT / "registry" / "responses" / "2026" / "example.json",
+    )
+    if not wrong_response_path:
+        raise AssertionError("response artifact path outside responses/ was accepted")
+
+    wrong_signoff_path = validate_artifact_path_prefix(
+        {"record_type": "visit", "signoff_path": "responses/example.md"},
+        ROOT / "registry" / "visits" / "2026" / "example.json",
+    )
+    if not wrong_signoff_path:
+        raise AssertionError("visit signoff path outside responses/signoffs/ was accepted")
+
+    nested_tag = validate_lifecycle_path(
+        {"record_type": "tag", "status": "accepted"},
+        ROOT / "registry" / "tags" / "accepted" / "sub" / "example.json",
+        enforce=True,
+    )
+    if not nested_tag:
+        raise AssertionError("nested tag record was accepted")
+
+    with tempfile.TemporaryDirectory() as temporary:
+        registry_root = Path(temporary) / "registry"
+        schemas = registry_root / "schemas"
+        schemas.mkdir(parents=True)
+        (schemas / "common.schema.json").write_text("{}\n", encoding="utf-8")
+        (registry_root / "README.md").write_text("# Registry\n", encoding="utf-8")
+        (registry_root / "INDEX.md").write_text("# Index\n", encoding="utf-8")
+        record = registry_root / "packets" / "2026" / "canonical.json"
+        record.parent.mkdir(parents=True)
+        record.write_text("{}\n", encoding="utf-8")
+        (registry_root / "packets" / "2026" / "shadow.JSON").write_text(
+            "{}\n", encoding="utf-8"
+        )
+        stray = registry_root / "inbox" / "untracked.json"
+        stray.parent.mkdir()
+        stray.write_text("{}\n", encoding="utf-8")
+        inventory_errors = validate_registry_inventory([record], registry_root, schemas)
+        if len(inventory_errors) != 2:
+            raise AssertionError(
+                "registry inventory did not reject uppercase and out-of-layout JSON: "
+                + "\n".join(inventory_errors)
+            )
 
 
 def main() -> int:

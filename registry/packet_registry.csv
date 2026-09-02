@@ -1,1 +1,1 @@
-packet_id,date,created_at,created_by,deposited_by,content_origin,source_session,target_session,topic,status,path,response_expected,response_packet_id,tags,notes
+packet_id,date,created_at,created_by,deposited_by,content_origin,source_note,source_session,target_session,topic,status,path,response_expected,response_packet_id,tags,notes

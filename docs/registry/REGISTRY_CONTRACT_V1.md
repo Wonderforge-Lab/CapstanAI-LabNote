@@ -114,13 +114,13 @@ Tag slugs are lowercase hyphenated slugs. IDs are validated as complete values; 
 
 ## Tags, provenance, and derivatives
 
-Packets and responses carry `created_by`, `deposited_by`, `content_origin`, `source_refs`, `derivative_of`, and `provenance_coverage` as applicable.
+Packets and responses carry `created_by`, `deposited_by`, `content_origin`, `source_refs`, `source_note`, `derivative_of`, and `provenance_coverage` as applicable.
 
 `content_origin` is a closed enum: `operator_authored`, `third_party`, `web`, `model_generated`, `mixed`, or `unknown`.
 
-Third-party, web, and mixed material requires source references. Derivative/summarising material requires upstream references and coverage. Routine routing summaries require record-level provenance; evidence or decision synthesis requires claim-level support where practical and must preserve uncertainty.
+Third-party, web, and mixed material requires source references. An `unknown` origin must include a non-empty `source_note` explaining the uncertainty; it must not be used as a substitute for available source references. Derivative/summarising material requires upstream references and coverage. Routine routing summaries require record-level provenance; evidence or decision synthesis requires claim-level support where practical and must preserve uncertainty.
 
-AI/session-created tags begin proposed and cannot become accepted in the same change set. Operator-supplied tags may be accepted directly with `acceptance_basis: operator_supplied`. Promotion of a proposal uses `acceptance_basis: operator_approved_promotion`. Pull-request validation rejects a same-change-set promotion; push validation detects the equivalent direct-write violation for remediation, but cannot undo a commit already accepted by the remote.
+AI/session-created tags begin proposed and cannot become accepted in the same change set. Operator-supplied tags may enter `accepted` directly with `acceptance_basis: operator_supplied`; this is a control-plane change and uses branch + PR. Promotion of a proposal uses `acceptance_basis: operator_approved_promotion` and also uses branch + PR. Pull-request validation rejects a same-change-set promotion; push validation detects the equivalent direct-write violation for remediation, but cannot undo a commit already accepted by the remote.
 
 ## Compatibility
 

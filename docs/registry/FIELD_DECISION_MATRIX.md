@@ -17,6 +17,6 @@ This matrix records the approved v1 decisions. “Artifact” means Markdown pac
 - `created_at` is the canonical RFC 3339 creation timestamp.
 - A CSV `date` is derived, not a competing canonical field.
 - Applicable packet, response, and message records carry tags as defined by the contract.
-- Packets and responses carry provenance: creator, depositor, origin, source references, derivation, and coverage as applicable.
+- Packets and responses carry provenance: creator, depositor, origin, source references, an uncertainty note when origin is unknown, derivation, and coverage as applicable.
 - Notifications inherit provenance through their required message link; visits do not carry provenance by default.
 - Legacy field names are migration inputs only.

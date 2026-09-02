@@ -52,6 +52,14 @@ Do not create task branches for ordinary deposits.
 
 Use branch + PR for procedure, policy, code, structure, cleanup, risky/bulky imports, many existing-file edits, or explicit review.
 
+## Direct-deposit boundary
+
+Direct routine deposits are content-plane work only: their artifacts and canonical records may be written under `datadrops/`, `responses/`, `messages/`, `notifications/`, `registry/packets/`, `registry/responses/`, `registry/messages/`, `registry/notifications/`, `registry/visits/`, `registry/visitors/`, and `registry/tags/proposed/`.
+
+Use branch + PR for any change to the control plane or its enforcement, including `AI_ENTRYPOINT.md`, `lobby/`, `docs/`, `.github/`, `registry/schemas/`, `scripts/`, `templates/`, `bridge_config.json`, `config/`, generated-view machinery, and `registry/tags/accepted/`.
+
+Post-push validation detects direct-write violations after they land; it cannot revoke a commit. Do not make CI auto-revert changes. A write credential is therefore part of the trust perimeter.
+
 For ordinary deposits, use `lobby/ROUTINE_DEPOSIT_QUICKSTART.md`.
 
 ## Reading Order
