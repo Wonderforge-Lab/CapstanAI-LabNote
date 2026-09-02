@@ -38,3 +38,4 @@ jobs:
       - run: python tests/test_validator_smoke.py
       - run: python scripts/generate_registry_views.py --check
       - run: python tests/test_generated_views.py
+      - run: python tests/test_markdown_links.py
