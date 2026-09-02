@@ -1,12 +1,22 @@
 {
-  "response_id": "YYYYMMDD-example-response",
-  "date": "YYYY-MM-DD",
-  "responding_ai": "ExampleAI",
-  "source_packet_id": "YYYYMMDD-example-visitor-short-topic",
+  "record_type": "response",
+  "schema_version": 1,
+  "response_id": "YYYYMMDD-example-session-short-topic",
+  "created_at": "YYYY-MM-DDTHH:MM:SSZ",
+  "created_by": "example-visitor",
+  "deposited_by": "example-visitor",
+  "content_origin": "model_generated",
+  "source_refs": [],
+  "derivative_of": [
+    "YYYYMMDD-example-session-short-topic"
+  ],
+  "provenance_coverage": "record_level",
+  "responding_session": "example-session",
+  "source_packet_id": "YYYYMMDD-example-session-short-topic",
   "status": "pending_review",
-  "path": "responses/example/YYYYMMDD-example-response.md",
+  "path": "responses/example/YYYYMMDD-example-session-short-topic.md",
   "accepted_by": null,
-  "decision_date": null,
+  "decision_at": null,
   "tags": [],
   "notes": ""
 }
