@@ -24,6 +24,19 @@ jobs:
       - run: python tests/test_generated_views.py
       - run: python tests/test_markdown_links.py
       - run: python tests/test_bridge_config.py
+      - run: python tests/test_tag_promotion.py
       - name: Enforce tag-promotion separation
         if: github.event_name == 'pull_request'
         run: python scripts/check_tag_promotion.py "${{ github.event.pull_request.base.sha }}" "${{ github.sha }}"
+      - name: Detect tag-promotion separation violation on push
+        if: github.event_name == 'push'
+        env:
+          BEFORE: ${{ github.event.before }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          if [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            base="$(git merge-base "origin/$DEFAULT_BRANCH" "$GITHUB_SHA")"
+          else
+            base="$BEFORE"
+          fi
+          python scripts/check_tag_promotion.py "$base" "$GITHUB_SHA"

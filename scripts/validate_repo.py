@@ -4,9 +4,12 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
+from functools import lru_cache
 from pathlib import Path
 
-from jsonschema import Draft202012Validator, FormatChecker, RefResolver
+from jsonschema import Draft202012Validator, FormatChecker
+from referencing import Registry, Resource
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY_ROOT = ROOT / "registry"
@@ -33,6 +36,16 @@ ID_FIELDS = {
     "visitor": "visitor_id",
     "tag": "tag_slug",
 }
+RECORD_TYPES = frozenset(ID_FIELDS)
+RECORD_TYPE_DIRS = {
+    "packets": "packet",
+    "responses": "response",
+    "messages": "message",
+    "notifications": "notification",
+    "visits": "visit",
+    "visitors": "visitor",
+    "tags": "tag",
+}
 REFERENCE_FIELDS = {
     "packet": (("response_packet_id", "response"),),
     "response": (("source_packet_id", "packet"),),
@@ -44,6 +57,7 @@ REFERENCE_FIELDS = {
     ),
     "notification": (("message_id", "message"),),
 }
+DERIVATIVE_TYPES = frozenset({"packet", "response"})
 MESSAGE_BUCKETS = {
     "open": "open",
     "acknowledged": "open",
@@ -67,10 +81,21 @@ def load_json(path: Path) -> dict:
         return json.load(handle)
 
 
+@lru_cache
+def schema_registry() -> Registry:
+    resources = [
+        (path.name, Resource.from_contents(load_json(path)))
+        for path in sorted(SCHEMAS.glob("*.schema.json"))
+    ]
+    return Registry().with_resources(resources)
+
+
 def schema_for(record: dict) -> Path:
     record_type = record.get("record_type")
     if not isinstance(record_type, str):
         raise ValueError("missing or invalid record_type")
+    if record_type not in RECORD_TYPES:
+        raise ValueError(f"{record_type!r} is not a Registry Contract record type")
     path = SCHEMAS / f"{record_type}.schema.json"
     if not path.is_file():
         raise ValueError(f"no schema for record_type {record_type!r}")
@@ -85,6 +110,35 @@ def is_canonical_record(path: Path) -> bool:
     return any(is_under(path, root) for root in CANONICAL_RECORD_ROOTS)
 
 
+def expected_record_type(path: Path) -> str | None:
+    resolved = path.resolve()
+    for root in CANONICAL_RECORD_ROOTS:
+        try:
+            relative = resolved.relative_to(root.resolve())
+        except ValueError:
+            continue
+        for part in relative.parts:
+            record_type = RECORD_TYPE_DIRS.get(part)
+            if record_type is not None:
+                return record_type
+    return None
+
+
+def validate_record_type_location(record: dict, path: Path, enforce: bool) -> list[str]:
+    if not (enforce or is_canonical_record(path)):
+        return []
+    expected = expected_record_type(path)
+    if expected is None:
+        return []
+    actual = record.get("record_type")
+    if actual != expected:
+        return [
+            f"record_type: {actual!r} does not match canonical directory "
+            f"(expected {expected!r})"
+        ]
+    return []
+
+
 def validate_filename(record: dict, path: Path, enforce: bool) -> list[str]:
     if not (enforce or is_canonical_record(path)):
         return []
@@ -93,6 +147,47 @@ def validate_filename(record: dict, path: Path, enforce: bool) -> list[str]:
     if isinstance(identifier, str) and path.stem != identifier:
         return [f"filename: {path.name} does not match {field} {identifier!r}"]
     return []
+
+
+def identifier_date(record: dict) -> str | None:
+    record_type = record.get("record_type")
+    identifier_field = ID_FIELDS.get(record_type)
+    identifier = record.get(identifier_field) if identifier_field else None
+    if not isinstance(identifier, str):
+        return None
+    if record_type == "visitor":
+        match = re.search(r"-([0-9]{8})-[0-9]{4}-", identifier)
+    elif record_type == "tag":
+        return None
+    else:
+        match = re.match(r"([0-9]{8})-", identifier)
+    return match.group(1) if match else None
+
+
+def validate_identifier_date(record: dict, path: Path) -> list[str]:
+    identifier_day = identifier_date(record)
+    created_at = record.get("created_at")
+    if identifier_day is None or not isinstance(created_at, str):
+        return []
+    created_day = created_at[:10].replace("-", "")
+    if not re.fullmatch(r"[0-9]{8}", created_day):
+        return []
+
+    errors: list[str] = []
+    if identifier_day != created_day:
+        errors.append(
+            f"identifier date {identifier_day!r} does not match created_at date {created_day!r}"
+        )
+
+    if is_under(path, REGISTRY_ROOT):
+        relative = path.resolve().relative_to(REGISTRY_ROOT.resolve())
+        year_directories = [part for part in relative.parts if re.fullmatch(r"[0-9]{4}", part)]
+        for year in year_directories:
+            if year != created_day[:4]:
+                errors.append(
+                    f"year directory {year!r} does not match created_at year {created_day[:4]!r}"
+                )
+    return errors
 
 
 def validate_path_fields(record: dict) -> list[str]:
@@ -162,9 +257,8 @@ def validate_document(
         record = load_json(path)
         schema_path = schema_for(record)
         schema = load_json(schema_path)
-        resolver = RefResolver(base_uri=SCHEMAS.as_uri() + "/", referrer=schema)
         validator = Draft202012Validator(
-            schema, resolver=resolver, format_checker=FormatChecker()
+            schema, registry=schema_registry(), format_checker=FormatChecker()
         )
         errors = sorted(
             validator.iter_errors(record), key=lambda error: list(error.absolute_path)
@@ -175,7 +269,14 @@ def validate_document(
         ]
         messages.extend(
             f"{path}: {message}"
+            for message in validate_record_type_location(record, path, enforce_filename)
+        )
+        messages.extend(
+            f"{path}: {message}"
             for message in validate_filename(record, path, enforce_filename)
+        )
+        messages.extend(
+            f"{path}: {message}" for message in validate_identifier_date(record, path)
         )
         messages.extend(f"{path}: {message}" for message in validate_path_fields(record))
         messages.extend(
@@ -208,7 +309,36 @@ def validate_references(records: list[tuple[Path, dict]]) -> list[str]:
                     f"{path}: {field}: no {target_type} record with ID {target_id!r} "
                     "in the validation set"
                 )
+        if record_type in DERIVATIVE_TYPES:
+            derivatives = record.get("derivative_of")
+            if isinstance(derivatives, list):
+                for derivative in derivatives:
+                    if not isinstance(derivative, str) or not any(
+                        derivative in index.get(target_type, set())
+                        for target_type in DERIVATIVE_TYPES
+                    ):
+                        errors.append(
+                            f"{path}: derivative_of: no packet or response record with ID "
+                            f"{derivative!r} in the validation set"
+                        )
     return errors
+
+
+def validate_unique_ids(records: list[tuple[Path, dict]]) -> list[str]:
+    locations: dict[tuple[str, str], list[Path]] = {}
+    for path, record in records:
+        record_type = record.get("record_type")
+        identifier_field = ID_FIELDS.get(record_type)
+        identifier = record.get(identifier_field) if identifier_field else None
+        if isinstance(record_type, str) and isinstance(identifier, str):
+            locations.setdefault((record_type, identifier), []).append(path)
+
+    return [
+        f"duplicate {record_type} ID {identifier!r}: "
+        + ", ".join(str(path) for path in paths)
+        for (record_type, identifier), paths in locations.items()
+        if len(paths) > 1
+    ]
 
 
 def validate_tags(records: list[tuple[Path, dict]]) -> list[str]:
@@ -249,6 +379,7 @@ def main() -> int:
     parser.add_argument("--check-references", action="store_true")
     parser.add_argument("--check-tags", action="store_true")
     parser.add_argument("--check-lifecycle", action="store_true")
+    parser.add_argument("--check-unique-ids", action="store_true")
     args = parser.parse_args()
 
     paths = list(args.paths)
@@ -265,6 +396,7 @@ def main() -> int:
     check_references = args.check_references or args.registry
     check_tags = args.check_tags or args.registry
     check_lifecycle = args.check_lifecycle or args.registry
+    check_unique_ids = args.check_unique_ids or args.registry
     documents = [
         (path, *validate_document(path, enforce_filename, check_lifecycle))
         for path in paths
@@ -277,6 +409,8 @@ def main() -> int:
         errors.extend(validate_references(valid_records))
     if check_tags:
         errors.extend(validate_tags(valid_records))
+    if check_unique_ids:
+        errors.extend(validate_unique_ids(valid_records))
 
     print("\n".join(errors) if errors else f"validated {len(paths)} record(s)")
     return 1 if errors else 0

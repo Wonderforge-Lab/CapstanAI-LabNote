@@ -25,7 +25,7 @@ Every canonical JSON record must contain:
 - its type-specific immutable ID;
 - `created_at` as an RFC 3339 timestamp;
 - a repository-relative artifact `path` where that record type has an artifact;
-- a type-specific `status`.
+- a type-specific `status` where that record type has a lifecycle.
 
 The validator will check IDs, locations, timestamps, path existence, references, tags, and lifecycle/path agreement. It will not claim that a Git author proves a visitor identity or human approval.
 
@@ -51,7 +51,7 @@ A response record indexes a response artifact. It carries response identity, res
 
 ### Message
 
-A message record carries message identity, sender, individual and/or group destination, state, path, tags, and the distinct optional relations `reply_to`, `reply_expected`, `response_message_id`, `needs_human_relay`, `related_packet`, `related_response`, and `summary`.
+A message record carries message identity, sender, individual and/or group destination, state, path, tags, and the distinct optional relations `reply_to`, `reply_expected`, `response_message_id`, `needs_human_relay`, `related_packet`, `related_response`, and `summary`. When both `to_visitor_id` and `to_group` are populated, the message is addressed to both; neither destination overrides or suppresses the other.
 
 ### Notification
 
@@ -63,11 +63,11 @@ A notification record carries notification identity, `from_visitor_id`, `to_visi
 
 A visit is an append-only signoff record and has no lifecycle status. It uses `session_family` and `relay_needed`.
 
-Visitor registration is canonical JSON-per-record under `registry/visitors/<visitor_id>.json`; the visitor CSV is a derived compatibility view. Visitor lifecycle is separate from visit records.
+Visitor registration is canonical JSON-per-record under `registry/visitors/<visitor_id>.json`; the visitor CSV is a derived compatibility view. Visitor lifecycle is separate from visit records. A routing record may name an unregistered visitor handle; registration is not a prerequisite for message, notification, or visit routing.
 
 ### Tag
 
-A tag record is the canonical vocabulary record. Tags are `proposed`, `accepted`, or `deprecated`, with directories that match their status. Tag records retain creator, creation timestamp, and—when accepted—`accepted_by`, `accepted_at`, and `acceptance_basis`.
+A tag record is the canonical vocabulary record. Tags are `proposed`, `accepted`, or `deprecated`, with directories that match their status. Tag records retain creator, creation timestamp, and—when accepted—`accepted_by`, `accepted_at`, and `acceptance_basis`. Those fields are an attestation recorded by the repository: schema validation checks their presence and form, but does not authenticate operator identity or prove approval. Enforced approval requires repository review rules outside this schema.
 
 ## Lifecycle and storage buckets
 
@@ -120,7 +120,7 @@ Packets and responses carry `created_by`, `deposited_by`, `content_origin`, `sou
 
 Third-party, web, and mixed material requires source references. Derivative/summarising material requires upstream references and coverage. Routine routing summaries require record-level provenance; evidence or decision synthesis requires claim-level support where practical and must preserve uncertainty.
 
-AI/session-created tags begin proposed and cannot become accepted in the same change set. Operator-supplied tags may be accepted directly with `acceptance_basis: operator_supplied`. Promotion of a proposal uses `acceptance_basis: operator_approved_promotion`.
+AI/session-created tags begin proposed and cannot become accepted in the same change set. Operator-supplied tags may be accepted directly with `acceptance_basis: operator_supplied`. Promotion of a proposal uses `acceptance_basis: operator_approved_promotion`. Pull-request validation rejects a same-change-set promotion; push validation detects the equivalent direct-write violation for remediation, but cannot undo a commit already accepted by the remote.
 
 ## Compatibility
 

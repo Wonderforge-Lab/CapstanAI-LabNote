@@ -9,7 +9,7 @@ from pathlib import PurePosixPath
 
 def changed_files(base: str, head: str) -> list[str]:
     result = subprocess.run(
-        ["git", "diff", "--name-only", f"{base}...{head}"],
+        ["git", "diff", "--no-renames", "--name-only", f"{base}...{head}"],
         text=True,
         capture_output=True,
         check=False,
