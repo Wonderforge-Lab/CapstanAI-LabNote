@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "product_name", "config_role", "workspace_identity_mode",
+    "workspace_context_required_before_write", "routine_deposit_quickstart",
+    "routine_write_mode_for_live_workspace", "routine_branch_creation_default",
+    "registry_canonical_format", "csv_registries", "registry_records_doc",
+    "registry_contract", "registry_generated_views", "connector_safe_wording",
+    "connector_limitations", "corpus_import_policy", "minimal_routine_deposit_example"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "product_name": { "const": "CapstanAI - LabNote" },
+    "config_role": { "const": "machine_readable_path_map_non_authoritative" },
+    "workspace_identity_mode": { "const": "portable_structural" },
+    "workspace_context_required_before_write": { "const": true },
+    "routine_deposit_quickstart": { "type": "string", "minLength": 1 },
+    "routine_write_mode_for_live_workspace": { "const": "default_branch_direct_write" },
+    "routine_branch_creation_default": { "const": "do_not_create_branch" },
+    "registry_canonical_format": { "const": "json_per_record" },
+    "csv_registries": { "const": "generated_compatibility_view" },
+    "registry_records_doc": { "type": "string", "minLength": 1 },
+    "registry_contract": { "type": "string", "minLength": 1 },
+    "registry_generated_views": { "type": "string", "minLength": 1 },
+    "connector_safe_wording": { "type": "string", "minLength": 1 },
+    "connector_limitations": { "type": "string", "minLength": 1 },
+    "corpus_import_policy": { "type": "string", "minLength": 1 },
+    "minimal_routine_deposit_example": { "type": "string", "minLength": 1 }
+  }
+}
