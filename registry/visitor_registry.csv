@@ -1,1 +1,1 @@
-visitor_id,date_registered,session_family,session_type,display_name,status,last_seen,profile_path,notes
+visitor_id,date,created_at,session_family,session_type,display_name,status,last_seen,profile_path,notes
