@@ -1,1 +1,1 @@
-message_id,date,from_visitor_id,to_visitor_id,to_group,status,path,reply_expected,response_message_id,needs_human_relay,notes
+message_id,date,created_at,from_visitor_id,to_visitor_id,to_group,status,path,reply_to,reply_expected,response_message_id,needs_human_relay,related_packet,related_response,summary,tags,notes
