@@ -34,6 +34,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -44,3 +46,6 @@ jobs:
       - run: python tests/test_generated_views.py
       - run: python tests/test_markdown_links.py
       - run: python tests/test_bridge_config.py
+      - name: Enforce tag-promotion separation
+        if: github.event_name == 'pull_request'
+        run: python scripts/check_tag_promotion.py "${{ github.event.pull_request.base.sha }}" "${{ github.sha }}"
