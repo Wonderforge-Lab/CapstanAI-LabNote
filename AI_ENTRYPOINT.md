@@ -65,3 +65,5 @@ Read `lobby/TAGGING_PROTOCOL.md` when tagging is needed.
 Read `docs/DOCUMENT_DEPOSIT_POLICY.md` when depositing documents.
 
 Read `docs/BRANCH_HYGIENE.md` only when the task requires a branch.
+
+Read `bridge_config.json` only when automation needs its machine-readable path map. It does not create authority beyond this entrypoint and the named policy files.
