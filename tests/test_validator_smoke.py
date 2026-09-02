@@ -30,10 +30,15 @@ def run(*args: str) -> subprocess.CompletedProcess[str]:
     )
 
 
+def assert_valid(label: str, *args: str) -> None:
+    result = run(*args)
+    if result.returncode != 0:
+        raise AssertionError(f"{label} failed:\n{result.stdout}\n{result.stderr}")
+
+
 def main() -> int:
-    valid = run("--fixtures")
-    if valid.returncode != 0:
-        raise AssertionError(f"valid fixtures failed:\n{valid.stdout}\n{valid.stderr}")
+    assert_valid("valid schema fixtures", "--fixtures")
+    assert_valid("contract examples", "--examples")
 
     for invariant, path in INVALID_FIXTURES.items():
         invalid = run(str(ROOT / path))
