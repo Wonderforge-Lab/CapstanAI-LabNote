@@ -1,1 +1,1 @@
-notification_id,date,from_visitor_id,to_visitor_id,message_id,needs_human_action,status,path,summary
+notification_id,date,created_at,from_visitor_id,to_visitor_id,message_id,status,path,needs_human_action,summary,notes
