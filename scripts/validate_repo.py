@@ -12,7 +12,17 @@ ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS = ROOT / "registry" / "schemas"
 VALID_FIXTURES = ROOT / "tests" / "fixtures" / "valid"
 CONTRACT_EXAMPLES = ROOT / "examples" / "contract_v1"
+CANONICAL_RECORD_ROOTS = (ROOT / "registry", CONTRACT_EXAMPLES)
 PATH_FIELDS = ("path", "signoff_path", "profile_path")
+ID_FIELDS = {
+    "packet": "packet_id",
+    "response": "response_id",
+    "message": "message_id",
+    "notification": "notification_id",
+    "visit": "visit_id",
+    "visitor": "visitor_id",
+    "tag": "tag_slug",
+}
 
 
 def load_json(path: Path):
@@ -30,14 +40,29 @@ def schema_for(record: dict) -> Path:
     return path
 
 
+def is_canonical_record(path: Path) -> bool:
+    resolved = path.resolve()
+    return any(
+        resolved.is_relative_to(root.resolve()) for root in CANONICAL_RECORD_ROOTS
+    )
+
+
+def validate_filename(record: dict, path: Path, enforce: bool) -> list[str]:
+    if not (enforce or is_canonical_record(path)):
+        return []
+    field = ID_FIELDS.get(record.get("record_type"))
+    identifier = record.get(field) if field else None
+    if isinstance(identifier, str) and path.stem != identifier:
+        return [f"filename: {path.name} does not match {field} {identifier!r}"]
+    return []
+
+
 def validate_path_fields(record: dict) -> list[str]:
     errors: list[str] = []
     root = ROOT.resolve()
     for field in PATH_FIELDS:
         value = record.get(field)
-        if value is None:
-            continue
-        if not isinstance(value, str):
+        if value is None or not isinstance(value, str):
             continue
         target = (ROOT / value).resolve()
         try:
@@ -50,7 +75,7 @@ def validate_path_fields(record: dict) -> list[str]:
     return errors
 
 
-def validate(path: Path) -> list[str]:
+def validate(path: Path, enforce_filename: bool = False) -> list[str]:
     try:
         record = load_json(path)
         schema_path = schema_for(record)
@@ -66,6 +91,10 @@ def validate(path: Path) -> list[str]:
             f"{path}: {'/'.join(map(str, error.absolute_path)) or '<record>'}: {error.message}"
             for error in errors
         ]
+        messages.extend(
+            f"{path}: {message}"
+            for message in validate_filename(record, path, enforce_filename)
+        )
         messages.extend(f"{path}: {message}" for message in validate_path_fields(record))
         return messages
     except (OSError, ValueError, json.JSONDecodeError) as error:
@@ -77,6 +106,7 @@ def main() -> int:
     parser.add_argument("paths", nargs="*", type=Path)
     parser.add_argument("--fixtures", action="store_true")
     parser.add_argument("--examples", action="store_true")
+    parser.add_argument("--enforce-filename", action="store_true")
     args = parser.parse_args()
 
     paths = list(args.paths)
@@ -87,7 +117,11 @@ def main() -> int:
     if not paths:
         parser.error("supply JSON paths, --fixtures, or --examples")
 
-    errors = [item for path in paths for item in validate(path)]
+    errors = [
+        item
+        for path in paths
+        for item in validate(path, enforce_filename=args.enforce_filename)
+    ]
     print("\n".join(errors) if errors else f"validated {len(paths)} record(s)")
     return 1 if errors else 0
 
