@@ -10,14 +10,18 @@ ROOT = Path(__file__).resolve().parents[1]
 VALIDATOR = ROOT / "scripts" / "validate_repo.py"
 
 INVALID_FIXTURES = {
-    "packet source provenance": "tests/fixtures/invalid/packet/record.json",
-    "response derivation provenance": "tests/fixtures/invalid/response/record.json",
-    "message recipient routing": "tests/fixtures/invalid/message/record.json",
-    "notification status vocabulary": "tests/fixtures/invalid/notification/record.json",
-    "visit relay boolean": "tests/fixtures/invalid/visit/record.json",
-    "visitor identifier grammar": "tests/fixtures/invalid/visitor/record.json",
-    "accepted-tag acceptance record": "tests/fixtures/invalid/tag/record.json",
-    "artifact path resolution": "tests/fixtures/invalid/path/record.json",
+    "packet source provenance": ("tests/fixtures/invalid/packet/record.json",),
+    "response derivation provenance": ("tests/fixtures/invalid/response/record.json",),
+    "message recipient routing": ("tests/fixtures/invalid/message/record.json",),
+    "notification status vocabulary": ("tests/fixtures/invalid/notification/record.json",),
+    "visit relay boolean": ("tests/fixtures/invalid/visit/record.json",),
+    "visitor identifier grammar": ("tests/fixtures/invalid/visitor/record.json",),
+    "accepted-tag acceptance record": ("tests/fixtures/invalid/tag/record.json",),
+    "artifact path resolution": ("tests/fixtures/invalid/path/record.json",),
+    "filename identifier agreement": (
+        "--enforce-filename",
+        "tests/fixtures/invalid/filename/not-the-packet-id.json",
+    ),
 }
 
 
@@ -41,8 +45,8 @@ def main() -> int:
     assert_valid("valid schema fixtures", "--fixtures")
     assert_valid("contract examples", "--examples")
 
-    for invariant, path in INVALID_FIXTURES.items():
-        invalid = run(str(ROOT / path))
+    for invariant, args in INVALID_FIXTURES.items():
+        invalid = run(*(str(ROOT / arg) if arg.endswith(".json") else arg for arg in args))
         if invalid.returncode == 0:
             raise AssertionError(
                 f"invalid fixture passed for {invariant}:\n{invalid.stdout}\n{invalid.stderr}"
