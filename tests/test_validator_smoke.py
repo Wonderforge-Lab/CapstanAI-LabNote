@@ -32,6 +32,10 @@ INVALID_FIXTURES = {
         "tests/fixtures/valid/tag/record.json",
         "tests/fixtures/invalid/tag-reference/record.json",
     ),
+    "lifecycle bucket agreement": (
+        "--check-lifecycle",
+        "tests/fixtures/invalid/lifecycle/record.json",
+    ),
 }
 
 
