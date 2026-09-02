@@ -23,9 +23,20 @@ ID_FIELDS = {
     "visitor": "visitor_id",
     "tag": "tag_slug",
 }
+REFERENCE_FIELDS = {
+    "packet": (("response_packet_id", "response"),),
+    "response": (("source_packet_id", "packet"),),
+    "message": (
+        ("reply_to", "message"),
+        ("response_message_id", "message"),
+        ("related_packet", "packet"),
+        ("related_response", "response"),
+    ),
+    "notification": (("message_id", "message"),),
+}
 
 
-def load_json(path: Path):
+def load_json(path: Path) -> dict:
     with path.open(encoding="utf-8") as handle:
         return json.load(handle)
 
@@ -75,7 +86,9 @@ def validate_path_fields(record: dict) -> list[str]:
     return errors
 
 
-def validate(path: Path, enforce_filename: bool = False) -> list[str]:
+def validate_document(
+    path: Path, enforce_filename: bool
+) -> tuple[dict | None, list[str]]:
     try:
         record = load_json(path)
         schema_path = schema_for(record)
@@ -96,9 +109,33 @@ def validate(path: Path, enforce_filename: bool = False) -> list[str]:
             for message in validate_filename(record, path, enforce_filename)
         )
         messages.extend(f"{path}: {message}" for message in validate_path_fields(record))
-        return messages
+        return record, messages
     except (OSError, ValueError, json.JSONDecodeError) as error:
-        return [f"{path}: {error}"]
+        return None, [f"{path}: {error}"]
+
+
+def validate_references(records: list[tuple[Path, dict]]) -> list[str]:
+    index: dict[str, set[str]] = {}
+    for _, record in records:
+        record_type = record.get("record_type")
+        identifier_field = ID_FIELDS.get(record_type)
+        identifier = record.get(identifier_field) if identifier_field else None
+        if isinstance(record_type, str) and isinstance(identifier, str):
+            index.setdefault(record_type, set()).add(identifier)
+
+    errors: list[str] = []
+    for path, record in records:
+        record_type = record.get("record_type")
+        for field, target_type in REFERENCE_FIELDS.get(record_type, ()):
+            target_id = record.get(field)
+            if target_id is None:
+                continue
+            if not isinstance(target_id, str) or target_id not in index.get(target_type, set()):
+                errors.append(
+                    f"{path}: {field}: no {target_type} record with ID {target_id!r} "
+                    "in the validation set"
+                )
+    return errors
 
 
 def main() -> int:
@@ -107,6 +144,7 @@ def main() -> int:
     parser.add_argument("--fixtures", action="store_true")
     parser.add_argument("--examples", action="store_true")
     parser.add_argument("--enforce-filename", action="store_true")
+    parser.add_argument("--check-references", action="store_true")
     args = parser.parse_args()
 
     paths = list(args.paths)
@@ -117,11 +155,16 @@ def main() -> int:
     if not paths:
         parser.error("supply JSON paths, --fixtures, or --examples")
 
-    errors = [
-        item
-        for path in paths
-        for item in validate(path, enforce_filename=args.enforce_filename)
+    documents = [
+        (path, *validate_document(path, args.enforce_filename)) for path in paths
     ]
+    errors = [item for _, _, messages in documents for item in messages]
+    if args.check_references:
+        valid_records = [
+            (path, record) for path, record, _ in documents if record is not None
+        ]
+        errors.extend(validate_references(valid_records))
+
     print("\n".join(errors) if errors else f"validated {len(paths)} record(s)")
     return 1 if errors else 0
 
