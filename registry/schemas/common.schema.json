@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "common.schema.json",
+  "$defs": {
+    "schema_version": {"type":"integer","const":1},
+    "timestamp": {"type":"string","format":"date-time"},
+    "slug": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "artifact_id": {"type":"string","pattern":"^[0-9]{8}-[a-z0-9][a-z0-9-]*$"},
+    "safe_path": {"type":"string","pattern":"^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[A-Za-z0-9._/-]+$"},
+    "origin": {"type":"string","enum":["operator_authored","third_party","web","model_generated","mixed","unknown"]},
+    "coverage": {"type":"string","enum":["record_level","claim_level","partial"]}
+  }
+}
