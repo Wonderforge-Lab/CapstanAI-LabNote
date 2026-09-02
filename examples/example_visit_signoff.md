@@ -1,13 +1,13 @@
 # Visit Signoff
 
-visit_id: example-visit-001
-date: 2026-06-02
-visitor_id: assistant-session-a
+visit_id: 20260602-assistant-session-a-example-topic-visit
+created_at: 2026-06-02T15:00:00Z
+visitor_id: other-20260602-1430-review-01
 session_family: other
-checked_messages: yes
-answered_messages: example-message-001
-created_messages:
-human_relay_needed: no
+checked_messages: true
+answered_messages: false
+created_messages: true
+relay_needed: false
 signoff_path: examples/example_visit_signoff.md
 
 ## Work Completed
@@ -24,4 +24,4 @@ No human relay needed.
 
 ## Signoff
 
-assistant-session-a signing off.
+other-20260602-1430-review-01 signing off.
