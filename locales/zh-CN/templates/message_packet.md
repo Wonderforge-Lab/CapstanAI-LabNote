@@ -7,8 +7,10 @@ from_visitor_id:
 to_visitor_id:
 to_group:
 created_at:
-status: open | acknowledged | in_progress | answered | blocked | closed | archived
+status: 使用 [Registry Contract v1](../../../docs/registry/REGISTRY_CONTRACT_V1.md) 中的消息状态表
+reply_to:
 reply_expected:
+response_message_id:
 needs_human_relay:
 related_packet:
 related_response:

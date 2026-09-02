@@ -99,6 +99,24 @@ Machine status values remain exactly as written in canonical records. Chinese te
 | dormant | 休眠 | keep `dormant`; `暂停活跃` may be used in explanatory prose when temporary inactivity needs emphasis |
 | retired | 已停用 | keep `retired`; avoid `退役` for software/session records |
 
+## Registry v1 溯源术语
+
+下列为基准字段名和枚举值。在任何语言层中都必须保持其字面形式不变；只翻译周围的说明文字。
+
+| Canonical English | 审阅后的简体中文说明 | 处理 | 协议含义 / 审阅说明 |
+| --- | --- | --- | --- |
+| `content_origin` | 内容来源类别 | 保留字段名 | 声明记录内容本身来自何处的类别。 |
+| `source_refs` | 来源引用 | 保留字段名 | 用于指明第三方、网络或混合来源材料的具体出处。 |
+| `source_note` | 来源说明 | 保留字段名 | 当 `content_origin` 为 `unknown` 时，必须说明不确定性；不能替代应有的 `source_refs`。 |
+| `derivative_of` | 派生来源 | 保留字段名 | 本产物所源自的上游工作包或回复记录。 |
+| `provenance_coverage` | 溯源与派生信息覆盖程度 | 保留字段名 | 记录中来源及派生关系被表示的完整程度。 |
+| `operator_authored` | 由操作者（人类）撰写 | 保留枚举值 | 内容由人类操作者撰写或创作。 |
+| `third_party` | 由非操作者的外部第三方提供或撰写 | 保留枚举值 | 内容并非由操作者提供或撰写。 |
+| `web` | 来源于网络 | 保留枚举值 | 内容来源于网络。 |
+| `model_generated` | 由 AI/模型生成 | 保留枚举值 | 内容由 AI 或模型生成。 |
+| `mixed` | 多来源混合 | 保留枚举值 | 内容具有不止一种来源。 |
+| `unknown` | 来源无法确定；必须说明不确定性 | 保留枚举值 | 需要非空的 `source_note`，但不应为了满足字段而虚构来源引用。 |
+
 ## Tag terms
 
 | Canonical English | Reviewed Simplified Chinese | Handling | Note |
@@ -161,6 +179,11 @@ status
 created_at
 response_expected
 needs_human_relay
+content_origin
+source_refs
+source_note
+derivative_of
+provenance_coverage
 registry/packets/
 registry/responses/
 registry/visits/

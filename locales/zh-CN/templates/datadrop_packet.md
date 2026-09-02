@@ -6,8 +6,13 @@ packet_id:
 source_session:
 target_session:
 created_by:
+deposited_by:
 created_at:
-status: new | in_review | answered | superseded | archived
+content_origin:
+source_refs:
+derivative_of:
+provenance_coverage:
+status: 使用 [Registry Contract v1](../../../docs/registry/REGISTRY_CONTRACT_V1.md) 中的工作包状态表
 topic:
 purpose:
 inputs_included:
