@@ -66,6 +66,7 @@ def main() -> int:
     assert_valid(
         "contract examples", "--examples", "--check-references", "--check-tags"
     )
+    assert_valid("canonical registry", "--registry")
 
     for invariant, args in INVALID_FIXTURES.items():
         invalid = run(*root_args(args))
