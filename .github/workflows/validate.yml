@@ -1,0 +1,31 @@
+name: Registry validation
+
+on:
+  push:
+    paths:
+      - "registry/schemas/**"
+      - "scripts/validate_repo.py"
+      - "tests/**"
+      - "requirements-dev.txt"
+      - ".github/workflows/validate.yml"
+  pull_request:
+    paths:
+      - "registry/schemas/**"
+      - "scripts/validate_repo.py"
+      - "tests/**"
+      - "requirements-dev.txt"
+      - ".github/workflows/validate.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validator-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -r requirements-dev.txt
+      - run: python tests/test_validator_smoke.py
