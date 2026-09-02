@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Smoke tests for the Registry Contract v1 validator scaffold."""
 from __future__ import annotations
+
 import subprocess
 import sys
 from pathlib import Path
@@ -8,21 +9,42 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 VALIDATOR = ROOT / "scripts" / "validate_repo.py"
 
-def run(path: str) -> subprocess.CompletedProcess[str]:
+INVALID_FIXTURES = {
+    "packet source provenance": "tests/fixtures/invalid/packet/record.json",
+    "response derivation provenance": "tests/fixtures/invalid/response/record.json",
+    "message recipient routing": "tests/fixtures/invalid/message/record.json",
+    "notification status vocabulary": "tests/fixtures/invalid/notification/record.json",
+    "visit relay boolean": "tests/fixtures/invalid/visit/record.json",
+    "visitor identifier grammar": "tests/fixtures/invalid/visitor/record.json",
+    "accepted-tag acceptance record": "tests/fixtures/invalid/tag/record.json",
+}
+
+
+def run(*args: str) -> subprocess.CompletedProcess[str]:
     return subprocess.run(
-        [sys.executable, str(VALIDATOR), str(ROOT / path)],
-        cwd=ROOT, text=True, capture_output=True, check=False,
+        [sys.executable, str(VALIDATOR), *args],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
     )
 
+
 def main() -> int:
-    valid = run("tests/fixtures/valid/packet/record.json")
+    valid = run("--fixtures")
     if valid.returncode != 0:
-        raise AssertionError(f"valid fixture failed:\n{valid.stdout}\n{valid.stderr}")
-    invalid = run("tests/fixtures/invalid/packet/record.json")
-    if invalid.returncode == 0 or "source_refs" not in invalid.stdout:
-        raise AssertionError(f"invalid fixture did not fail as expected:\n{invalid.stdout}\n{invalid.stderr}")
-    print("validator smoke tests passed")
+        raise AssertionError(f"valid fixtures failed:\n{valid.stdout}\n{valid.stderr}")
+
+    for invariant, path in INVALID_FIXTURES.items():
+        invalid = run(str(ROOT / path))
+        if invalid.returncode == 0:
+            raise AssertionError(
+                f"invalid fixture passed for {invariant}:\n{invalid.stdout}\n{invalid.stderr}"
+            )
+
+    print(f"validator smoke tests passed ({len(INVALID_FIXTURES)} invalid invariants)")
     return 0
+
 
 if __name__ == "__main__":
     raise SystemExit(main())
