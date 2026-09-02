@@ -1,13 +1,13 @@
 # Visit Signoff
 
 visit_id:
-date:
+created_at:
 visitor_id:
 session_family:
 checked_messages:
 answered_messages:
 created_messages:
-human_relay_needed:
+relay_needed:
 signoff_path:
 
 ## Work Completed
