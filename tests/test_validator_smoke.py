@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Smoke tests for the Registry Contract v1 validator scaffold."""
+"""Smoke tests for the Registry Contract v1 validator."""
 from __future__ import annotations
 
 import subprocess
@@ -17,6 +17,7 @@ INVALID_FIXTURES = {
     "visit relay boolean": "tests/fixtures/invalid/visit/record.json",
     "visitor identifier grammar": "tests/fixtures/invalid/visitor/record.json",
     "accepted-tag acceptance record": "tests/fixtures/invalid/tag/record.json",
+    "artifact path resolution": "tests/fixtures/invalid/path/record.json",
 }
 
 
