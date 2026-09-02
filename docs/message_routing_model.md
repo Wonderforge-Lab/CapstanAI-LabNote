@@ -9,6 +9,6 @@ Use a message when:
 - the operator needs a compact status note,
 - a blocked task needs a human relay.
 
-Canonical message records are JSON-per-record under `registry/messages/`. CSV files, if present, are legacy / optional rollups. The message file carries the useful text. The JSON registry record carries the state.
+Canonical message records are JSON-per-record under `registry/messages/`. CSV registries and `registry/INDEX.md` are generated, read-only compatibility views; do not edit them manually. The message file carries the useful text. The JSON registry record carries the state.
 
 Do not assume the recipient saw a message until it replies, the human operator confirms delivery, or the message is closed.

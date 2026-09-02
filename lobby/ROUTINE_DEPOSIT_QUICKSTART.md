@@ -30,11 +30,11 @@ Use a branch + PR only for procedure, policy, repo structure, code/script change
 8. Read `docs/DOCUMENT_DEPOSIT_POLICY.md` if depositing documents.
 9. Inspect supplied material enough to infer tags.
 10. Match inferred tags to accepted registry tags.
-11. Add operator-supplied missing tags as accepted JSON records.
+11. Do not create an accepted tag record as part of this direct deposit. For an operator-supplied missing tag, use branch + PR with the required acceptance metadata, or ask the operator whether to record it as a proposal instead.
 12. Add AI-generated tags as proposed JSON records only if useful.
 13. Create packet, response, message, or signoff files.
 14. Create JSON registry record files.
-15. Do not edit CSV unless the operator explicitly asks.
+15. Do not edit generated CSV or `registry/INDEX.md` views manually.
 16. Add a `README_FIRST` notice if team review or relay is needed.
 17. Report files created and stop.
 

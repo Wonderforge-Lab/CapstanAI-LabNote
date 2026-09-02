@@ -14,7 +14,7 @@ Proposed tags should be written to:
 registry/tags/proposed/<tag_slug>.json
 ```
 
-If the operator supplies a tag that is not already accepted, create `registry/tags/accepted/<tag_slug>.json` with `created_by` set to `operator`, then mention it in the signoff.
+If the operator supplies a tag that is not already accepted, create `registry/tags/accepted/<tag_slug>.json` only through branch + PR, with the required acceptance metadata and `acceptance_basis: operator_supplied`. Do not create it as part of a direct routine deposit.
 
 AI-generated tags must be proposed, not accepted.
 

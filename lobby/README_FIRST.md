@@ -26,7 +26,7 @@ Branches/PRs are for procedure, policy, code, structure, cleanup, risky/bulky im
 
 Canonical registry records are JSON-per-record under `registry/`.
 
-CSV files are legacy / optional rollups.
+CSV registries and `registry/INDEX.md` are generated, read-only compatibility views. Do not edit them manually.
 
 ## Current Visitor Rule
 

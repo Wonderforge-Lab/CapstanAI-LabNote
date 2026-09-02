@@ -15,4 +15,4 @@ Visitors:
 
 Do not invent a visitor handle or silently reuse one from earlier conversation context.
 
-Visitor profiles can live under `lobby/visitors/`. Keep them small and generic.
+A canonical visitor registration lives at `registry/visitors/<visitor_id>.json`. A small optional visitor profile may live under `lobby/visitors/` for human-facing orientation; it is not a substitute for the canonical registration record. Keep optional profiles small and generic.
