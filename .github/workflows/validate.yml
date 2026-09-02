@@ -2,29 +2,7 @@ name: Registry validation
 
 on:
   push:
-    paths:
-      - "bridge_config.json"
-      - "config/**"
-      - "registry/**/*.json"
-      - "registry/*.csv"
-      - "registry/INDEX.md"
-      - "registry/schemas/**"
-      - "scripts/**"
-      - "tests/**"
-      - "requirements-dev.txt"
-      - ".github/workflows/validate.yml"
   pull_request:
-    paths:
-      - "bridge_config.json"
-      - "config/**"
-      - "registry/**/*.json"
-      - "registry/*.csv"
-      - "registry/INDEX.md"
-      - "registry/schemas/**"
-      - "scripts/**"
-      - "tests/**"
-      - "requirements-dev.txt"
-      - ".github/workflows/validate.yml"
 
 permissions:
   contents: read
