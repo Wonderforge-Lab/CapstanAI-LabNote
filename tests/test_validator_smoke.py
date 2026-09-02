@@ -27,6 +27,11 @@ INVALID_FIXTURES = {
         "tests/fixtures/valid/packet/record.json",
         "tests/fixtures/invalid/reference/record.json",
     ),
+    "tag vocabulary resolution": (
+        "--check-tags",
+        "tests/fixtures/valid/tag/record.json",
+        "tests/fixtures/invalid/tag-reference/record.json",
+    ),
 }
 
 
@@ -51,8 +56,12 @@ def root_args(args: tuple[str, ...]) -> tuple[str, ...]:
 
 
 def main() -> int:
-    assert_valid("valid schema fixtures", "--fixtures", "--check-references")
-    assert_valid("contract examples", "--examples", "--check-references")
+    assert_valid(
+        "valid schema fixtures", "--fixtures", "--check-references", "--check-tags"
+    )
+    assert_valid(
+        "contract examples", "--examples", "--check-references", "--check-tags"
+    )
 
     for invariant, args in INVALID_FIXTURES.items():
         invalid = run(*root_args(args))
