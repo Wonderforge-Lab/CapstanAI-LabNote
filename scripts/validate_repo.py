@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Read-only Registry Contract v1 validator scaffold."""
+"""Read-only Registry Contract v1 validator."""
 from __future__ import annotations
 
 import argparse
 import json
-import sys
 from pathlib import Path
 
 from jsonschema import Draft202012Validator, FormatChecker, RefResolver
@@ -13,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS = ROOT / "registry" / "schemas"
 VALID_FIXTURES = ROOT / "tests" / "fixtures" / "valid"
 CONTRACT_EXAMPLES = ROOT / "examples" / "contract_v1"
+PATH_FIELDS = ("path", "signoff_path", "profile_path")
 
 
 def load_json(path: Path):
@@ -30,6 +30,26 @@ def schema_for(record: dict) -> Path:
     return path
 
 
+def validate_path_fields(record: dict) -> list[str]:
+    errors: list[str] = []
+    root = ROOT.resolve()
+    for field in PATH_FIELDS:
+        value = record.get(field)
+        if value is None:
+            continue
+        if not isinstance(value, str):
+            continue
+        target = (ROOT / value).resolve()
+        try:
+            target.relative_to(root)
+        except ValueError:
+            errors.append(f"{field}: referenced path escapes the repository")
+            continue
+        if not target.is_file():
+            errors.append(f"{field}: referenced file does not exist: {value}")
+    return errors
+
+
 def validate(path: Path) -> list[str]:
     try:
         record = load_json(path)
@@ -42,10 +62,12 @@ def validate(path: Path) -> list[str]:
         errors = sorted(
             validator.iter_errors(record), key=lambda error: list(error.absolute_path)
         )
-        return [
+        messages = [
             f"{path}: {'/'.join(map(str, error.absolute_path)) or '<record>'}: {error.message}"
             for error in errors
         ]
+        messages.extend(f"{path}: {message}" for message in validate_path_fields(record))
+        return messages
     except (OSError, ValueError, json.JSONDecodeError) as error:
         return [f"{path}: {error}"]
 
