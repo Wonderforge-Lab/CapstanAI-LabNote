@@ -1,0 +1,13 @@
+{
+  "record_type": "visitor",
+  "schema_version": 1,
+  "visitor_id": "fixture-visitor",
+  "created_at": "2026-09-02T12:00:00Z",
+  "session_family": "codex",
+  "session_type": "review",
+  "display_name": "Fixture visitor",
+  "status": "registered",
+  "last_seen": null,
+  "profile_path": null,
+  "notes": "Invalid: visitor identifier does not follow the canonical grammar."
+}
