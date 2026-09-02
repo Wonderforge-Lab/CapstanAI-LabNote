@@ -22,6 +22,11 @@ INVALID_FIXTURES = {
         "--enforce-filename",
         "tests/fixtures/invalid/filename/not-the-packet-id.json",
     ),
+    "typed reference resolution": (
+        "--check-references",
+        "tests/fixtures/valid/packet/record.json",
+        "tests/fixtures/invalid/reference/record.json",
+    ),
 }
 
 
@@ -41,12 +46,16 @@ def assert_valid(label: str, *args: str) -> None:
         raise AssertionError(f"{label} failed:\n{result.stdout}\n{result.stderr}")
 
 
+def root_args(args: tuple[str, ...]) -> tuple[str, ...]:
+    return tuple(str(ROOT / arg) if arg.endswith(".json") else arg for arg in args)
+
+
 def main() -> int:
-    assert_valid("valid schema fixtures", "--fixtures")
-    assert_valid("contract examples", "--examples")
+    assert_valid("valid schema fixtures", "--fixtures", "--check-references")
+    assert_valid("contract examples", "--examples", "--check-references")
 
     for invariant, args in INVALID_FIXTURES.items():
-        invalid = run(*(str(ROOT / arg) if arg.endswith(".json") else arg for arg in args))
+        invalid = run(*root_args(args))
         if invalid.returncode == 0:
             raise AssertionError(
                 f"invalid fixture passed for {invariant}:\n{invalid.stdout}\n{invalid.stderr}"
