@@ -1,16 +1,8 @@
 # Registry Records
 
-Canonical registry records are one JSON file per record.
+Canonical registry records are one JSON file per record. JSON is the structured index, state, relationship, and provenance envelope for its linked Markdown artifact; it is not required to duplicate the artifact body.
 
-CSV files are legacy / optional rollups.
-
-Visitors should create JSON record files instead of editing shared CSV ledgers.
-
-## Why
-
-Shared CSV files are brittle through AI/GitHub connectors because every update requires replacing the whole file.
-
-JSON-per-record lets visitors create one small file per packet, visit, message, notification, response, or tag.
+The authoritative field, status, lifecycle, provenance, and compatibility rules are in [Registry Contract v1](registry/REGISTRY_CONTRACT_V1.md). The JSON schemas under `registry/schemas/` and `scripts/validate_repo.py` enforce that contract.
 
 ## Canonical Paths
 
@@ -20,16 +12,22 @@ Packets:
 registry/packets/<year>/<packet_id>.json
 ```
 
+Responses:
+
+```text
+registry/responses/<year>/<response_id>.json
+```
+
 Visits:
 
 ```text
 registry/visits/<year>/<visit_id>.json
 ```
 
-Responses:
+Visitors:
 
 ```text
-registry/responses/<year>/<response_id>.json
+registry/visitors/<visitor_id>.json
 ```
 
 Messages:
@@ -38,107 +36,52 @@ Messages:
 registry/messages/open/<message_id>.json
 registry/messages/answered/<message_id>.json
 registry/messages/closed/<message_id>.json
+registry/messages/archived/<message_id>.json
 ```
 
 Notifications:
 
 ```text
 registry/notifications/open/<notification_id>.json
+registry/notifications/delivered/<notification_id>.json
 registry/notifications/closed/<notification_id>.json
 ```
 
 Tags:
 
 ```text
-registry/tags/accepted/<tag_slug>.json
 registry/tags/proposed/<tag_slug>.json
+registry/tags/accepted/<tag_slug>.json
 registry/tags/deprecated/<tag_slug>.json
 ```
+
+The status determines the message, notification, or tag storage bucket. Use the per-record-type lifecycle table in the contract; do not invent a new status or directory.
 
 ## Visitor Rule
 
 For ordinary visitor work:
 
 ```text
-create JSON record
-do not edit CSV
-mention created record in signoff
+create one canonical JSON record
+create or update its linked artifact as needed
+validate the record
+mention it in the signoff
+do not edit a CSV registry
 ```
+
+Use the corresponding file in `templates/` as the starting envelope. The checked, public-safe record/artifact pairs under `examples/contract_v1/` show complete packet, response, message, and visit records.
+
+## Tags
+
+Tags are controlled vocabulary records, not free text.
+
+- A session-created tag begins under `registry/tags/proposed/`.
+- A proposed tag cannot become accepted in the same change set.
+- An operator-supplied tag may be accepted directly only with the required acceptance metadata and `acceptance_basis: operator_supplied`.
+- Records may use only tags that resolve to a proposed or accepted tag record.
 
 ## CSV Rollups
 
-CSV registries may remain as human-readable indexes.
+The CSV registries are compatibility views during the v1 migration. They are not canonical and must not be edited as part of a normal write.
 
-They may be regenerated or manually updated later.
-
-They are not required for routine visitor writes.
-
-## Operator-Supplied Tags
-
-If the operator supplies a tag that is not already accepted:
-
-1. Create `registry/tags/accepted/<tag_slug>.json`.
-2. Set `created_by` to `operator`.
-3. Set `status` to `accepted`.
-4. Mention the new accepted tag record in the signoff.
-
-AI-generated tags must go under `registry/tags/proposed/`.
-
-## Canonical Naming
-
-Use these names unless the operator supplies a specific alternative:
-
-```text
-packet_id:
-YYYYMMDD-<visitor_id>-<short-topic>
-
-packet:
-datadrops/shared/inbox/<packet_id>.md
-
-packet record:
-registry/packets/YYYY/<packet_id>.json
-
-visit_id:
-<packet_id>-visit
-
-visit record:
-registry/visits/YYYY/<visit_id>.json
-
-signoff:
-responses/signoffs/<packet_id>-signoff.md
-```
-
-## Packet Record Example
-
-```json
-{
-  "packet_id": "20260603-example-visitor-routine-test",
-  "date": "2026-06-03",
-  "source_ai": "ExampleAI",
-  "target_ai": "Shared",
-  "topic": "routine-test",
-  "status": "new",
-  "path": "datadrops/shared/inbox/20260603-example-visitor-routine-test.md",
-  "response_expected": false,
-  "response_packet_id": null,
-  "tags": ["workflow-testing"],
-  "notes": "Fictional public-safe example packet record."
-}
-```
-
-## Visit Record Example
-
-```json
-{
-  "visit_id": "20260603-example-visitor-routine-test-visit",
-  "date": "2026-06-03",
-  "visitor_id": "example-visitor",
-  "visitor_family": "example-ai",
-  "checked_messages": true,
-  "answered_messages": false,
-  "created_messages": false,
-  "relay_needed": false,
-  "signoff_path": "responses/signoffs/20260603-example-visitor-routine-test-signoff.md",
-  "notes": "Fictional public-safe example visit record."
-}
-```
+The next generated-views phase will make them reproducible projections from the JSON records and have CI check that projection. Until then, they remain legacy inputs only.
