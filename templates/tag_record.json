@@ -1,10 +1,15 @@
 {
+  "record_type": "tag",
+  "schema_version": 1,
   "tag_slug": "example-tag",
+  "created_at": "YYYY-MM-DDTHH:MM:SSZ",
   "display_name": "Example Tag",
   "status": "proposed",
   "scope": "example",
   "description": "Short public-safe description of the tag.",
   "created_by": "example-visitor",
-  "date_created": "YYYY-MM-DD",
+  "accepted_by": null,
+  "accepted_at": null,
+  "acceptance_basis": null,
   "notes": ""
 }
