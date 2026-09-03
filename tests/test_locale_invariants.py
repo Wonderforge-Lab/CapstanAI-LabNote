@@ -108,6 +108,34 @@ SURFACES: dict[str, dict[str, object]] = {
             "accepted",
         ),
     },
+    "lobby/README.md": {
+        "locale": "locales/zh-CN/lobby/README.md",
+        "literals": (
+            "AI_ENTRYPOINT.md",
+            "README_FIRST.md",
+            "VISITOR_CHECKLIST.md",
+            "ROUTINE_DEPOSIT_QUICKSTART.md",
+            "registry/",
+            "CSV",
+        ),
+    },
+    "messages/ROUTING_RULES.md": {
+        "locale": "locales/zh-CN/messages/ROUTING_RULES.md",
+        "literals": (
+            "to_visitor_id",
+            "to_group",
+            "registry/messages/",
+            "registry/INDEX.md",
+            "needs_human_relay",
+        ),
+    },
+    "docs/visitor_lobby_model.md": {
+        "locale": "locales/zh-CN/docs/visitor_lobby_model.md",
+        "literals": (
+            "registry/visitors/<visitor_id>.json",
+            "lobby/visitors/",
+        ),
+    },
     "registry/README.md": {
         "locale": "locales/zh-CN/registry/README.md",
         "literals": (
@@ -123,10 +151,6 @@ SURFACES: dict[str, dict[str, object]] = {
             "registry/INDEX.md",
             "CI",
         ),
-    },
-    "SECURITY.md": {
-        "locale": "locales/zh-CN/SECURITY.md",
-        "literals": (),
     },
     "templates/datadrop_packet.md": {
         "locale": "locales/zh-CN/templates/datadrop_packet.md",

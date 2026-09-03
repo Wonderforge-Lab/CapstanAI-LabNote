@@ -13,3 +13,9 @@ For collaborator changes:
 - Avoid private identifiers, real user data, account names, local paths, and internal project references.
 - Keep docs plain and useful to engineers.
 - Small text artifacts belong here; bulky material belongs elsewhere.
+
+## Maintaining the canonical source repository
+
+This section applies to collaborators maintaining `Wonderforge-Lab/CapstanAI-LabNote`, the public source scaffold. Use a branch, pull request, validation, review, and release process.
+
+Canonical maintenance is not a LabNote visitor session. Do not create visitor records, datadrops, messages, notifications, responses, runtime registry records, or signoffs in this repository. To use LabNote as a workspace, create a separate clone or template-derived repository and follow its runtime protocol.

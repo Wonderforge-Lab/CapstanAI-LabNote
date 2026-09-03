@@ -1,5 +1,5 @@
-# Control-plane review paths. These assignments request review on pull requests;
-# direct default-branch deposits remain governed by AI_ENTRYPOINT.md.
+# Control-plane review paths. These assignments request review on pull requests.
+# Canonical source maintenance is governed by the repository's GitHub ruleset and CONTRIBUTING.md.
 /AI_ENTRYPOINT.md @Wonderforge-Lab
 /lobby/ @Wonderforge-Lab
 /docs/ @Wonderforge-Lab

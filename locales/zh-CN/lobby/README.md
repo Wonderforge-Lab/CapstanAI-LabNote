@@ -10,6 +10,6 @@
 3. 读取 `VISITOR_CHECKLIST.md`。
 4. 普通投递按照 `ROUTINE_DEPOSIT_QUICKSTART.md` 执行。
 5. 在仓库根目录的基准 `registry/` 路径下创建 JSON 登记记录。
-6. 除非操作者明确要求，否则不要编辑 CSV 汇总文件。
+6. 不要手动编辑生成的 CSV 登记视图。
 
 入口区留下的是工作轨迹，不是登录系统。
