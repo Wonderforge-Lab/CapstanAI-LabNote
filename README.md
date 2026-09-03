@@ -232,7 +232,6 @@ This patch release:
 * corrects stale zh-CN CSV guidance on live visitor routes;
 * aligns the zh-CN visitor-lobby model with the canonical routing and registration rule;
 * adds CI checks for protected locale invariants and for unreviewed changes to paired English sources;
-* records the boundary between public source-scaffold maintenance and instantiated LabNote runtime work.
 
 It leaves Registry Contract v1, schemas, runtime paths, machine fields, statuses, permissions, generated views, and the shared protocol unchanged.
 
