@@ -1,11 +1,5 @@
 # AI Entrypoint
 
-## Source-repository maintenance
-
-This public repository is the CapstanAI - LabNote source scaffold. Maintainers working on this source repository use ordinary development governance: work on a branch and submit a pull request. Do not create visitor records, lobby check-ins, or signoffs for source-repository maintenance.
-
-The visitor workflow below applies only to an instantiated LabNote workspace: a cloned or template-derived workspace being used for live work. See `docs/DEVELOPMENT_AND_RUNTIME_BOUNDARY.md`.
-
 This repository contains a `CapstanAI - LabNote` workspace.
 
 ## Language Routing
@@ -44,7 +38,7 @@ If this is a private or otherwise controlled live workspace, normal LabNote depo
 
 Validate LabNote by its expected structure and entrypoint, not by a fixed repository owner or slug. If the expected LabNote structure is missing or materially inconsistent, stop and report the mismatch.
 
-In an instantiated live workspace: no current-run visitor handle, no write.
+No current-run visitor handle, no write.
 
 Do not reuse visitor handles, branches, storage locations, or permissions from earlier conversation context unless the human operator explicitly confirms them for this run.
 
