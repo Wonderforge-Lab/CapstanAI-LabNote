@@ -21,8 +21,7 @@ signoff_path: responses/signoffs/20260901-zhcn-example-routine-test-signoff.md
 
 ## 未结事项
 
-- 进行简体中文端到端协议一致性审阅。
-- 确认使用英文基准协议的会话能够直接理解 JSON 记录和运行期路径。
+无。
 
 ## 转递说明
 

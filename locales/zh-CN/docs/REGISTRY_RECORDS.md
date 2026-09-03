@@ -82,6 +82,6 @@ registry/tags/deprecated/<tag_slug>.json
 
 ## 生成的兼容视图
 
-CSV 登记表和 `registry/INDEX.md` 是生成的、只读的兼容视图。它们不是基准记录，且不得手动编辑。
+CSV 登记库和 `registry/INDEX.md` 是生成的、只读的兼容视图。它们不是基准记录，且不得手动编辑。
 
 基准 JSON 发生变化时，请在本地使用 `scripts/generate_registry_views.py` 重新生成视图，并提交生成后的视图。CI 会检查已提交的视图是否与基准 JSON 记录一致。
