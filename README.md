@@ -225,9 +225,9 @@ Detailed runtime rules live in those canonical files rather than being duplicate
 
 ## Status
 
-Latest published scaffold release: `v0.2.0 - CapstanAI Identity Migration`.
+Latest published scaffold release: `v0.3.0 - Registry v1 and Simplified Chinese Revision`.
 
-Current development work includes:
+This revision includes:
 
 * portable acquisition and bootstrap,
 * traceable multi-session coordination,

@@ -231,9 +231,9 @@ LabNote 是工作台账（ledger），不是仓库（warehouse）。工作区应
 
 ## 状态
 
-当前最新发布的框架版本：`v0.2.0 - CapstanAI Identity Migration`。
+当前最新发布的框架版本：`v0.3.0 - Registry v1 and Simplified Chinese Revision`。
 
-目前的开发工作包括：
+此修订包括：
 
 * 可移植的获取与初始化流程，
 * 可追踪的多会话协调，
