@@ -7,7 +7,7 @@ from_visitor_id:
 to_visitor_id:
 message_id:
 created_at:
-status: needed | told_to_human | delivered_by_human | confirmed | cancelled
+status: 使用 [Registry Contract v1](../../../docs/registry/REGISTRY_CONTRACT_V1.md) 中的通知状态表
 needs_human_action:
 summary:
 

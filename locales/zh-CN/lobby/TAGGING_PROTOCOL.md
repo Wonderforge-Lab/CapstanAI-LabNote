@@ -14,7 +14,7 @@ registry/tags/accepted/*.json
 registry/tags/proposed/<tag_slug>.json
 ```
 
-如果操作者提供了一个当前尚未被接受的标签，请创建 `registry/tags/accepted/<tag_slug>.json`，将 `created_by` 设置为 `operator`，然后在签退记录中说明这一新增标签。
+如果操作者提供了一个当前尚未被接受的标签，仅可通过带有所需接受元数据和 `acceptance_basis: operator_supplied` 的 `branch + PR` 创建 `registry/tags/accepted/<tag_slug>.json`。不要将它作为直接常规投递的一部分创建。
 
 AI 自行生成的标签**必须**作为 `proposed` 提交，**不得**直接标记为 `accepted`。
 

@@ -5,8 +5,14 @@
 response_id:
 responding_session:
 source_packet_id:
+created_by:
+deposited_by:
 created_at:
-status: pending_review | accepted | rejected | archived
+content_origin:
+source_refs:
+derivative_of:
+provenance_coverage:
+status: 使用 [Registry Contract v1](../../../docs/registry/REGISTRY_CONTRACT_V1.md) 中的回复状态表
 confidence: low | medium | high
 response_type: answer | critique | synthesis | counterproposal | review
 

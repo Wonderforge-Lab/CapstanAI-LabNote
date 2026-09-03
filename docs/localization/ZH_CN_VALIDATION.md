@@ -32,7 +32,8 @@ The first-release `zh-CN` surface completed:
 9. first-release inventory/completeness review;
 10. paired English / Simplified-Chinese adversarial behavioural testing;
 11. a controlled frozen-source narrow retest of the remaining parity suspects;
-12. a final pre-PR forensic/hygiene sweep.
+12. a final pre-PR forensic/hygiene sweep;
+13. a Registry Contract v1 source-alignment and native-language review.
 
 External Simplified-Chinese language review was supplied through DeepSeek and then adjudicated against the canonical English source and the project glossary. Reviewer suggestions were not automatically accepted where they would change protocol force, terminology meaning or machine compatibility.
 
@@ -90,6 +91,28 @@ human-authority parity failures: 0
 
 `zh-CN` is therefore supported while English remains the canonical protocol source.
 
+## Wave 4: Registry Contract v1 source alignment
+
+Registry Contract v1 and its enforcement work introduced new operational English source material after the first-release locale review. Wave 4 reconciled the selected zh-CN operational route without creating a parallel protocol.
+
+The external Simplified-Chinese review compared:
+
+```text
+base:          068e75281c0a33b16e993ca0d7506c947bf4affe
+reviewed head: 1556e1fa33efc371f0aca95fbd92fea32038ddef
+```
+
+The review passed with no blockers, should-fix findings, minor findings, or new regressions. It confirmed:
+
+- English remains the canonical language route and zh-CN does not create a parallel protocol;
+- the control-plane/content-plane boundary and direct-deposit boundary retain their original force;
+- `私密转录文本` preserves the full scope of private transcripts;
+- generated CSV and `registry/INDEX.md` views remain generated, read-only compatibility views;
+- accepted-tag authority, machine identifiers, paths, enums, and template fields remain invariant;
+- `source_refs` and `source_note` remain distinct, and `unknown` origin still requires an explanation rather than fabricated references.
+
+Wave 4 also introduced an explicit locale-invariant CI check. It verifies declared source-to-locale counterparts and the protocol literals that must remain unchanged; it deliberately does not attempt to compare translated prose mechanically.
+
 ## English-source consistency repairs discovered during localization
 
 Localization exposed stale English communication guidance that still pointed routine work at shared CSV registries.
@@ -100,23 +123,19 @@ The canonical English repairs cover:
 - `messages/ROUTING_RULES.md`;
 - `notifications/README.md`.
 
-Routine communication records now follow the repository's existing canonical JSON-per-record policy; CSV files remain legacy/optional rollups.
+Routine communication records now follow the canonical JSON-per-record policy. CSV files and `registry/INDEX.md` are generated, read-only compatibility views.
 
 Older English examples were also refreshed so their Markdown shapes and registry guidance match current canonical templates and policies.
 
 See `docs/localization/COMMUNICATION_REGISTRY_SOURCE_DRIFT.md` for the source-level consistency note.
 
-## Shared protocol debt deliberately not changed
+## Remaining source-level question deliberately not changed
 
-The validation process surfaced several pre-existing canonical design questions that are not localization defects and were intentionally not changed in the language-layer work:
+The validation process surfaced one pre-existing canonical design question that is not a localization defect and was intentionally not changed in the language-layer work:
 
-- message file/status `archived` exists while canonical message-registry path documentation currently lists `open`, `answered` and `closed`;
 - corpus-import wording contains a sequencing question between manifest-first fallback and the missing-full-import-approval stop condition;
-- some Markdown and JSON artifacts use different canonical field names, including `source_session` / `target_session` versus `source_ai` / `target_ai`, and `session_family` / `human_relay_needed` versus `visitor_family` / `relay_needed`;
-- the public/reference runtime boundary could be stated more explicitly in a future canonical protocol clarification.
-- Registry Contract v1 now treats CSV files and `registry/INDEX.md` as generated compatibility views; `locales/zh-CN/registry/README.md` retains the earlier legacy/optional-rollup wording and is queued for Wave 4 correction.
 
-Any repair to those items should be made as an explicit English-source protocol/schema decision and then propagated to localized surfaces.
+Any repair to that item should be made as an explicit English-source policy decision and then propagated to localized surfaces.
 
 ## Release-surface hygiene
 

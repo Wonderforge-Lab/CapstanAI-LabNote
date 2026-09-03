@@ -1,6 +1,6 @@
 # Translation Surface Inventory
 
-Status: **implemented first-release inventory**
+Status: **implemented first-release inventory; Wave 4 source-alignment update in progress**
 Canonical source language: English (`en`)
 First supported locale: Simplified Chinese (`zh-CN`)
 
@@ -11,7 +11,7 @@ First supported locale: Simplified Chinese (`zh-CN`)
 - **C - keep canonical, localize around it:** machine/protocol structure should remain unchanged; translated explanation may be added elsewhere.
 - **D - defer:** historical, empty runtime, binary, or otherwise outside the first localization release.
 
-For `zh-CN`, all Class A surfaces and the selected Class B support surfaces needed for the first supported release have been implemented and reviewed. Treatment text below describes the intended handling of each surface, not unfinished work status. Current locale support status is recorded in `locales/README.md`.
+For `zh-CN`, the first-release Class A route and selected Class B support surfaces were implemented and reviewed against their then-current English sources. Canonical changes merged after that review are explicitly tracked as Wave 4 source-alignment work; a class is a treatment decision, not a claim that its current English revision is already localized. Current locale support status is recorded in `locales/README.md`.
 
 ## Top-level files
 
@@ -43,6 +43,11 @@ For `zh-CN`, all Class A surfaces and the selected Class B support surfaces need
 | `docs/CONNECTOR_LIMITATIONS.md` | B | Translate after core route |
 | `docs/CONNECTOR_SAFE_WORDING.md` | B | Translate after core route, preserving compatibility intent |
 | `docs/branding.md` | A | Translate explanation; product names remain unchanged |
+| `docs/UPGRADING.md` | B | Translate as an upgrade companion after the core operational route is current |
+| `docs/registry/*.md` | B | Translate as Registry Contract v1 reference companions; preserve fields, enums, paths, and examples structurally |
+| `docs/localization/GLOSSARY.md` | B | Maintain the canonical terminology source together with its explicitly mapped locale glossary |
+| `docs/localization/TAG_DISPLAY_CATALOG.md` | B | Maintain canonical display text together with its explicitly mapped localized catalogue |
+| other `docs/localization/` process files | D | Keep canonical unless a separate localization-maintenance need is established |
 
 ## `lobby/`
 
@@ -139,7 +144,14 @@ without changing protocol structure.
 | tag slugs | C | Keep unchanged |
 | tag display names/descriptions | A/B | Localize through locale metadata or mapping, not by replacing canonical tag records |
 | `registry/README.md` | B | Translate explanation |
+| `registry/schemas/` | C | Keep machine schemas canonical; localize explanatory contract material around them |
 | runtime record directories | D | No translation |
+
+## Repository governance files
+
+| Area | Class | Treatment |
+| --- | --- | --- |
+| `.github/CODEOWNERS` | C | Keep canonical; it is machine/interoperability governance rather than a localized instruction surface |
 
 ## `archive/`
 

@@ -3,13 +3,13 @@
 > 下列字段名保持语言不变，以保持机器兼容性和跨语言一致性。
 
 visit_id:
-date:
+created_at:
 visitor_id:
 session_family:
 checked_messages:
 answered_messages:
 created_messages:
-human_relay_needed:
+relay_needed:
 signoff_path:
 
 ## 已完成工作
