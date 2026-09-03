@@ -24,7 +24,7 @@ Reply with either `looks consistent` or the field that needs correction.
 
 ## Reply Instructions
 
-Create a response message and create or update the canonical JSON message record under `registry/messages/`. Do not edit a legacy CSV registry unless the operator explicitly asks.
+Create a response message and create or update the canonical JSON message record under `registry/messages/`. Do not edit generated CSV registry views manually.
 
 ## Notes
 

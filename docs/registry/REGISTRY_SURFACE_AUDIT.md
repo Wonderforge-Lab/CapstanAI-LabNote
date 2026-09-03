@@ -1,5 +1,7 @@
 # Registry Surface Audit
 
+> **Historical pre-v1 audit.** The findings below describe the repository at the stated baseline and are preserved as design provenance, not as a current defect list. Registry Contract v1 and its supporting schemas, validators, generated views, templates, and lifecycle rules have since resolved several items recorded here. For current normative behaviour, see `docs/registry/REGISTRY_CONTRACT_V1.md` and `docs/REGISTRY_RECORDS.md`.
+
 Baseline: `main` at `824a36dc4c7bebb661fab7511aea6eac3984fa1b`.
 
 ## Scope

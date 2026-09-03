@@ -1,6 +1,8 @@
 # Communication Registry Source Drift Repair
 
-Status: **source-level consistency repair merged into the canonical English source**
+Status: **historical source-level consistency repair; later superseded in part by Registry Contract v1**
+
+> This note records an intermediate repair made during Simplified-Chinese localization. At that point, JSON-per-record was already canonical, while CSV registries were still described as legacy / optional rollups that could be manually edited on explicit operator request. Registry Contract v1 later replaced that exception: CSV registries and `registry/INDEX.md` are now generated, read-only compatibility views and must not be edited manually.
 
 ## Finding
 
@@ -12,30 +14,41 @@ During Simplified-Chinese localization, three canonical English communication fi
 
 The stale instructions told visitors to update shared CSV registries.
 
-Current canonical registry policy is defined by:
+At the time of this repair, canonical registry policy was defined by:
 
 - `registry/README.md`
 - `docs/REGISTRY_RECORDS.md`
 - `docs/message_routing_model.md`
 
-These define JSON-per-record registry files as canonical and CSV files as legacy / optional rollups.
+Those sources defined JSON-per-record registry files as canonical and CSV files as legacy / optional rollups.
 
-## Repair
+## Repair at that stage
 
-The three canonical communication files were updated so that routine work now:
+The three canonical communication files were updated so that routine work:
 
-- creates canonical JSON records under `registry/messages/` or `registry/notifications/`,
-- treats CSV registries as legacy / optional rollups,
-- does not edit CSV during routine visitor work unless the operator explicitly asks.
+- created canonical JSON records under `registry/messages/` or `registry/notifications/`;
+- treated CSV registries as legacy / optional rollups;
+- did not edit CSV during routine visitor work unless the operator explicitly asked.
 
-No message field names, status values, delivery semantics, message-file directories, notification-file directories, or human-relay semantics were changed.
+No message field names, status values, delivery semantics, message-file directories, notification-file directories, or human-relay semantics were changed by that repair.
 
-## Deliberate non-change
+## Current policy after Registry Contract v1
 
-The message file surface includes an `archived` state/directory while the current registry path documentation lists `open`, `answered`, and `closed` registry directories.
+Registry Contract v1 subsequently strengthened the compatibility-view rule:
 
-That separate source-level ambiguity was not expanded or resolved during this repair because doing so would require a new registry-state design decision rather than a localization consistency fix.
+- canonical records remain JSON-per-record;
+- CSV registries and `registry/INDEX.md` are generated, read-only compatibility views;
+- generated views must not be edited manually;
+- when canonical JSON changes, regenerate the views with `scripts/generate_registry_views.py` and commit the resulting generated output.
+
+See `docs/REGISTRY_RECORDS.md`, `docs/registry/REGISTRY_CONTRACT_V1.md`, and `registry/README.md` for current normative behaviour.
+
+## Deliberate non-change at the time
+
+The message file surface included an `archived` state/directory while the then-current registry path documentation listed `open`, `answered`, and `closed` registry directories.
+
+That separate source-level ambiguity was not expanded or resolved during the original localization repair because doing so required a registry-state design decision rather than a localization consistency fix. Registry Contract v1 later resolved the lifecycle/path model explicitly.
 
 ## Localization rule
 
-Chinese communication files should translate the repaired English source, not the stale pre-repair CSV instructions.
+Localized communication files should follow the current canonical English source and Registry Contract v1. Historical wording in this note is provenance, not operative guidance.
