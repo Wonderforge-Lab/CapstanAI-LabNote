@@ -1,5 +1,5 @@
 # Control-plane review paths. These assignments request review on pull requests.
-# Canonical source maintenance is governed by GitHub branch protection and CONTRIBUTING.md.
+# Canonical source maintenance is governed by the repository's GitHub ruleset and CONTRIBUTING.md.
 /AI_ENTRYPOINT.md @Wonderforge-Lab
 /lobby/ @Wonderforge-Lab
 /docs/ @Wonderforge-Lab
