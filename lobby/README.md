@@ -10,6 +10,6 @@ Every assistant session checks in through the lobby before handling LabNote work
 3. Read `VISITOR_CHECKLIST.md`.
 4. For ordinary deposits, follow `ROUTINE_DEPOSIT_QUICKSTART.md`.
 5. Create JSON registry records under `../registry/`.
-6. Do not edit CSV rollups unless the operator explicitly asks.
+6. Do not edit generated CSV registry views manually.
 
 The lobby is a paper trail, not a login system.
