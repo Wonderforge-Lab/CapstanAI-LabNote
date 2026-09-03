@@ -231,15 +231,18 @@ LabNote 是工作台账（ledger），不是仓库（warehouse）。工作区应
 
 ## 状态
 
-当前最新发布的框架版本：`v0.3.1 - Registry Guidance Cleanup`。
+当前最新发布的框架版本：`v0.3.2 - Locale Route Freshness`。
 
 这个补丁版本：
 
-* 清理仍允许手工编辑 CSV 登记视图的过时当前指导；
-* 将本地化来源漂移说明和 v1 之前的登记库审计明确标记为历史溯源材料；
-* 不改变 Registry Contract v1、schema、运行时路径、机器字段、状态值、本地化协议或生成的登记视图。
+* 修正了访客会话实际路由中已过时的 zh-CN CSV 指导；
+* 使 zh-CN 访客会话入口模型与基准的路由和登记规则保持一致；
+* 增加了 CI 检查，用于保护本地化中的关键不变项，并识别未经审阅的成对英文来源变更；
+* 记录了公共源脚手架维护与已实例化 LabNote 运行期工作之间的边界。
 
-`v0.3.0 - Registry v1 and Simplified Chinese Revision` 仍是本补丁所基于的功能版本基线。
+本版本不改变 Registry Contract v1、schema、运行时路径、机器字段、状态值、权限、生成视图或共享协议。
+
+`v0.3.0 - Registry v1 and Simplified Chinese Revision` 仍是这些补丁版本所基于的功能版本基线。
 
 以后，CapstanAI 可能会发展出更丰富的确定性层，以及 relay、vault 和 protocol 等模块。LabNote 则从最简单、真正有用的工作台账开始。
 
