@@ -225,15 +225,18 @@ Detailed runtime rules live in those canonical files rather than being duplicate
 
 ## Status
 
-Latest published scaffold release: `v0.3.1 - Registry Guidance Cleanup`.
+Latest published scaffold release: `v0.3.2 - Locale Route Freshness`.
 
 This patch release:
 
-* removes stale live guidance that still allowed manual CSV registry edits,
-* marks the localization source-drift note and pre-v1 registry audit as historical provenance,
-* leaves Registry Contract v1, schemas, runtime paths, machine fields, statuses, localization protocol, and generated views unchanged.
+* corrects stale zh-CN CSV guidance on live visitor routes;
+* aligns the zh-CN visitor-lobby model with the canonical routing and registration rule;
+* adds CI checks for protected locale invariants and for unreviewed changes to paired English sources;
+* records the boundary between public source-scaffold maintenance and instantiated LabNote runtime work.
 
-`v0.3.0 - Registry v1 and Simplified Chinese Revision` remains the feature baseline beneath this patch.
+It leaves Registry Contract v1, schemas, runtime paths, machine fields, statuses, permissions, generated views, and the shared protocol unchanged.
+
+`v0.3.0 - Registry v1 and Simplified Chinese Revision` remains the feature baseline beneath these patch releases.
 
 CapstanAI may later grow a richer deterministic layer, along with relay, vault, and protocol modules. LabNote begins as the simplest useful ledger.
 
