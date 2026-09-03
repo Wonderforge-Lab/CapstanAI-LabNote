@@ -84,7 +84,7 @@ packet → response → review → decision
 没有守护进程。  
 没有数据库。  
 没有常驻仓库的智能体。  
-不需要模型 API 密钥。  
+没有模型 API 密钥。<br>
 也不演“共享记忆”这出戏。
 
 只有一些普通文件，被安排成一种让项目知识活得比生成它的那场聊天更久的方式。
@@ -109,7 +109,7 @@ packet → response → review → decision
 
 一次好的交接，会带上足够的溯源信息和状态，让后来的人或 AI 看得出这项工作从哪里来、发生了什么，以及下一步该做什么。
 
-LabNote 设置好以后，你可以直接让 AI 或智能体做这样的事：
+LabNote 设置好以后，你可以请 AI 或智能体做这样的事：
 
 ```text
 把这份文档放进我的 LabNote 仓库，并和 [文档名称] 建立交叉引用。
@@ -211,7 +211,7 @@ LabNote 告诉 AI：你在这个项目里应该怎么行动。
 
 ## 下一步看哪里？
 
-LabNote 是工作台账（ledger），不是大型资料仓库（warehouse）。工作区应聚焦在体积小、可以直接检查的记录，以及经过批准、指向更重材料的引用。不要在 LabNote 中存放凭证、私钥或 token。
+LabNote 是工作台账（ledger），不是仓库（warehouse）。工作区应聚焦在体积小、可以直接检查的记录，以及经过批准、指向更重材料的引用。不要在 LabNote 中存放凭证、私钥或 token。
 
 | 区域 | 需要做什么 | 阅读 |
 | --- | --- | --- |
@@ -231,9 +231,9 @@ LabNote 是工作台账（ledger），不是大型资料仓库（warehouse）。
 
 ## 状态
 
-当前最新发布的框架版本：`v0.2.0 - CapstanAI Identity Migration`。
+当前最新发布的框架版本：`v0.3.0 - Registry v1 and Simplified Chinese Revision`。
 
-目前的开发工作包括：
+此修订包括：
 
 * 可移植的获取与初始化流程，
 * 可追踪的多会话协调，

@@ -6,4 +6,4 @@
 
 从 `templates/notification_request.md` 创建通知文件，把它放入 `notifications/open/`，并在 `registry/notifications/` 下创建基准 JSON 通知记录。
 
-CSV 通知登记表（如果存在）属于旧版/可选汇总。普通访客会话工作不要编辑这些 CSV，除非操作者明确要求。
+CSV 通知登记表和 `registry/INDEX.md` 是生成的只读兼容视图。不得手动编辑。

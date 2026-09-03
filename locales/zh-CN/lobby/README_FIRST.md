@@ -18,7 +18,7 @@
 locales/zh-CN/lobby/ROUTINE_DEPOSIT_QUICKSTART.md
 ```
 
-常规投递直接写入受控工作区的默认分支。
+常规投递直接写入实际使用中的受控工作区的默认分支。
 
 对于以下情况，**必须使用 `branch + PR`**：流程、政策、代码、仓库结构、清理、高风险/大体量导入、对大量现有文件的修改，或明确要求审阅的更改。
 
@@ -26,7 +26,7 @@ locales/zh-CN/lobby/ROUTINE_DEPOSIT_QUICKSTART.md
 
 基准（canonical）登记库记录采用每条记录一个 JSON 文件的方式，存放在 `registry/` 下。
 
-CSV 文件属于旧版/可选汇总，不是基准记录格式。
+CSV 登记库和 `registry/INDEX.md` 是生成的只读兼容视图。不得手动编辑。
 
 ## 当前访客会话规则
 
