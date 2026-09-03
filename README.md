@@ -223,6 +223,15 @@ LabNote is the ledger, not the warehouse. Keep the workspace focused on small, i
 
 Detailed runtime rules live in those canonical files rather than being duplicated here.
 
+## Acknowledgements
+
+CapstanAI - LabNote is human-led. Recent language-layer and verification work was assisted by the following AI collaborators:
+
+- **OpenAI Codex** — implementation support, verification design, and repository review.
+- **DeepSeek** — independent Simplified-Chinese language, cultural, and adversarial review.
+
+These acknowledgements describe assisted contributions. Human maintainers retain authorship, decision authority, and release control.
+
 ## Status
 
 Latest published scaffold release: `v0.3.2 - Locale Route Freshness`.
