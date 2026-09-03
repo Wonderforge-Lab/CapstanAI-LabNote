@@ -225,15 +225,15 @@ Detailed runtime rules live in those canonical files rather than being duplicate
 
 ## Status
 
-Latest published scaffold release: `v0.3.0 - Registry v1 and Simplified Chinese Revision`.
+Latest published scaffold release: `v0.3.1 - Registry Guidance Cleanup`.
 
-This revision includes:
+This patch release:
 
-* portable acquisition and bootstrap,
-* traceable multi-session coordination,
-* visitor/session identity and message routing,
-* human review, provenance, and tag hygiene,
-* bounded workflow routes.
+* removes stale live guidance that still allowed manual CSV registry edits,
+* marks the localization source-drift note and pre-v1 registry audit as historical provenance,
+* leaves Registry Contract v1, schemas, runtime paths, machine fields, statuses, localization protocol, and generated views unchanged.
+
+`v0.3.0 - Registry v1 and Simplified Chinese Revision` remains the feature baseline beneath this patch.
 
 CapstanAI may later grow a richer deterministic layer, along with relay, vault, and protocol modules. LabNote begins as the simplest useful ledger.
 
