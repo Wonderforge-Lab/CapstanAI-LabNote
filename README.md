@@ -40,7 +40,7 @@ It gives a project a durable place to:
 - keep critique and review attached to the work they concern; and
 - return after a gap with a clear trail instead of a pile of old chats.
 
-LabNote sits alongside the tools you already use, from ordinary folders to version control and project applications. You decide what belongs in the record and what requires review; your AI tools help do the work, while the workspace holds the trail.
+LabNote is an addition to your existing tools, not a replacement for them. It sits alongside ordinary folders, version control, and project applications. You decide what belongs in the record and what requires review; your AI tools help do the work, while the workspace holds the trail.
 
 Give each meaningful project its own named LabNote copy. Start with a few tasks, one handoff or a small document trail; let it grow into a fuller record only when the work calls for it.
 
