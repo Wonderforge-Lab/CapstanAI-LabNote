@@ -2,6 +2,8 @@
 
 #### *A simple, file-based ledger for AI-assisted work that outlives the chat.*
 
+CapstanAI is the project name; LabNote is its practical, file-based ledger.
+
 **English** | [简体中文](locales/zh-CN/README.md)
 
 <p align="center">
@@ -42,7 +44,7 @@ LabNote is one part of your stack, not a replacement for your folders, version c
 
 Give each meaningful project its own named LabNote copy. Start with a few tasks, one handoff or a small document trail; let it grow into a fuller record only when the work calls for it.
 
-When a chat ends, a tool changes, or a project goes quiet, the files remain. Kept under normal version control and backup, they give the next session a way back into the work—and a map for rebuilding it.
+When a chat ends, a tool changes, or a project goes quiet, the files remain. Kept under normal version control and backup, they give the next session a way back into the work, and a map for rebuilding it.
 
 ## Get LabNote
 
@@ -83,11 +85,7 @@ registry/       ← what happened, when and by whom
 
 A session enters, reads the relevant route, contributes what it needs to contribute, leaves a traceable record and stops. The human remains in charge.
 
-A typical trail is:
-
-```text
-packet → response → review → decision
-```
+A typical trail is **packet → response → review → decision**.
 
 Once LabNote is set up, you can say things like:
 
@@ -99,7 +97,7 @@ Leave a critique for [AI or agent name] about [document name].
 Register this report, tag it properly, and leave a short completion note.
 ```
 
-The AI gets enough structure to act, enough context to orient itself, and clear stopping points when a human decision is needed. The included validation workflow checks the scaffold's structure on pushes and pull requests.
+The AI gets enough structure to act, enough context to orient itself, and clear stopping points when a human decision is needed. The included validation workflow runs on pushes and pull requests. It checks registry records and provenance/path rules, generated views and Markdown links, locale invariants and freshness, bridge configuration, and tag-promotion separation.
 
 [See how handoffs move through review and decision](docs/review_workflow.md).
 

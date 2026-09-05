@@ -2,6 +2,8 @@
 
 #### *一个简洁、基于文件的项目工作台账（ledger），让 AI 辅助工作在聊天结束后仍能延续。*
 
+CapstanAI 是这个项目的名称；LabNote 是其中实用、基于文件的工作台账。
+
 [English](../../README.md) | **简体中文**
 
 <p align="center">
@@ -83,15 +85,7 @@ registry/       ← 记录发生了什么、何时发生以及由谁完成
 
 一个会话进入后，读取相关路径，完成自己需要贡献的部分，留下可追溯的记录，然后停止。人类始终掌握主导权。
 
-一条典型轨迹是：
-
-```text
-packet → response → review → decision
-```
-
-```text
-工作包（packet） → 回复（response） → 审阅（review） → 决定（decision）
-```
+一条典型轨迹是 **packet → response → review → decision**；对应地，它是工作包（packet）→ 回复（response）→ 审阅（review）→ 决定（decision）。
 
 设置好 LabNote 后，你可以这样对 AI 说：
 
@@ -103,7 +97,7 @@ packet → response → review → decision
 登记这份报告，正确打上标签，并留一条简短的完成记录。
 ```
 
-AI 获得足够的结构来行动，足够的背景来定位自己；当需要人类决定时，它也有明确的停止点。随附的验证工作流会在推送和拉取请求时检查源框架的结构。
+AI 获得足够的结构来行动，足够的背景来定位自己；当需要人类决定时，它也有明确的停止点。随附的验证工作流会在每次推送和拉取请求时运行。它会检查登记记录及其溯源信息/路径规则、生成视图和 Markdown 链接、本地化不变量与源文件新鲜度、bridge 配置，以及标签晋级隔离。
 
 [查看交接如何经过审阅并形成决定](docs/review_workflow.md)。
 
