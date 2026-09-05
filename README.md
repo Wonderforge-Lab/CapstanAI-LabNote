@@ -1,263 +1,166 @@
-# LabNote
+# CapstanAI LabNote
 
-#### *A lightweight project notebook for keeping AI-assisted work coherent across sessions, tools and time.*
+#### *A simple, file-based ledger for AI-assisted work that outlives the chat.*
+
+CapstanAI is the project name; LabNote is its practical, file-based ledger.
 
 **English** | [简体中文](locales/zh-CN/README.md)
 
-<p align="left">
-  <img src="assets/capstanai_labnote_raven.png" alt="CapstanAI LabNote raven perched on a lab notebook with a pearl and fountain pen" width="40%">
+<p align="center">
+  <img src="https://img.shields.io/badge/license-Apache--2.0-blue" alt="Apache License 2.0">
+  <img src="https://img.shields.io/badge/runtime-none-informational" alt="No LabNote runtime">
 </p>
 
-LabNote helps you keep track of long-running projects that involve AI.
-
-If a project outlives one chat, moves between different AI tools, gets picked up again months later, or simply becomes too complicated to hold in your head, LabNote gives the work somewhere stable to live.
-
-It's a lightweight, repo-based notebook and coordination layer built from ordinary files. AI sessions can leave behind useful work, provenance, decisions, critiques, handoffs and next steps, so the next session does not have to start from a blank room.
-
-You can use it with ChatGPT, Codex, Claude Code, local models, browser AIs, coding agents, or any other AI that can work with ordinary repository files.
-
-## What can you use LabNote for?
-
-LabNote is deliberately general-purpose.
-
-**Software and technical projects**  
-Coordinate planning, implementation, testing, review and handoffs across different AI tools.
-
-**Research and investigations**  
-Keep sources, findings, competing hypotheses, evidence and synthesis organised across separate sessions.
-
-**Writing and creative work**  
-Carry outlines, drafts, critiques, continuity notes and editorial decisions through a long project.
-
-**Casework and life admin**  
-Keep chronology, correspondence, evidence, drafts, decisions and next actions together.
-
-**Learning and academic work**  
-Preserve research notes, questions, explanations, progress and tutor-session continuity.
-
-**Dormant projects**  
-Come back after weeks or months and ask a fresh AI to bring you up to speed without rebuilding the whole context by hand.
-
-Those are just a few examples.
-
-If the work lasts longer than one chat, benefits from more than one AI session, or would be a drag to reconstruct from memory, then LabNote probably has a use for it.
-
-## Why I made it
-
-Fact is, I got sick and tired of the context window for chats filling up long before I'd even finished thrashing out an idea for a project. Sure, you can generate a handoff sheet for the next AI, but that means asking it to synthesise the whole chat, which means some finer points and even entire avenues of thought can be lost.  
-At the same time, I'd keep catching myself coming up with development ideas on an unrelated chat, or even on a chat with another model. This meant that things would get scattered and I'd lose track to the point that sometimes I'd even abandon a project and start from scratch.  
-
-To try and keep the sprawl under control, I burned time, tokens and compute, passing around progress reports, handover sheets, documents, critiques and reminders - all just to keep everything on the same page.
-AI platforms have tried to address continuity with things like project areas, canvases and branching chats. They help, but they still don't do the job for me.  
-I needed something simpler and more intuitive; something that would let one AI chat flow naturally into another, and would also let me keep track of projects without things turning into a full-on second-brain.  
-Hence LabNote.  
-What started as a fix for my own terrible project memory turned into something considerably more useful.
-  
-Fundamentally, using LabNote, the AI is mostly relegated to a low-token, low-compute archivist and coordinator. It's told what to read, where to put things, what to record and when to stop.
-
-LabNote is my daily driver now. I make a new one for most substantial projects, and I even use it to dust down old work that has been sitting untouched for months.
-
-## The basic idea
+<p align="center">
+  <img src="assets/capstanai_labnote_raven.png" alt="CapstanAI LabNote raven perched on a lab notebook with a pearl and fountain pen" width="30%">
+</p>
 
 Most AI work starts in a blank room.
 
-A fresh chat does not know what happened before. One model may not know what another decided. A coding agent may solve its narrow task but miss the wider project. Useful reasoning can disappear into an old conversation nobody wants to reread.
+A fresh chat often does not know what happened before. One model may not know what another decided. A coding agent may finish its own task without seeing the wider project. Useful work gets stranded in old conversations that nobody wants to reconstruct by hand.
 
-LabNote gives your AI a room with labels on the drawers.
+**LabNote gives your AI a room with labels on the drawers.**
 
-A session can enter, find the relevant work, contribute what it needs to contribute, leave a traceable record, and stop.
+It is a lightweight project notebook built from ordinary files. It gives selected project material a stable home, so a new session can find the thread instead of starting again.
 
-The human remains in charge.
+Set it up once, point each AI at the same entrance, and let the ledger carry the continuity.
 
-A typical trail is:
+With suitable access to the files, LabNote works with browser AIs, coding agents and local models. If an AI cannot reach the files itself, it can still guide you through getting a copy and setting it up.
 
-```text
-packet → response → review → decision
-```
+## What LabNote does well
 
-No daemon.  
-No database.  
-No repo-resident agent.  
-No model API keys.  
-No shared-memory theatre.
+You may already be running a rough version of this yourself: pasting summaries between chats, writing handoff notes, keeping scattered folders, bookmarking old conversations, and trying to remember which AI was told what.
 
-Just ordinary files arranged so useful project knowledge survives the chat that created it.
+LabNote turns that repeated coordination work into a visible route through the project. It can be a task list, a handoff ledger, a small working library, an audit trail, or a deliberate drop point between sessions.
 
-## How it works
+It gives a project a durable place to:
 
-That simple trail expands into a repeatable handoff:
+- keep the important tasks and decisions, with their sources and next actions;
+- pass work between sessions without repeating the whole brief;
+- keep critique and review attached to the work they concern; and
+- return after a gap with a clear trail instead of a pile of old chats.
 
-```text
-Human or AI creates a packet
-↓
-Packet goes into the right inbox
-↓
-A receiving AI session reads only what it needs
-↓
-The receiving session writes a response
-↓
-The response is reviewed
-↓
-The decision is recorded
-```
+LabNote is an addition to your existing tools, not a replacement for them. It sits alongside ordinary folders, version control, and project applications. You decide what belongs in the record and what requires review; your AI tools help do the work, while the workspace holds the trail.
 
-A good handoff carries enough provenance and status to show where the work came from, what happened to it, and what should happen next.
+Give each meaningful project its own named LabNote copy. Start with a few tasks, one handoff or a small document trail; let it grow into a fuller record only when the work calls for it.
 
-Once LabNote is set up, you can ask an AI or agent to do things like:
-
-```text
-Put this document in my LabNote repo and cross-reference it with [document name].
-```
-
-```text
-Leave a critique for [AI/Agent name] about [document name].
-```
-
-```text
-Register this report, tag it properly, and leave a short completion note.
-```
-
-LabNote gives the AI enough structure to act, and enough constraint to stop guessing.
+When a chat ends, a tool changes, or a project goes quiet, the files remain. Kept under normal version control and backup, they give the next session a way back into the work, and a map for rebuilding it.
 
 ## Get LabNote
 
-If you are already talking to an AI, the easiest starting point is:
+> **Already looking at your own copy?** You have LabNote already—start at
+> [`AI_ENTRYPOINT.md`](AI_ENTRYPOINT.md).
+
+If you are already talking to an AI, this is the easiest place to begin. Copy and paste:
 
 ```text
 Help me set up CapstanAI LabNote for this project. First work out what access you have, then recommend the simplest safe route for me. I want you to explain any terminal commands before I run them.
 ```
 
-Common routes:
+Or make your own copy directly:
 
-| Environment | Suggested route |
+| Where you want it | What to do |
 | --- | --- |
-| Browser AI + terminal available | AI-guided local clone, then connect to a private GitHub repo if wanted |
-| Browser AI without terminal access | GitHub **Use this template** route |
-| Coding agent or terminal-capable AI | Agent clones/copies and configures the workspace, subject to operator approval |
-| Local-only project | Clone or copy locally; no remote required |
+| **In your own GitHub repository** | [Use this template](https://github.com/Wonderforge-Lab/CapstanAI-LabNote/generate), then choose the name and visibility of your new repository. |
+| **On your own computer** | Clone or download the repository. A remote GitHub copy is optional. |
 
-See [`docs/ACQUISITION.md`](docs/ACQUISITION.md) for exact beginner-friendly steps and terminal guidance.
+> **Keep live work out of this public repository.** The public CapstanAI LabNote repository is the source scaffold. Put private project material in your own private, controlled or local copy.
 
-The acquisition method does not change how LabNote works after the copy exists.
+Once you have your copy:
 
-### Public source, live workspace
+1. Give your AI [`AI_ENTRYPOINT.md`](AI_ENTRYPOINT.md) as its starting point.
+2. Confirm the workspace context if it asks.
+3. Let it follow the LabNote lobby from there.
 
-The canonical CapstanAI LabNote repository is public so people can inspect and acquire the scaffold. A copied workspace may be private, public, local-only, or otherwise controlled. Portable LabNote workflow files do not depend on a fixed repository owner, slug, or visibility.
+[Choose the right setup route](docs/ACQUISITION.md), or [follow the first-use walkthrough](docs/quickstart.md).
 
-If the current workspace is public or reference-only, do not deposit private runtime material there. Controlled live workspaces follow the runtime and storage rules linked below.
-
-## First use
-
-1. Acquire the workspace.
-2. Give your AI `AI_ENTRYPOINT.md` as its starting point.
-3. Confirm the workspace context if the AI asks.
-4. Let the AI follow the LabNote lobby from there.
-
-No repository rename or LabNote identity-file edit should be required before first use. You do not need to learn the whole filing system before using it.
-
-See [`docs/quickstart.md`](docs/quickstart.md) for the longer walkthrough.
-
-## Why it helps
-
-* **Preserve continuity** across fresh chats, models, tools, coding agents, and dormant projects.
-* **Cut coordination admin** by letting AI sessions leave structured work for each other instead of making the human relay everything by hand.
-* **Keep work auditable** through labelled packets, provenance, responses, reviews, visit records, and signoffs.
-* **Bound AI behaviour** with deterministic entry, fixed routes, ask-gates, stop-points, and human review.
-* **Stay repo-native and low-bloat** so any capable AI that can read and write ordinary repo files can participate without a daemon, database, or hidden runtime.
-
-## Why not just use `AGENTS.md`?
-
-`AGENTS.md`, `CLAUDE.md`, and similar context files are useful. LabNote can work alongside them, but it is solving a different problem.
-
-A typical agent context file usually tells an AI about a repository: how to run tests, where key files live, what style to follow, and what commands to use. That can help, but it can also turn into a long instruction blob as the project grows.
-
-LabNote is not just a bigger context file. It gives the AI a structured workflow: where to enter, what to read first, where to deposit work, how to tag it, how to sign off, how to hand work onward, and when to stop and ask the human.
-
-| Ordinary agent context file | LabNote |
-| --- | --- |
-| Tells the AI about the repo | Gives the AI a route through the work |
-| Can become a large instruction blob | Uses nested, role-specific instructions |
-| Often focuses on task execution | Also handles handoffs, review, provenance, and stop-points |
-| May increase exploration and context load | Keeps work bounded through packet routes and ask-gates |
-| Usually lives as one file | Uses a small repo structure, templates, registry records, and signoffs |
-| Helps one agent orient itself | Helps many AI sessions coordinate over time |
-
-`AGENTS.md` can tell an AI what kind of project it is in.
-
-LabNote tells the AI how to behave inside the project.
-
-## Built around five principles
-
-1. **Human-held authority**  
-   LabNote supports the human-in-the-loop. It does not replace them.
-
-2. **Deterministic entry**  
-   Every AI enters through the lobby, reads the same rules, and follows the same route.
-
-3. **Bounded action**  
-   The AI gets fixed targets, allowed paths, stop conditions, and ask-gates.
-
-4. **Traceable work**  
-   Documents, critiques, tags, decisions, handoffs, and signoffs leave a clear trail.
-
-5. **Growth without bloat**  
-   LabNote can grow into richer workflows without requiring a local daemon, database, model install, or repo-resident agent.
-
-## Where to go next
-
-LabNote is the ledger, not the warehouse. Keep the workspace focused on small, inspectable records and approved references to heavier material. Do not store credentials, private keys, or tokens in LabNote.
-
-| Area | Need | Read |
-| --- | --- | --- |
-| **Start** | Set up LabNote | [`docs/ACQUISITION.md`](docs/ACQUISITION.md) |
-| **Start** | Beginner walkthrough | [`docs/quickstart.md`](docs/quickstart.md) |
-| **Start** | Give an AI its starting instructions | [`AI_ENTRYPOINT.md`](AI_ENTRYPOINT.md) |
-| **Work** | Make a normal deposit | [`lobby/ROUTINE_DEPOSIT_QUICKSTART.md`](lobby/ROUTINE_DEPOSIT_QUICKSTART.md) |
-| **Work** | Understand visitor/session identity | [`docs/visitor_lobby_model.md`](docs/visitor_lobby_model.md) |
-| **Work** | Route messages between sessions | [`docs/message_routing_model.md`](docs/message_routing_model.md) |
-| **Work** | Review a response or decision | [`docs/review_workflow.md`](docs/review_workflow.md) |
-| **Reference** | Branch and PR rules | [`docs/BRANCH_HYGIENE.md`](docs/BRANCH_HYGIENE.md) |
-| **Reference** | Registry records and paths | [`docs/REGISTRY_RECORDS.md`](docs/REGISTRY_RECORDS.md) |
-| **Reference** | Storage rules | [`docs/storage_policy.md`](docs/storage_policy.md) |
-| **Reference** | Document and binary deposit rules | [`docs/DOCUMENT_DEPOSIT_POLICY.md`](docs/DOCUMENT_DEPOSIT_POLICY.md) |
-
-Detailed runtime rules live in those canonical files rather than being duplicated here.
-
-## Acknowledgements
-
-CapstanAI - LabNote is human-led. Recent language-layer and verification work was assisted by the following AI collaborators:
-
-- **OpenAI Codex** — implementation support, verification design, and repository review.
-- **DeepSeek** — independent Simplified-Chinese language, cultural, and adversarial review.
-
-These acknowledgements describe assisted contributions. Human maintainers retain authorship, decision authority, and release control.
-
-## Status
-
-Latest published scaffold release: `v0.3.2 - Locale Route Freshness`.
-
-This patch release:
-
-* corrects stale zh-CN CSV guidance on live visitor routes;
-* aligns the zh-CN visitor-lobby model with the canonical routing and registration rule;
-* adds CI checks for protected locale invariants and for unreviewed changes to paired English sources;
-
-It leaves Registry Contract v1, schemas, runtime paths, machine fields, statuses, permissions, generated views, and the shared protocol unchanged.
-
-`v0.3.0 - Registry v1 and Simplified Chinese Revision` remains the feature baseline beneath these patch releases.
-
-CapstanAI may later grow a richer deterministic layer, along with relay, vault, and protocol modules. LabNote begins as the simplest useful ledger.
+## A working picture
 
 ```text
-packets, provenance, replies, and decisions
+lobby/          ← every AI session starts here
+datadrops/      ← source material and work go in
+responses/      ← critiques, replies and signoffs come back
+registry/       ← what happened, when and by whom
 ```
 
-## Motto
+A session enters, reads the relevant route, contributes what it needs to contribute, leaves a traceable record and stops. The human remains in charge.
+
+A typical trail is **packet → response → review → decision**.
+
+Once LabNote is set up, you can say things like:
 
 ```text
-Mind the gap. Mark the crossing.
+Put this document in my LabNote and cross-reference it with [document name].
+
+Leave a critique for [AI or agent name] about [document name].
+
+Register this report, tag it properly, and leave a short completion note.
 ```
 
-## License
+The AI gets enough structure to act, enough context to orient itself, and clear stopping points when a human decision is needed. The included validation workflow runs on pushes and pull requests. It checks registry records and provenance/path rules, generated views and Markdown links, locale invariants and freshness, bridge configuration, and tag-promotion separation.
 
-Apache License 2.0.
+[See how handoffs move through review and decision](docs/review_workflow.md).
+
+## Why clone it instead of making a folder?
+
+You absolutely can make a folder, keep a to-do list and ask an AI to leave better notes. For a short project, that may be all you need.
+
+LabNote is the version you do not have to keep rebuilding. It gives every session the same place to begin, a small method for leaving work behind, and a visible record that still makes sense when you return later or switch tools.
+
+You do not have to use every part of it. The more careful routes are already there when you need review, provenance, auditability or a clean way to pass work on. Until then, it can sit quietly beside the tools you already use.
+
+## Why LabNote stays small
+
+LabNote does not try to save everything as it happens. Not every message belongs in a durable project record. Instead, it preserves the parts you choose to carry forward: the source, the decision, the critique, the handoff and the next action.
+
+That keeps the ledger smaller, clearer and easier to inspect. It avoids needless rereading, resummarising and context loading when a later session only needs the useful trail.
+
+The rails do not make a model smarter, and they cannot make one infallible. They make routine coordination work smaller and clearer: a known entrance, a limited reading route, clear write targets, and defined points to stop and ask.
+
+LabNote itself needs:
+
+- no daemon;
+- no database;
+- no hosted runtime;
+- no repo-resident agent;
+- no model API keys.
+
+No shared-memory theatre.
+
+Just ordinary files, clear routes and human-held authority. The ledger is right there in the files, where you can inspect it yourself.
+
+[See how LabNote fits alongside context files and model memory](docs/WHY_LABNOTE.md).
+
+## Where it earns its keep
+
+**Research, investigations and casework**
+Keep sources, evidence, competing explanations, chronology and decisions together across separate sessions.
+
+**Software and technical work**
+Carry plans, implementation notes, tests, reviews and handoffs between different tools and agents.
+
+**Writing, study and creative projects**
+Preserve outlines, drafts, critiques, open questions and editorial choices without rebuilding the brief every time.
+
+**Long-running or dormant projects**
+Return after weeks or months and give a fresh AI a reliable place to find what mattered and what should happen next.
+
+The subject does not matter much. If the work lasts longer than one chat, moves between tools, or would be a nuisance to reconstruct from memory, LabNote can give it a durable spine.
+
+## Why I made it
+
+Fact is, I got sick and tired of chat context windows filling up before I'd even finished thrashing out an idea.
+
+Handoff sheets helped, but each new synthesis risked losing finer points or whole avenues of thought. Ideas would appear in unrelated chats or conversations with another model. Progress reports, critiques and reminders multiplied, and sometimes the project became scattered enough that I lost the thread and started again.
+
+Project areas, canvases and branching chats all help, but I wanted something simpler: a way for one AI session to flow naturally into another without turning the project into a full-on second brain.
+
+Hence LabNote. What began as a fix for my own terrible project memory became my daily driver. I now make one for most substantial projects, and use it to dust down work that has been sitting untouched for months.
+
+At heart, it turns the AI into a low-overhead archivist and coordinator: told what to read, where to put things, what to record and when to stop.
+
+## Licence
+
+[Apache License 2.0](LICENSE) · [CapstanAI LabNote source releases and version history](https://github.com/Wonderforge-Lab/CapstanAI-LabNote/releases)
+
+> **Mind the gap. Mark the crossing.**
