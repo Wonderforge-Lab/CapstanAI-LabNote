@@ -40,10 +40,7 @@ one.
 
 ## Understand the project
 
-- [Why LabNote?](WHY_LABNOTE.md) — how a visible project ledger fits beside
-  folders, context files, RAG, model memory, and one-shot work.
+- [LabNote alongside context files and model memory](WHY_LABNOTE.md) — how a
+  visible project ledger complements those two kinds of AI support.
 - [Project provenance](PROJECT_PROVENANCE.md) — how human maintainers and
   managed AI assistance contributed to the project.
-
-The index is a map, not another instruction manual. Follow the document that
-matches the question in front of you.

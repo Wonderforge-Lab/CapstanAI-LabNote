@@ -21,7 +21,7 @@ A fresh chat often does not know what happened before. One model may not know wh
 
 **LabNote gives your AI a room with labels on the drawers.**
 
-It is a lightweight project notebook built from ordinary files. Work, sources, decisions, critiques, handoffs and next steps have somewhere stable to live, so a new session can find the thread instead of starting again.
+It is a lightweight project notebook built from ordinary files. It gives selected project material a stable home, so a new session can find the thread instead of starting again.
 
 Set it up once, point each AI at the same entrance, and let the ledger carry the continuity.
 
@@ -35,12 +35,12 @@ LabNote turns that repeated coordination work into a visible route through the p
 
 It gives a project a durable place to:
 
-- keep the tasks, sources, decisions and next actions that matter;
+- keep the important tasks and decisions, with their sources and next actions;
 - pass work between sessions without repeating the whole brief;
 - keep critique and review attached to the work they concern; and
 - return after a gap with a clear trail instead of a pile of old chats.
 
-LabNote is one part of your stack, not a replacement for your folders, version control, drives or project tools. You, your chosen AI tools, and the workspace each have a role. You decide what belongs in the record, what needs review, and what happens next.
+LabNote sits alongside the tools you already use, from ordinary folders to version control and project applications. You decide what belongs in the record and what requires review; your AI tools help do the work, while the workspace holds the trail.
 
 Give each meaningful project its own named LabNote copy. Start with a few tasks, one handoff or a small document trail; let it grow into a fuller record only when the work calls for it.
 
@@ -129,7 +129,7 @@ No shared-memory theatre.
 
 Just ordinary files, clear routes and human-held authority. The ledger is right there in the files, where you can inspect it yourself.
 
-[See how LabNote fits alongside context files, RAG and model memory](docs/WHY_LABNOTE.md).
+[See how LabNote fits alongside context files and model memory](docs/WHY_LABNOTE.md).
 
 ## Where it earns its keep
 

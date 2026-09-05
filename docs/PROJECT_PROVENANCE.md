@@ -39,7 +39,4 @@ English is the canonical protocol language. Locale documentation may explain
 the same project facts in a natural local form while preserving the relevant
 paths, machine fields, and protocol boundaries.
 
-A Simplified-Chinese counterpart to this page is planned with the locale
-documentation route.
-
 [Return to the documentation index](README.md).
