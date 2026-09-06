@@ -13,6 +13,19 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 SURFACES: dict[str, dict[str, object]] = {
+    "README.md": {
+        "locale": "locales/zh-CN/README.md",
+        "literals": (
+            "AI_ENTRYPOINT.md",
+            "lobby/",
+            "datadrops/",
+            "responses/",
+            "registry/",
+            "docs/ACQUISITION.md",
+            "docs/quickstart.md",
+            "https://github.com/Wonderforge-Lab/CapstanAI-LabNote/generate",
+        ),
+    },
     "AI_ENTRYPOINT.md": {
         "locale": "locales/zh-CN/AI_ENTRYPOINT.md",
         "literals": (
@@ -35,6 +48,45 @@ SURFACES: dict[str, dict[str, object]] = {
             "registry/*_registry.csv",
             "scripts/generate_registry_views.py",
             "bridge_config.json",
+        ),
+    },
+    "docs/README.md": {
+        "locale": "locales/zh-CN/docs/README.md",
+        "literals": (
+            "ACQUISITION.md",
+            "quickstart.md",
+            "../lobby/ROUTINE_DEPOSIT_QUICKSTART.md",
+            "review_workflow.md",
+            "visitor_lobby_model.md",
+            "message_routing_model.md",
+            "REGISTRY_RECORDS.md",
+            "storage_policy.md",
+            "DOCUMENT_DEPOSIT_POLICY.md",
+            "../SECURITY.md",
+            "WHY_LABNOTE.md",
+            "PROJECT_PROVENANCE.md",
+        ),
+    },
+    "docs/ACQUISITION.md": {
+        "locale": "locales/zh-CN/docs/ACQUISITION.md",
+        "literals": (
+            "AI_ENTRYPOINT.md",
+            "https://github.com/Wonderforge-Lab/CapstanAI-LabNote.git",
+            "git clone",
+            "git remote rename origin upstream",
+            "git remote add origin <YOUR-PRIVATE-REPO-URL>",
+            "git push -u origin main",
+            "Use this template",
+        ),
+    },
+    "docs/quickstart.md": {
+        "locale": "locales/zh-CN/docs/quickstart.md",
+        "literals": (
+            "AI_ENTRYPOINT.md",
+            "ACQUISITION.md",
+            "registry/packets/<year>/",
+            "registry/responses/<year>/",
+            "accepted",
         ),
     },
     "docs/localization/GLOSSARY.md": {

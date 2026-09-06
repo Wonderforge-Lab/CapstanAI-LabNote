@@ -1,6 +1,6 @@
 # Translation Surface Inventory
 
-Status: **implemented first-release inventory; Wave 4 source-alignment update in progress**
+Status: **current supported-locale inventory**
 Canonical source language: English (`en`)
 First supported locale: Simplified Chinese (`zh-CN`)
 
@@ -11,7 +11,7 @@ First supported locale: Simplified Chinese (`zh-CN`)
 - **C - keep canonical, localize around it:** machine/protocol structure should remain unchanged; translated explanation may be added elsewhere.
 - **D - defer:** historical, empty runtime, binary, or otherwise outside the first localization release.
 
-For `zh-CN`, the first-release Class A route and selected Class B support surfaces were implemented and reviewed against their then-current English sources. Canonical changes merged after that review are explicitly tracked as Wave 4 source-alignment work; a class is a treatment decision, not a claim that its current English revision is already localized. Current locale support status is recorded in `locales/README.md`.
+For `zh-CN`, the Class A operational route and selected Class B support surfaces are implemented. A class is a treatment decision, not a claim that every current English document in that class has a localized counterpart. Current locale support status is recorded in `locales/README.md`; source/counterpart freshness is enforced for existing pairs.
 
 ## Top-level files
 
@@ -30,6 +30,7 @@ For `zh-CN`, the first-release Class A route and selected Class B support surfac
 
 | Path | Class | Treatment |
 | --- | --- | --- |
+| `docs/README.md` | A | Localized documentation index; route readers to localized operational guidance when a counterpart exists |
 | `docs/ACQUISITION.md` | A | Full localized onboarding; commands/URLs unchanged |
 | `docs/quickstart.md` | A | Full localized walkthrough; paths/identifiers unchanged |
 | `docs/visitor_lobby_model.md` | A | Translate carefully; `visitor` has project-specific meaning |
@@ -44,10 +45,16 @@ For `zh-CN`, the first-release Class A route and selected Class B support surfac
 | `docs/CONNECTOR_SAFE_WORDING.md` | B | Translate after core route, preserving compatibility intent |
 | `docs/branding.md` | A | Translate explanation; product names remain unchanged |
 | `docs/UPGRADING.md` | B | Translate as an upgrade companion after the core operational route is current |
-| `docs/registry/*.md` | B | Translate as Registry Contract v1 reference companions; preserve fields, enums, paths, and examples structurally |
+| `docs/WHY_LABNOTE.md` | B | Localized conceptual companion explaining how LabNote fits beside context files and model memory |
+| `docs/PROJECT_PROVENANCE.md` | B | Localized project-provenance record |
+| active Registry Contract v1 references under `docs/registry/` | B | Canonical English reference set; localized companions are deferred until a dedicated reference-translation need is established |
+| `docs/registry/REGISTRY_SURFACE_AUDIT.md` | D | Keep as a canonical historical pre-v1 audit; it is not current operational guidance |
 | `docs/localization/GLOSSARY.md` | B | Maintain the canonical terminology source together with its explicitly mapped locale glossary |
 | `docs/localization/TAG_DISPLAY_CATALOG.md` | B | Maintain canonical display text together with its explicitly mapped localized catalogue |
-| other `docs/localization/` process files | D | Keep canonical unless a separate localization-maintenance need is established |
+| `docs/localization/COMMUNICATION_REGISTRY_SOURCE_DRIFT.md` | D | Keep canonical as localization-maintenance history |
+| `docs/localization/LOCALIZATION_CONTRACT.md` | D | Keep canonical as the maintainer-facing localization contract |
+| `docs/localization/TRANSLATION_SURFACE.md` | D | Keep canonical as the maintainer-facing inventory |
+| `docs/localization/ZH_CN_VALIDATION.md` | D | Keep canonical as the zh-CN validation record |
 
 ## `lobby/`
 
