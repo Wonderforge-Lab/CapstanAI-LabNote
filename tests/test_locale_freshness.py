@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -26,13 +27,47 @@ SOURCE_OVERRIDES = {
 }
 
 
-def paired_surfaces() -> dict[str, str]:
-    pairs: dict[str, str] = {}
+def source_for_locale(relative: str) -> str:
+    return SOURCE_OVERRIDES.get(relative, relative)
+
+
+def locale_surfaces() -> dict[str, str]:
+    surfaces: dict[str, str] = {}
     for locale_path in sorted(LOCALE_ROOT.rglob("*.md")):
         locale_rel = locale_path.relative_to(ROOT).as_posix()
         relative = locale_path.relative_to(LOCALE_ROOT).as_posix()
-        source_rel = SOURCE_OVERRIDES.get(relative, relative)
+        surfaces[locale_rel] = source_for_locale(relative)
+    return surfaces
+
+
+def paired_surfaces() -> dict[str, str]:
+    pairs: dict[str, str] = {}
+    for locale_rel, source_rel in locale_surfaces().items():
         if (ROOT / source_rel).is_file():
+            pairs[source_rel] = locale_rel
+    return pairs
+
+
+def files_at(revision: str) -> set[str]:
+    result = subprocess.run(
+        ["git", "ls-tree", "-r", "--name-only", revision],
+        cwd=ROOT,
+        check=True,
+        text=True,
+        capture_output=True,
+    )
+    return {line for line in result.stdout.splitlines() if line}
+
+
+def paired_surfaces_at(revision: str) -> dict[str, str]:
+    files = files_at(revision)
+    pairs: dict[str, str] = {}
+    prefix = "locales/zh-CN/"
+    for locale_rel in sorted(
+        path for path in files if path.startswith(prefix) and path.endswith(".md")
+    ):
+        source_rel = source_for_locale(locale_rel.removeprefix(prefix))
+        if source_rel in files:
             pairs[source_rel] = locale_rel
     return pairs
 
@@ -64,7 +99,9 @@ def acknowledgements(pairs: dict[str, str]) -> dict[str, str]:
         reason = entry.get("reason")
         if not isinstance(source, str) or source not in pairs:
             raise AssertionError(f"invalid acknowledgement source: {source!r}")
-        if not isinstance(source_sha256, str) or len(source_sha256) != 64:
+        if not isinstance(source_sha256, str) or not re.fullmatch(
+            r"[0-9a-f]{64}", source_sha256
+        ):
             raise AssertionError(f"invalid source_sha256 for {source!r}")
         if not isinstance(reason, str) or not reason.strip():
             raise AssertionError(f"missing review reason for {source!r}")
@@ -79,9 +116,23 @@ def main() -> int:
         raise SystemExit("usage: test_locale_freshness.py <base> <head>")
 
     pairs = paired_surfaces()
+    base_pairs = paired_surfaces_at(sys.argv[1])
     changed = changed_paths(sys.argv[1], sys.argv[2])
     reviewed = acknowledgements(pairs)
     failures: list[str] = []
+
+    for locale_rel, source_rel in locale_surfaces().items():
+        if not (ROOT / source_rel).is_file():
+            failures.append(
+                f"localized surface has no canonical source: {locale_rel} ({source_rel})"
+            )
+
+    for source_rel, locale_rel in base_pairs.items():
+        if (ROOT / source_rel).is_file() and not (ROOT / locale_rel).is_file():
+            failures.append(
+                f"paired localized surface was removed while its canonical source remains: "
+                f"{locale_rel} ({source_rel})"
+            )
 
     for source_rel, locale_rel in pairs.items():
         if source_rel not in changed or locale_rel in changed:

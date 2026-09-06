@@ -12,7 +12,7 @@
 
 ## 工作
 
-- [进行常规投递](../../../lobby/ROUTINE_DEPOSIT_QUICKSTART.md) —— 以最小但有用的记录，把一项普通工作放到正确路径中。
+- [进行常规投递](../lobby/ROUTINE_DEPOSIT_QUICKSTART.md) —— 以最小但有用的记录，把一项普通工作放到正确路径中。
 - [理解审阅与决定](review_workflow.md) —— 查看回复如何成为经过审阅的结果。
 - [理解访客会话与会话身份](visitor_lobby_model.md) —— 了解实际工作区中的会话记录代表什么。
 - [理解消息路由](message_routing_model.md) —— 遵循会话或角色之间的消息模型。
@@ -22,7 +22,7 @@
 
 - [阅读存储策略](storage_policy.md) —— 让台账保持精简、可检查，并符合工作区可见性的要求。
 - [阅读文档投递策略](DOCUMENT_DEPOSIT_POLICY.md) —— 处理文档和二进制文件，避免把 LabNote 变成普通文件堆。
-- [阅读安全说明](../../../SECURITY.md) —— 不要把凭证、token、密钥或无意暴露的私密材料放入错误的工作区。
+- [阅读安全说明](../SECURITY.md) —— 不要把凭证、token、密钥或无意暴露的私密材料放入错误的工作区。
 
 ## 了解项目
 
