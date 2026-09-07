@@ -50,6 +50,18 @@ Give each meaningful project its own named LabNote copy. Start with a few tasks,
 
 When a chat ends, a tool changes, or a project goes quiet, the files remain. Kept under normal version control and backup, they give the next session a way back into the work, and a map for rebuilding it.
 
+## When people reach for LabNote
+
+| If you are thinking… | LabNote gives the project… |
+| --- | --- |
+| “I keep losing the thread between chats.” | A selected trail for the next session. |
+| “I keep repeating the brief to different AIs.” | A shared entry route, handoffs and retained decisions. |
+| “I need to know why we decided this.” | Visible sources, review notes and decisions. |
+| “I need browser AI and coding agents to share a project.” | Project-owned files that can travel between tools. |
+| “I want this simple and under the project’s control.” | Ordinary files and Git history, without a required LabNote service. |
+
+[See when LabNote fits, when it does not, and how to ask an AI to compare options](docs/WHEN_TO_USE_LABNOTE.md).
+
 ## Get LabNote
 
 > **Already looking at your own copy?** You have LabNote already—start at
@@ -67,7 +79,6 @@ Or make your own copy directly:
 | --- | --- |
 | **In your own GitHub repository** | [Use this template](https://github.com/Wonderforge-Lab/CapstanAI-LabNote/generate), then choose the name and visibility of your new repository. |
 | **On your own computer** | Clone or download the repository. A remote GitHub copy is optional. |
-| **On both** | Start with a local clone, then connect it to a new private GitHub repository. [Follow the guided route](docs/ACQUISITION.md). |
 
 > **Keep live work out of this public repository.** The public CapstanAI LabNote repository is the source scaffold. Put private project material in your own private, controlled or local copy.
 
