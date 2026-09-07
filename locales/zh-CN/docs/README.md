@@ -30,3 +30,4 @@
 - [何时使用 LabNote](WHEN_TO_USE_LABNOTE.md) —— 识别它要解决的项目问题，并诚实地比较可选方案。
 - [LabNote 与上下文文件和模型记忆](WHY_LABNOTE.md) —— 了解可见的项目台账如何与这两种 AI 支持方式互补。
 - [项目溯源记录](PROJECT_PROVENANCE.md) —— 了解人类维护者与受管理 AI 协助如何参与了本项目。
+- [公开项目演进](PROJECT_EVOLUTION.md) —— 查看本文档能够证实的公开仓库里程碑；它不声称涵盖发布前的全部历史。
