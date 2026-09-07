@@ -1,8 +1,12 @@
 # CapstanAI LabNote
 
-#### *A simple, file-based ledger for AI-assisted work that outlives the chat.*
+#### *A human-controlled, git-native project ledger for AI-assisted work across chats and sessions.*
 
-CapstanAI is the project name; LabNote is its practical, file-based ledger.
+CapstanAI LabNote is a lightweight, file-based project ledger for people working across AI assistants, coding agents and separate chats. It keeps selected sources, handoffs, reviews, decisions and next actions in ordinary Markdown files and structured JSON records—so the next session can pick up the project thread.
+
+You decide what belongs in the record and what requires review. A shared entry route gives each AI a clear reading path, defined places to leave work and stopping points for human decisions. Basic ledger use needs no LabNote background service, database or model API key.
+
+CapstanAI is the project name; LabNote is its practical ledger.
 
 **English** | [简体中文](locales/zh-CN/README.md)
 
