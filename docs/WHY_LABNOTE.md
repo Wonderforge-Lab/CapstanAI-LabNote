@@ -23,7 +23,8 @@ stepping stones that make the next piece of work understandable:
 That makes the retained trail smaller and easier to inspect than a full
 transcript or a growing context blob. An AI can help prepare the record, but
 the workspace does not silently harvest conversations: the human decides what
-belongs and what needs review.
+belongs and what needs review. An AI may propose a deposit, but the human
+operator must initiate or approve the write in the current interaction.
 
 ## Model context is not project continuity
 
