@@ -42,6 +42,8 @@ one.
 
 ## Understand the project
 
+- [When to use LabNote](WHEN_TO_USE_LABNOTE.md) — recognise the project
+  problems it is designed to address and compare options honestly.
 - [LabNote alongside context files and model memory](WHY_LABNOTE.md) — how a
   visible project ledger complements those two kinds of AI support.
 - [Project provenance](PROJECT_PROVENANCE.md) — how human maintainers and
