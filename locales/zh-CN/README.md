@@ -91,6 +91,8 @@ registry/       ← 记录发生了什么、何时发生以及由谁完成
 
 一条典型轨迹是 **packet → response → review → decision**；对应地，它是工作包（packet）→ 回复（response）→ 审阅（review）→ 决定（decision）。
 
+[查看一条从来源到决定的虚构轨迹，其中包括对 AI 说法的修正](docs/WORKED_CONTINUITY_TRAIL.md)。
+
 设置好 LabNote 后，你可以这样对 AI 说：
 
 ```text
