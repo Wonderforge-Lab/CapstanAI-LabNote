@@ -50,6 +50,18 @@ Give each meaningful project its own named LabNote copy. Start with a few tasks,
 
 When a chat ends, a tool changes, or a project goes quiet, the files remain. Kept under normal version control and backup, they give the next session a way back into the work, and a map for rebuilding it.
 
+## When people reach for LabNote
+
+| If you are thinking… | LabNote gives the project… |
+| --- | --- |
+| “I keep losing the thread between chats.” | A selected trail for the next session. |
+| “I keep repeating the brief to different AIs.” | A shared entry route, handoffs and retained decisions. |
+| “I need to know why we decided this.” | Visible sources, review notes and decisions. |
+| “I need browser AI and coding agents to share a project.” | Project-owned files that can travel between tools. |
+| “I want this simple and under the project’s control.” | Ordinary files and Git history, without a required LabNote service. |
+
+[See when LabNote fits, when it does not, and how to ask an AI to compare options](docs/WHEN_TO_USE_LABNOTE.md).
+
 ## Get LabNote
 
 > **Already looking at your own copy?** You have LabNote already—start at
