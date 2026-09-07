@@ -22,6 +22,8 @@ one.
   normal piece of work in the right route with the minimum useful record.
 - [Understand review and decisions](review_workflow.md) — see how a response
   becomes a reviewed outcome.
+- [See a fictional continuity trail](WORKED_CONTINUITY_TRAIL.md) — follow a
+  source through response, correction, decision and next action.
 - [Understand visitor and session identity](visitor_lobby_model.md) — learn
   what session records mean in a live workspace.
 - [Understand message routing](message_routing_model.md) — follow the model

@@ -91,6 +91,8 @@ A session enters, reads the relevant route, contributes what it needs to contrib
 
 A typical trail is **packet → response → review → decision**.
 
+[See a fictional source-to-decision trail, including a corrected AI claim](docs/WORKED_CONTINUITY_TRAIL.md).
+
 Once LabNote is set up, you can say things like:
 
 ```text
