@@ -6,7 +6,7 @@ CapstanAI LabNote is a lightweight, file-based project ledger for people working
 
 You decide what belongs in the record and what requires review. A shared entry route gives each AI a clear reading path, defined places to leave work and stopping points for human decisions. Basic ledger use needs no LabNote background service, database or model API key.
 
-CapstanAI is the project name; LabNote is its practical ledger.
+CapstanAI LabNote is the name of this standalone ledger. It works without a separate CapstanAI service or engine.
 
 **English** | [简体中文](locales/zh-CN/README.md)
 
@@ -60,7 +60,7 @@ When a chat ends, a tool changes, or a project goes quiet, the files remain. Kep
 | “I need browser AI and coding agents to share a project.” | Project-owned files that can travel between tools. |
 | “I want this simple and under the project’s control.” | Ordinary files and Git history, without a required LabNote service. |
 
-[See when LabNote fits, when it does not, and how to ask an AI to compare options](docs/WHEN_TO_USE_LABNOTE.md).
+[See when LabNote fits, and when a simpler or different tool may be better](docs/WHEN_TO_USE_LABNOTE.md).
 
 ## Get LabNote
 
@@ -72,6 +72,8 @@ If you are already talking to an AI, this is the easiest place to begin. Copy an
 ```text
 Help me set up CapstanAI LabNote for this project. First work out what access you have, then recommend the simplest safe route for me. I want you to explain any terminal commands before I run them.
 ```
+
+> This starts a setup conversation; it does not authorise an AI to create a project record on its own. In a controlled copy, tell the AI explicitly when you want it to start a deposit or other record.
 
 Or make your own copy directly:
 
@@ -99,7 +101,7 @@ responses/      ← critiques, replies and signoffs come back
 registry/       ← what happened, when and by whom
 ```
 
-A session enters, reads the relevant route, contributes what it needs to contribute, leaves a traceable record and stops. The human remains in charge.
+A session enters, reads the relevant route, contributes what it needs to contribute, leaves a traceable record and stops. The human remains in charge. An AI may suggest a record worth making, but it waits for the human to start or approve that step.
 
 A typical trail is **packet → response → review → decision**.
 
@@ -176,6 +178,8 @@ Project areas, canvases and branching chats all help, but I wanted something sim
 Hence LabNote. What began as a fix for my own terrible project memory became my daily driver. I now make one for most substantial projects, and use it to dust down work that has been sitting untouched for months.
 
 At heart, it turns the AI into a low-overhead archivist and coordinator: told what to read, where to put things, what to record and when to stop.
+
+[Read the evidence-led public evolution of this repository](docs/PROJECT_EVOLUTION.md).
 
 ## Licence
 
