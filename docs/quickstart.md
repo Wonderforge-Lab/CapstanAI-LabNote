@@ -4,7 +4,7 @@ CapstanAI LabNote has three stages: acquire a copy, bootstrap the workspace, the
 
 ## 1. Acquire LabNote
 
-If you are already talking to an AI, the simplest starting point is:
+First decide whether you want LabNote **locally, on GitHub, or both**. If you are already talking to an AI, the simplest starting point is:
 
 ```text
 Help me set up CapstanAI LabNote for this project. First work out what access you have, then recommend the simplest safe route for me. I want you to explain any terminal commands before I run them.
