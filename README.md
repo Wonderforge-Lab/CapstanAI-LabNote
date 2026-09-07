@@ -67,6 +67,7 @@ Or make your own copy directly:
 | --- | --- |
 | **In your own GitHub repository** | [Use this template](https://github.com/Wonderforge-Lab/CapstanAI-LabNote/generate), then choose the name and visibility of your new repository. |
 | **On your own computer** | Clone or download the repository. A remote GitHub copy is optional. |
+| **On both** | Start with a local clone, then connect it to a new private GitHub repository. [Follow the guided route](docs/ACQUISITION.md). |
 
 > **Keep live work out of this public repository.** The public CapstanAI LabNote repository is the source scaffold. Put private project material in your own private, controlled or local copy.
 
