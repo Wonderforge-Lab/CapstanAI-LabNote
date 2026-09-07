@@ -40,6 +40,8 @@ Validate LabNote by its expected structure and entrypoint, not by a fixed reposi
 
 No current-run visitor handle, no write.
 
+An AI may identify material that could be useful to retain and may explain or draft a proposed deposit. It must not start, create, change, or register a project record merely because it considers that material useful. A human operator must directly initiate or approve the specific write in the current interaction.
+
 Do not reuse visitor handles, branches, storage locations, or permissions from earlier conversation context unless the human operator explicitly confirms them for this run.
 
 If source reports/documents are pasted or uploaded in the current prompt, treat that material as the source material.

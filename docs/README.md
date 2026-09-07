@@ -48,3 +48,6 @@ one.
   visible project ledger complements those two kinds of AI support.
 - [Project provenance](PROJECT_PROVENANCE.md) — how human maintainers and
   managed AI assistance contributed to the project.
+- [Public project evolution](PROJECT_EVOLUTION.md) — the public repository
+  milestones this documentation can evidence, without claiming to tell the
+  whole pre-public history.
