@@ -2,6 +2,18 @@
 
 This guide is only about acquiring a usable LabNote workspace. Once the copy exists, normal LabNote use starts at `AI_ENTRYPOINT.md`.
 
+## First choose where you want it
+
+Before cloning or using the template, decide which destination you want:
+
+| You want | Choose |
+| --- | --- |
+| A copy only on your own computer | **Local** |
+| A workspace only on GitHub | **GitHub** |
+| A local working copy and a GitHub workspace | **Both** |
+
+This choice affects how you acquire LabNote, not how it works once your copy exists.
+
 ## Easiest starting prompt
 
 If you are already talking to an AI, you can simply say:
