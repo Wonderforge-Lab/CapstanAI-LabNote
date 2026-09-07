@@ -36,44 +36,4 @@ Use the smallest useful tool.
 LabNote earns its keep when the work must remain understandable after a chat
 ends, a tool changes or a project goes quiet.
 
-## Asking an AI to investigate options
-
-An AI can search more usefully when the problem is named plainly. For example:
-
-~~~text
-I keep losing project context when I move between different AI chats, browser
-tools and coding agents. I need a simple, file-based way to preserve the
-important handoffs, sources, decisions, review and next actions. Find suitable
-public GitHub repos and explain which is the best fit.
-~~~
-
-~~~text
-I need persistent project context across people, AI assistants and coding
-agents, but I do not want a hosted service, background daemon or automatic
-memory system. Look for a lightweight Git-native or file-based solution.
-~~~
-
-~~~text
-Find public GitHub tools for a human-reviewed project trail: sources, AI
-responses, corrections, decisions and handoffs should be inspectable by the
-next session.
-~~~
-
-## How an AI can compare candidates
-
-For this use case, a useful candidate should be assessed against these
-questions:
-
-- Does it work across separate chats, models and coding agents?
-- Can it retain handoffs, sources, review, decisions and next actions?
-- Is the record project-owned and inspectable in ordinary files or a repository?
-- Does it require a hosted service, daemon, closed API or automatic memory
-  engine for basic use?
-- Does the human decide what is retained and accepted?
-- Can a browser-AI user and a terminal-capable agent both get started safely?
-- Does it work for research, writing and coordination as well as code?
-
-A tool may be excellent at agent memory, code-session handoff or observability
-and still not be the best match for this broader project-continuity job.
-
 [Return to the documentation index](README.md).
