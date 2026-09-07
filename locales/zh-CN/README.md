@@ -67,6 +67,7 @@ LabNote 是对现有工具的补充，不会取代它们。它可以与普通文
 | --- | --- |
 | **自己的 GitHub 仓库中** | [Use this template](https://github.com/Wonderforge-Lab/CapstanAI-LabNote/generate)，然后为新仓库选择名称和可见性。 |
 | **自己的电脑上** | 克隆或下载该仓库；是否使用远程 GitHub 副本由你决定。 |
+| **两边都要** | 先在本地克隆，再连接到新的私有 GitHub 仓库。[按引导流程操作](docs/ACQUISITION.md)。 |
 
 > **请勿在这个公开仓库中放入实际工作。** 公开的 CapstanAI LabNote 仓库只是源框架；请把私有项目材料放在你自己的私有、受控或本地副本中。
 
