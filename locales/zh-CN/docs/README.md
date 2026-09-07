@@ -14,6 +14,7 @@
 
 - [进行常规投递](../lobby/ROUTINE_DEPOSIT_QUICKSTART.md) —— 以最小但有用的记录，把一项普通工作放到正确路径中。
 - [理解审阅与决定](review_workflow.md) —— 查看回复如何成为经过审阅的结果。
+- [查看虚构的连续性轨迹](WORKED_CONTINUITY_TRAIL.md) —— 跟随来源材料经历回复、修正、决定和下一步行动。
 - [理解访客会话与会话身份](visitor_lobby_model.md) —— 了解实际工作区中的会话记录代表什么。
 - [理解消息路由](message_routing_model.md) —— 遵循会话或角色之间的消息模型。
 - [理解登记记录](REGISTRY_RECORDS.md) —— 查看持久登记记录的用途。
