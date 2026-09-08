@@ -54,6 +54,16 @@ Do not create task branches for ordinary deposits.
 
 Use branch + PR for procedure, policy, code, structure, cleanup, risky/bulky imports, many existing-file edits, or explicit review.
 
+## One Active Deposit Per Workspace
+
+LabNote supports one active writer at a time per live workspace. People and agents may read and prepare material in parallel; simultaneous deposits, including agent swarms, are unsupported. Human operators sharing a workspace must coordinate turns across all sessions, tools and copies publishing to it. This is an operating rule, not an enforced lock or automatic queue.
+
+A human-assigned current-run visitor handle identifies a session; it neither authorizes a deposit nor reserves a writing turn. Before any write, including visitor registration, confirm with the human that this specific deposit is authorized and no other writer is active in the same workspace. If another writer is active or the turn is unclear, stop before writing and ask the human. Do not infer a free turn from a unique handle or an apparently idle repository.
+
+The turn covers the complete authorized deposit: its artifacts, required JSON records and any required regenerated views. Verify the complete deposit at the agreed destination—local, GitHub or both—before reporting completion. A draft or local commit is not proof of publication to GitHub.
+
+If a write fails or its outcome is uncertain, preserve prepared work, report the failed, partial or unverified outcome and stop for human direction. Check what actually landed before any authorized retry; do not blindly replay, overwrite conflicting work or force-push as recovery. The human must resolve the outstanding turn before another writer starts. Follow the completion and recovery steps in `lobby/ROUTINE_DEPOSIT_QUICKSTART.md`.
+
 ## Direct-deposit boundary
 
 Direct routine deposits are content-plane work only: their artifacts and canonical records may be written under `datadrops/`, `responses/`, `messages/`, `notifications/`, `registry/packets/`, `registry/responses/`, `registry/messages/`, `registry/notifications/`, `registry/visits/`, `registry/visitors/`, and `registry/tags/proposed/`, together with the generated views `registry/INDEX.md` and `registry/*_registry.csv` when `scripts/generate_registry_views.py` regenerates them from canonical records created or changed in the same deposit.

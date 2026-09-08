@@ -33,6 +33,8 @@ No repository rename or LabNote identity-file edit should be required before fir
 
 ## 3. Operate LabNote
 
+Follow the [routine deposit cycle](../lobby/ROUTINE_DEPOSIT_QUICKSTART.md) for each contribution below. Only one writer may deposit into a workspace at a time: the human authorizes the turn, waits for destination verification and the completion report, then authorizes the next. A visitor handle identifies a session; it does not reserve a turn. Reading and preparation may happen in parallel.
+
 1. Copy `templates/datadrop_packet.md` for a new packet.
 2. Fill in the packet header and task sections.
 3. If the packet depends on larger files, add an operator-approved reference and a short summary instead of committing the raw dump.
