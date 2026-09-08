@@ -4,7 +4,7 @@
 
 CapstanAI LabNote is a lightweight, file-based project ledger for people working across AI assistants, coding agents and separate chats. It keeps selected sources, handoffs, reviews, decisions and next actions in ordinary Markdown files and structured JSON records—so the next session can pick up the project thread.
 
-You decide what belongs in the record and what requires review. A shared entry route gives each AI a clear reading path, defined places to leave work and stopping points for human decisions. Basic ledger use needs no LabNote background service, database or model API key.
+You decide what belongs in the record and what requires review. A shared entry route gives each AI a clear reading path, defined places to leave work and stopping points for human decisions. Basic ledger use needs no LabNote background service, MCP server, database or model API key.
 
 CapstanAI LabNote is the name of this standalone ledger. It works without a separate CapstanAI service or engine.
 
@@ -103,6 +103,10 @@ registry/       ← what happened, when and by whom
 
 A session enters, reads the relevant route, contributes what it needs to contribute, leaves a traceable record and stops. The human remains in charge. An AI may suggest a record worth making, but it waits for the human to start or approve that step.
 
+**One deposit at a time, per workspace.** People and AI agents may read, research and prepare material in parallel, but simultaneous deposits—including agent swarms—are unsupported. The human authorises one contributor's deposit, waits for the whole deposit to be verified in the intended local workspace, GitHub repository or both, and receives the completion report before authorising the next. People sharing a workspace must coordinate those turns across all sessions and tools.
+
+A human-assigned contributor handle identifies a session; it does not grant write permission or reserve a turn. This is a human-managed operating rule, not a technical lock. LabNote provides no automatic queue, locking service or multi-agent write coordination. [Follow the deposit cycle and its failure/verification rules](lobby/ROUTINE_DEPOSIT_QUICKSTART.md).
+
 A typical trail is **packet → response → review → decision**.
 
 [See a fictional source-to-decision trail, including a corrected AI claim](docs/WORKED_CONTINUITY_TRAIL.md).
@@ -140,10 +144,13 @@ The rails do not make a model smarter, and they cannot make one infallible. They
 LabNote itself needs:
 
 - no daemon;
+- no MCP server;
 - no database;
 - no hosted runtime;
 - no repo-resident agent;
 - no model API keys.
+
+LabNote neither includes nor requires an MCP (Model Context Protocol) server. Your chosen assistant may use an external connector, including MCP, to access files or GitHub; that is the assistant's access route, not a LabNote service.
 
 No shared-memory theatre.
 
