@@ -8,8 +8,6 @@ You decide what belongs in the record and what requires review. A shared entry r
 
 CapstanAI LabNote is the name of this standalone ledger. It works without a separate CapstanAI service or engine.
 
-**English** | [简体中文](locales/zh-CN/README.md)
-
 <p align="center">
   <img src="https://img.shields.io/badge/license-Apache--2.0-blue" alt="Apache License 2.0">
   <img src="https://img.shields.io/badge/runtime-none-informational" alt="No LabNote runtime">
@@ -121,7 +119,7 @@ Leave a critique for [AI or agent name] about [document name].
 Register this report, tag it properly, and leave a short completion note.
 ```
 
-The AI gets enough structure to act, enough context to orient itself, and clear stopping points when a human decision is needed. The included validation workflow runs on pushes and pull requests. It checks registry records and provenance/path rules, generated views and Markdown links, locale invariants and freshness, bridge configuration, and tag-promotion separation.
+The AI gets enough structure to act, enough context to orient itself, and clear stopping points when a human decision is needed. The included validation workflow runs on pushes and pull requests. It checks registry records and provenance/path rules, generated views and Markdown links, bridge configuration, and tag-promotion separation.
 
 [See how handoffs move through review and decision](docs/review_workflow.md).
 

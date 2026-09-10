@@ -6,7 +6,7 @@ Baseline: `main` at `824a36dc4c7bebb661fab7511aea6eac3984fa1b`.
 
 ## Scope
 
-The census read 121 Markdown, JSON, and CSV protocol surfaces. It covered active English material, supported zh-CN machine-invariant surfaces, templates, examples, registry views, routing material, configuration, and archive references. Binary assets were out of scope.
+The census read 121 Markdown, JSON, and CSV protocol surfaces. At that historical baseline, it covered active English material, the then-supported Simplified-Chinese machine-invariant surfaces, templates, examples, registry views, routing material, configuration, and archive references. Binary assets were out of scope.
 
 ## Findings
 

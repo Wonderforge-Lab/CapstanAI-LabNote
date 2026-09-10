@@ -4,8 +4,6 @@ The repository README helps you decide whether LabNote fits your work and get
 a copy. This page helps you find the exact guidance you need once you have
 one.
 
-**English** | [简体中文](../locales/zh-CN/docs/README.md)
-
 ## Start
 
 - [Choose a setup route](ACQUISITION.md) — use the repository as a GitHub
