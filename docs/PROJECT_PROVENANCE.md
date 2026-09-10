@@ -4,7 +4,7 @@ CapstanAI LabNote is human-led. Human maintainers retain authorship, decision
 authority, repository control, and release authority.
 
 The project has also used managed AI assistance for development, implementation,
-testing, review, localisation, and documentation. The roles below describe that
+testing, review, and documentation. The roles below describe that
 assistance transparently; they do not transfer responsibility away from the
 human maintainers.
 
@@ -32,11 +32,5 @@ repository change, or release.
 Specific releases, pull requests, review records, and revision notes retain
 their own local history. They may name the work or review relevant to that
 revision without needing to repeat this full project-wide record.
-
-## Localisation
-
-English is the canonical protocol language. Locale documentation may explain
-the same project facts in a natural local form while preserving the relevant
-paths, machine fields, and protocol boundaries.
 
 [Return to the documentation index](README.md).

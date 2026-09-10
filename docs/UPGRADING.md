@@ -14,7 +14,7 @@ Use this guide when you choose to adopt a newer scaffold release.
 ## Recommended Upgrade Flow
 
 1. Fetch the released scaffold version into a separate branch.
-2. Compare it against the live workspace and classify changes as safe scaffold additions, deliberate protocol migrations, local policy conflicts, or locale/source changes requiring a later localization review.
+2. Compare it against the live workspace and classify changes as safe scaffold additions, deliberate protocol migrations, or local policy conflicts.
 3. Apply schema, template, and validator changes together. Do not leave a canonical registry half-migrated.
 4. Run the registry validator, generated-view check, validator smoke suite, generated-view smoke suite, Markdown-link test, and bridge-config test.
 5. Review the diff, including generated CSV and INDEX views.
@@ -25,7 +25,6 @@ Use this guide when you choose to adopt a newer scaffold release.
 - JSON records carry schema_version; migrate records before enabling a new schema as required CI.
 - bridge_config.json carries its own schema_version.
 - Generated CSV files and registry/INDEX.md are projections, not migration inputs.
-- English protocol changes freeze the source before a localized route is re-audited. Do not silently patch a locale to compensate for an unresolved English-source change.
 
 ## Live Data
 

@@ -19,6 +19,8 @@ became public, and how the distributed scaffold was subsequently maintained.
 | 3 September 2026 | [v0.3.1](https://github.com/Wonderforge-Lab/CapstanAI-LabNote/releases/tag/v0.3.1) and [v0.3.2](https://github.com/Wonderforge-Lab/CapstanAI-LabNote/releases/tag/v0.3.2) | Active guidance and locale-route freshness were hardened with repository validation. |
 | 7 September 2026 | [A practical guide to when LabNote fits](https://github.com/Wonderforge-Lab/CapstanAI-LabNote/commit/cab623f0d72e7f133d5de285a387b8d50f4bc537) | The public documentation was extended around real continuity problems and honest fit. |
 
+The Chinese-language files and validation machinery described by the September releases were retired from the distributed template on 10 September 2026. They remain preserved in the [development snapshot](https://github.com/Wonderforge-Lab/Dev-for-LabNote/pull/2) and its [preservation addendum](https://github.com/Wonderforge-Lab/Dev-for-LabNote/pull/3) for possible work on a separate edition. Earlier releases and Git history remain unchanged.
+
 ## How to read the record
 
 - [Git history](https://github.com/Wonderforge-Lab/CapstanAI-LabNote/commits/main)

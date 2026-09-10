@@ -1,9 +1,0 @@
-# 通知
-
-通知用于记录需要操作者进行人工转递（human relay）的请求。
-
-当某条消息需要在彼此无法直接看到对方内容的会话之间传递时，使用通知。
-
-从 `templates/notification_request.md` 创建通知文件，把它放入 `notifications/open/`，并在 `registry/notifications/` 下创建基准 JSON 通知记录。
-
-CSV 通知登记表和 `registry/INDEX.md` 是生成的只读兼容视图。不得手动编辑。
