@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import subprocess
+import json
+import shutil
 import sys
 import tempfile
 from pathlib import Path
@@ -167,7 +169,40 @@ def assert_direct_validator_invariants() -> None:
             )
 
 
+def assert_minimal_routine_deposit() -> None:
+    """Validate the shipped specimen at its real destination paths, without repair."""
+    example = ROOT / "examples" / "minimal_routine_deposit"
+    with tempfile.TemporaryDirectory() as temporary:
+        workspace = Path(temporary) / "workspace"
+        shutil.copytree(ROOT, workspace, ignore=shutil.ignore_patterns(".git", "__pycache__"))
+        for filename, kind, id_key, artifact, path_key in (
+            ("packet_record.json", "packets", "packet_id", "datadrop_packet.md", "path"),
+            ("visit_record.json", "visits", "visit_id", "signoff.md", "signoff_path"),
+        ):
+            record = json.loads((example / filename).read_text(encoding="utf-8"))
+            destination = workspace / "registry" / kind / record[id_key][:4]
+            destination.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(example / filename, destination / (record[id_key] + ".json"))
+            artifact_path = workspace / record[path_key]
+            artifact_path.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(example / artifact, artifact_path)
+        for args in (
+            ("scripts/generate_registry_views.py",),
+            ("scripts/validate_repo.py", "--registry"),
+            ("scripts/generate_registry_views.py", "--check"),
+        ):
+            result = subprocess.run(
+                [sys.executable, *args], cwd=workspace, text=True,
+                capture_output=True, check=False,
+            )
+            if result.returncode:
+                raise AssertionError(
+                    f"minimal routine deposit failed: {args}\n{result.stdout}\n{result.stderr}"
+                )
+
+
 def main() -> int:
+    assert_minimal_routine_deposit()
     assert_direct_validator_invariants()
     assert_valid(
         "valid schema fixtures", "--fixtures", "--check-references", "--check-tags"
