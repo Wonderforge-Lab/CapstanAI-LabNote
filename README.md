@@ -15,7 +15,7 @@ You choose what gets saved and when. LabNote gives the AI instructions for findi
   <img src="assets/capstanai_labnote_raven.png" alt="CapstanAI LabNote raven perched on a lab notebook with a pearl and fountain pen" width="30%">
 </p>
 
-                                                  - Mind the gap. Mark the crossing -
+                                               - Mind the gap. Mark the crossing -
 
 ## Why use it?
 
