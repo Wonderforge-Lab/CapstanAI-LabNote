@@ -1,8 +1,10 @@
 {
+  "record_type": "visit",
+  "schema_version": 1,
   "visit_id": "20260603-example-visitor-routine-test-visit",
-  "date": "2026-06-03",
+  "created_at": "2026-06-03T12:00:00Z",
   "visitor_id": "example-visitor",
-  "visitor_family": "example-ai",
+  "session_family": "example-ai",
   "checked_messages": true,
   "answered_messages": false,
   "created_messages": false,
